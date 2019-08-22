@@ -95,24 +95,24 @@ public class NacosRegistry extends FailbackRegistry {
     private static final String WILDCARD = "*";
 
     /**
-     * The separator for service name
+     * The separator for com.atlwj.aop.service name
      * Change a constant to be configurable, it's designed for Windows file name that is compatible with old
      * Nacos binary release(< 0.6.1)
      */
-    private static final String SERVICE_NAME_SEPARATOR = System.getProperty("nacos.service.name.separator", ":");
+    private static final String SERVICE_NAME_SEPARATOR = System.getProperty("nacos.com.atlwj.aop.service.name.separator", ":");
 
     /**
-     * The pagination size of query for Nacos service names(only for Dubbo-OPS)
+     * The pagination size of query for Nacos com.atlwj.aop.service names(only for Dubbo-OPS)
      */
-    private static final int PAGINATION_SIZE = Integer.getInteger("nacos.service.names.pagination.size", 100);
+    private static final int PAGINATION_SIZE = Integer.getInteger("nacos.com.atlwj.aop.service.names.pagination.size", 100);
 
     /**
-     * The interval in second of lookup Nacos service names(only for Dubbo-OPS)
+     * The interval in second of lookup Nacos com.atlwj.aop.service names(only for Dubbo-OPS)
      */
-    private static final long LOOKUP_INTERVAL = Long.getLong("nacos.service.names.lookup.interval", 30);
+    private static final long LOOKUP_INTERVAL = Long.getLong("nacos.com.atlwj.aop.service.names.lookup.interval", 30);
 
     /**
-     * {@link ScheduledExecutorService} lookup Nacos service names(only for Dubbo-OPS)
+     * {@link ScheduledExecutorService} lookup Nacos com.atlwj.aop.service names(only for Dubbo-OPS)
      */
     private volatile ScheduledExecutorService scheduledExecutorService;
 
@@ -192,7 +192,7 @@ public class NacosRegistry extends FailbackRegistry {
     }
 
     /**
-     * Get the service names from the specified {@link URL url}
+     * Get the com.atlwj.aop.service names from the specified {@link URL url}
      *
      * @param url      {@link URL}
      * @param listener {@link NotifyListener}
@@ -212,7 +212,7 @@ public class NacosRegistry extends FailbackRegistry {
 
         final Set<String> serviceNames;
 
-        if (serviceName.isConcrete()) { // is the concrete service name
+        if (serviceName.isConcrete()) { // is the concrete com.atlwj.aop.service name
             serviceNames = singleton(serviceName.toString());
         } else {
             serviceNames = filterServiceNames(serviceName);
@@ -265,7 +265,7 @@ public class NacosRegistry extends FailbackRegistry {
     }
 
     /**
-     * Get the service names for Dubbo OPS
+     * Get the com.atlwj.aop.service names for Dubbo OPS
      *
      * @param url {@link URL}
      * @return non-null
@@ -319,7 +319,7 @@ public class NacosRegistry extends FailbackRegistry {
         final String targetGroup = url.getParameter(GROUP_KEY, "");
 
         filterData(serviceNames, serviceName -> {
-            // split service name to segments
+            // split com.atlwj.aop.service name to segments
             // (required) segments[0] = category
             // (required) segments[1] = serviceInterface
             // (optional) segments[2] = version
@@ -337,13 +337,13 @@ public class NacosRegistry extends FailbackRegistry {
 
             String serviceInterface = segments[SERVICE_INTERFACE_INDEX];
             if (!WILDCARD.equals(targetServiceInterface) &&
-                    !StringUtils.equals(targetServiceInterface, serviceInterface)) { // no match service interface
+                    !StringUtils.equals(targetServiceInterface, serviceInterface)) { // no match com.atlwj.aop.service interface
                 return false;
             }
 
             String version = segments[SERVICE_VERSION_INDEX];
             if (!WILDCARD.equals(targetVersion) &&
-                    !StringUtils.equals(targetVersion, version)) { // no match service version
+                    !StringUtils.equals(targetVersion, version)) { // no match com.atlwj.aop.service version
                 return false;
             }
 

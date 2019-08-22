@@ -26,7 +26,7 @@ import java.util.Map;
 import java.util.Optional;
 
 /**
- * Consumer Model which is about subscribed services.
+ * Consumer Model which is about subscribed dubbo.
  */
 public class ConsumerModel {
     private final Object proxyObject;
@@ -37,12 +37,12 @@ public class ConsumerModel {
 
     /**
      *  This constructor create an instance of ConsumerModel and passed objects should not be null.
-     *  If service name, service instance, proxy object,methods should not be null. If these are null
+     *  If com.atlwj.aop.service name, com.atlwj.aop.service instance, proxy object,methods should not be null. If these are null
      *  then this constructor will throw {@link IllegalArgumentException}
-     * @param serviceName Name of the service.
+     * @param serviceName Name of the com.atlwj.aop.service.
      * @param serviceInterfaceClass Service interface class.
      * @param proxyObject  Proxy object.
-     * @param methods Methods of service class
+     * @param methods Methods of com.atlwj.aop.service class
      * @param attributes Attributes of methods.
      */
     public ConsumerModel(String serviceName
@@ -94,7 +94,7 @@ public class ConsumerModel {
     }
 
     /**
-     * Return all method models for the current service
+     * Return all method models for the current com.atlwj.aop.service
      *
      * @return method model list
      */

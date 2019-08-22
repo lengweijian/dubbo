@@ -52,7 +52,7 @@ public interface Serialization {
     /**
      * Get a serialization implementation instance
      *
-     * @param url URL address for the remote service
+     * @param url URL address for the remote com.atlwj.aop.service
      * @param output the underlying output stream
      * @return serializer
      * @throws IOException
@@ -63,7 +63,7 @@ public interface Serialization {
     /**
      * Get a deserialization implementation instance
      *
-     * @param url URL address for the remote service
+     * @param url URL address for the remote com.atlwj.aop.service
      * @param input the underlying input stream
      * @return deserializer
      * @throws IOException

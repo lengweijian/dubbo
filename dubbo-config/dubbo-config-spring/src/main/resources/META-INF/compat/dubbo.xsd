@@ -58,7 +58,7 @@
         </xsd:attribute>
         <xsd:attribute name="mock" type="xsd:string">
             <xsd:annotation>
-                <xsd:documentation><![CDATA[ Use service mock implementation. ]]></xsd:documentation>
+                <xsd:documentation><![CDATA[ Use com.atlwj.aop.service mock implementation. ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="merger" type="xsd:string">
@@ -68,12 +68,12 @@
         </xsd:attribute>
         <xsd:attribute name="validation" type="xsd:string">
             <xsd:annotation>
-                <xsd:documentation><![CDATA[ Use service jsr303 validation, true/false. ]]></xsd:documentation>
+                <xsd:documentation><![CDATA[ Use com.atlwj.aop.service jsr303 validation, true/false. ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="cache" type="xsd:string">
             <xsd:annotation>
-                <xsd:documentation><![CDATA[ Use service cache, lru/threadlocal/jcache. ]]></xsd:documentation>
+                <xsd:documentation><![CDATA[ Use com.atlwj.aop.service cache, lru/threadlocal/jcache. ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
@@ -88,12 +88,12 @@
                 </xsd:attribute>
                 <xsd:attribute name="local" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ Use service local implementation. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ Use com.atlwj.aop.service local implementation. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="stub" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ Use service local implementation. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ Use com.atlwj.aop.service local implementation. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="proxy" type="xsd:string">
@@ -133,22 +133,22 @@
                 </xsd:attribute>
                 <xsd:attribute name="application" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service application. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service application. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="module" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service module. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service module. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="registry" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service registry. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service registry. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="monitor" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service monitor. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service monitor. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="callbacks" type="xsd:string">
@@ -158,24 +158,24 @@
                 </xsd:attribute>
                 <xsd:attribute name="onconnect" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service client connected. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service client connected. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="ondisconnect" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service client disconnected. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service client disconnected. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="scope" type="xsd:string">
                     <xsd:annotation>
                         <xsd:documentation>
-                            <![CDATA[ Defines the service visibility, choise:[local remote]. default is remote, which can be invoked by network。  ]]></xsd:documentation>
+                            <![CDATA[ Defines the com.atlwj.aop.service visibility, choise:[local remote]. default is remote, which can be invoked by network。  ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="tag" type="xsd:string">
                     <xsd:annotation>
                         <xsd:documentation>
-                            <![CDATA[ Defines the service tag]]></xsd:documentation>
+                            <![CDATA[ Defines the com.atlwj.aop.service tag]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
             </xsd:extension>
@@ -187,12 +187,12 @@
             <xsd:extension base="abstractInterfaceType">
                 <xsd:attribute name="version" type="xsd:string" default="0.0.0">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service version. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service version. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="group" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service group. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service group. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="check" type="xsd:string">
@@ -207,7 +207,7 @@
                 </xsd:attribute>
                 <xsd:attribute name="generic" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ Generic service. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ Generic com.atlwj.aop.service. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="injvm" type="xsd:string">
@@ -241,76 +241,76 @@
             <xsd:extension base="abstractInterfaceType">
                 <xsd:attribute name="register" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service can be register to registry. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service can be register to registry. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="version" type="xsd:string" default="0.0.0">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service version. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service version. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="group" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service group. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service group. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="deprecated" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ whether the service is deprecated. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ whether the com.atlwj.aop.service is deprecated. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="delay" type="xsd:string" default="0">
                     <xsd:annotation>
                         <xsd:documentation>
-                            <![CDATA[ The service export delay millisecond. ]]>
+                            <![CDATA[ The com.atlwj.aop.service export delay millisecond. ]]>
                         </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="export" type="xsd:string">
                     <xsd:annotation>
                         <xsd:documentation>
-                            <![CDATA[ The service is export. ]]>
+                            <![CDATA[ The com.atlwj.aop.service is export. ]]>
                         </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="weight" type="xsd:string">
                     <xsd:annotation>
                         <xsd:documentation>
-                            <![CDATA[ The service weight. ]]>
+                            <![CDATA[ The com.atlwj.aop.service weight. ]]>
                         </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="document" type="xsd:string">
                     <xsd:annotation>
                         <xsd:documentation>
-                            <![CDATA[ The service document. ]]>
+                            <![CDATA[ The com.atlwj.aop.service document. ]]>
                         </xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="dynamic" type="xsd:string">
                     <xsd:annotation>
                         <xsd:documentation>
-                            <![CDATA[ the service registered to the registry is dynamic(true) or static(false). ]]></xsd:documentation>
+                            <![CDATA[ the com.atlwj.aop.service registered to the registry is dynamic(true) or static(false). ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="token" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service use token. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service use token. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="accesslog" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service use accesslog. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service use accesslog. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="executes" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service allow execute requests. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service allow execute requests. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="protocol" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service protocol. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service protocol. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="warmup" type="xsd:string">
@@ -320,7 +320,7 @@
                 </xsd:attribute>
                 <xsd:attribute name="serialization" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The serialization protocol of service. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The serialization protocol of com.atlwj.aop.service. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:anyAttribute namespace="##other" processContents="lax"/>
@@ -545,19 +545,19 @@
         <xsd:attribute name="dynamic" type="xsd:string">
             <xsd:annotation>
                 <xsd:documentation>
-                    <![CDATA[ the service registered to this registry is dynamic(true) or static(false). ]]></xsd:documentation>
+                    <![CDATA[ the com.atlwj.aop.service registered to this registry is dynamic(true) or static(false). ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="register" type="xsd:string">
             <xsd:annotation>
                 <xsd:documentation>
-                    <![CDATA[ register service to this registry(true) or not(false). ]]></xsd:documentation>
+                    <![CDATA[ register com.atlwj.aop.service to this registry(true) or not(false). ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="subscribe" type="xsd:string">
             <xsd:annotation>
                 <xsd:documentation>
-                    <![CDATA[ subscribe service to this registry(true) or not(false). ]]></xsd:documentation>
+                    <![CDATA[ subscribe com.atlwj.aop.service to this registry(true) or not(false). ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="default" type="xsd:string">
@@ -782,12 +782,12 @@
     <xsd:complexType name="metricsType">
         <xsd:attribute name="port" type="xsd:string" use="required">
             <xsd:annotation>
-                <xsd:documentation><![CDATA[ The metrics service port. ]]></xsd:documentation>
+                <xsd:documentation><![CDATA[ The metrics com.atlwj.aop.service port. ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="protocol" type="xsd:string" use="required">
             <xsd:annotation>
-                <xsd:documentation><![CDATA[ The metrics service protocol. ]]></xsd:documentation>
+                <xsd:documentation><![CDATA[ The metrics com.atlwj.aop.service protocol. ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
     </xsd:complexType>
@@ -930,7 +930,7 @@
                 </xsd:choice>
                 <xsd:attribute name="interface" type="xsd:token" use="required">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service interface class name. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service interface class name. ]]></xsd:documentation>
                         <xsd:appinfo>
                             <tool:annotation>
                                 <tool:expected-type type="java.lang.Class"/>
@@ -955,7 +955,7 @@
                 </xsd:attribute>
                 <xsd:attribute name="protocol" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service protocol. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service protocol. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:anyAttribute namespace="##other" processContents="lax"/>
@@ -979,12 +979,12 @@
         </xsd:attribute>
         <xsd:attribute name="host" type="xsd:string">
             <xsd:annotation>
-                <xsd:documentation><![CDATA[ The service host. ]]></xsd:documentation>
+                <xsd:documentation><![CDATA[ The com.atlwj.aop.service host. ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="port" type="xsd:string">
             <xsd:annotation>
-                <xsd:documentation><![CDATA[ The service port. ]]></xsd:documentation>
+                <xsd:documentation><![CDATA[ The com.atlwj.aop.service port. ]]></xsd:documentation>
             </xsd:annotation>
         </xsd:attribute>
         <xsd:attribute name="threadpool" type="xsd:string">
@@ -1145,17 +1145,17 @@
         <xsd:complexContent>
             <xsd:extension base="abstractServiceType">
                 <xsd:choice minOccurs="0" maxOccurs="unbounded">
-                    <xsd:element ref="service" minOccurs="0" maxOccurs="unbounded"/>
+                    <xsd:element ref="com.atlwj.aop.service" minOccurs="0" maxOccurs="unbounded"/>
                     <xsd:element ref="parameter" minOccurs="0" maxOccurs="unbounded"/>
                 </xsd:choice>
                 <xsd:attribute name="host" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service host. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service host. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="port" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service port. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service port. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="threadpool" type="xsd:string">
@@ -1290,7 +1290,7 @@
                 <xsd:attribute name="interface" type="xsd:token" use="required">
                     <xsd:annotation>
                         <xsd:documentation>
-                            <![CDATA[ Defines the interface to advertise for this service in the service registry. ]]></xsd:documentation>
+                            <![CDATA[ Defines the interface to advertise for this com.atlwj.aop.service in the com.atlwj.aop.service registry. ]]></xsd:documentation>
                         <xsd:appinfo>
                             <tool:annotation>
                                 <tool:expected-type type="java.lang.Class"/>
@@ -1301,17 +1301,17 @@
                 <xsd:attribute name="ref" type="xsd:string">
                     <xsd:annotation>
                         <xsd:documentation>
-                            <![CDATA[ The service implementation instance bean id. ]]></xsd:documentation>
+                            <![CDATA[ The com.atlwj.aop.service implementation instance bean id. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="class" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service implementation class name. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service implementation class name. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="path" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ The service path. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ The com.atlwj.aop.service path. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:attribute name="provider" type="xsd:string">
@@ -1321,7 +1321,7 @@
                 </xsd:attribute>
                 <xsd:attribute name="generic" type="xsd:string">
                     <xsd:annotation>
-                        <xsd:documentation><![CDATA[ Generic service. ]]></xsd:documentation>
+                        <xsd:documentation><![CDATA[ Generic com.atlwj.aop.service. ]]></xsd:documentation>
                     </xsd:annotation>
                 </xsd:attribute>
                 <xsd:anyAttribute namespace="##other" processContents="lax"/>
@@ -1397,7 +1397,7 @@
 
     <xsd:element name="provider" type="providerType">
         <xsd:annotation>
-            <xsd:documentation><![CDATA[ Export service default config ]]></xsd:documentation>
+            <xsd:documentation><![CDATA[ Export com.atlwj.aop.service default config ]]></xsd:documentation>
             <xsd:appinfo>
                 <tool:annotation>
                     <tool:exports type="org.apache.dubbo.config.ProviderConfig"/>
@@ -1428,9 +1428,9 @@
         </xsd:annotation>
     </xsd:element>
 
-    <xsd:element name="service" type="serviceType">
+    <xsd:element name="com.atlwj.aop.service" type="serviceType">
         <xsd:annotation>
-            <xsd:documentation><![CDATA[ Export service config ]]></xsd:documentation>
+            <xsd:documentation><![CDATA[ Export com.atlwj.aop.service config ]]></xsd:documentation>
             <xsd:appinfo>
                 <tool:annotation>
                     <tool:exports type="org.apache.dubbo.config.ServiceConfig"/>
@@ -1441,7 +1441,7 @@
 
     <xsd:element name="reference" type="referenceType">
         <xsd:annotation>
-            <xsd:documentation><![CDATA[ Reference service config ]]></xsd:documentation>
+            <xsd:documentation><![CDATA[ Reference com.atlwj.aop.service config ]]></xsd:documentation>
             <xsd:appinfo>
                 <tool:annotation>
                     <tool:exports type="org.apache.dubbo.config.ReferenceConfig"/>
@@ -1452,7 +1452,7 @@
 
     <xsd:element name="method" type="methodType">
         <xsd:annotation>
-            <xsd:documentation><![CDATA[ The service method config ]]></xsd:documentation>
+            <xsd:documentation><![CDATA[ The com.atlwj.aop.service method config ]]></xsd:documentation>
             <xsd:appinfo>
                 <tool:annotation>
                     <tool:exports type="org.apache.dubbo.config.MethodConfig"/>
@@ -1463,7 +1463,7 @@
 
     <xsd:element name="argument" type="argumentType">
         <xsd:annotation>
-            <xsd:documentation><![CDATA[ The service argument config ]]></xsd:documentation>
+            <xsd:documentation><![CDATA[ The com.atlwj.aop.service argument config ]]></xsd:documentation>
             <xsd:appinfo>
                 <tool:annotation>
                     <tool:exports type="org.apache.dubbo.config.ArgumentConfig"/>
@@ -1474,13 +1474,13 @@
 
     <xsd:element name="parameter" type="parameterType">
         <xsd:annotation>
-            <xsd:documentation><![CDATA[ The service url parameter ]]></xsd:documentation>
+            <xsd:documentation><![CDATA[ The com.atlwj.aop.service url parameter ]]></xsd:documentation>
         </xsd:annotation>
     </xsd:element>
 
     <xsd:element name="metrics" type="metricsType">
         <xsd:annotation>
-            <xsd:documentation><![CDATA[ The metrics service ]]></xsd:documentation>
+            <xsd:documentation><![CDATA[ The metrics com.atlwj.aop.service ]]></xsd:documentation>
             <xsd:appinfo>
                 <tool:annotation>
                     <tool:exports type="org.apache.dubbo.config.MetricsConfig"/>

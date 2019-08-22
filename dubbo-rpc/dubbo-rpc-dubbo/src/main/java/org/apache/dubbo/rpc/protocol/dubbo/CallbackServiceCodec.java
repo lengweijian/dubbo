@@ -50,7 +50,7 @@ import static org.apache.dubbo.rpc.protocol.dubbo.Constants.CHANNEL_CALLBACK_KEY
 import static org.apache.dubbo.rpc.Constants.IS_SERVER_KEY;
 
 /**
- * callback service helper
+ * callback com.atlwj.aop.service helper
  */
 class CallbackServiceCodec {
     private static final Logger logger = LoggerFactory.getLogger(CallbackServiceCodec.class);
@@ -79,7 +79,7 @@ class CallbackServiceCodec {
     }
 
     /**
-     * export or unexport callback service on client side
+     * export or unexport callback com.atlwj.aop.service on client side
      *
      * @param channel
      * @param url
@@ -120,9 +120,9 @@ class CallbackServiceCodec {
                     Invoker<?> invoker = PROXY_FACTORY.getInvoker(inst, clazz, exportUrl);
                     // should destroy resource?
                     Exporter<?> exporter = protocol.export(invoker);
-                    // this is used for tracing if instid has published service or not.
+                    // this is used for tracing if instid has published com.atlwj.aop.service or not.
                     channel.setAttribute(cacheKey, exporter);
-                    logger.info("Export a callback service :" + exportUrl + ", on " + channel + ", url is: " + url);
+                    logger.info("Export a callback com.atlwj.aop.service :" + exportUrl + ", on " + channel + ", url is: " + url);
                     increaseInstanceCount(channel, countKey);
                 }
             }
@@ -138,7 +138,7 @@ class CallbackServiceCodec {
     }
 
     /**
-     * refer or destroy callback service on server side
+     * refer or destroy callback com.atlwj.aop.service on server side
      *
      * @param url
      */
@@ -169,7 +169,7 @@ class CallbackServiceCodec {
                         callbackInvokers.add(invoker);
                         channel.setAttribute(CHANNEL_CALLBACK_KEY, callbackInvokers);
                     }
-                    logger.info("method " + inv.getMethodName() + " include a callback service :" + invoker.getUrl() + ", a proxy :" + invoker + " has been created.");
+                    logger.info("method " + inv.getMethodName() + " include a callback com.atlwj.aop.service :" + invoker.getUrl() + ", a proxy :" + invoker + " has been created.");
                 }
             }
         } else {
@@ -219,7 +219,7 @@ class CallbackServiceCodec {
         if (count != null && count >= limit) {
             //client side error
             throw new IllegalStateException("interface " + interfaceClass + " `s callback instances num exceed providers limit :" + limit
-                    + " ,current num: " + (count + 1) + ". The new callback service will not work !!! you can cancle the callback service which exported before. channel :" + channel);
+                    + " ,current num: " + (count + 1) + ". The new callback com.atlwj.aop.service will not work !!! you can cancle the callback com.atlwj.aop.service which exported before. channel :" + channel);
         } else {
             return false;
         }

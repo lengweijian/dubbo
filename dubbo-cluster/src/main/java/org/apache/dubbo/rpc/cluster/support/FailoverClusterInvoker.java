@@ -82,7 +82,7 @@ public class FailoverClusterInvoker<T> extends AbstractClusterInvoker<T> {
                 Result result = invoker.invoke(invocation);
                 if (le != null && logger.isWarnEnabled()) {
                     logger.warn("Although retry the method " + methodName
-                            + " in the service " + getInterface().getName()
+                            + " in the com.atlwj.aop.service " + getInterface().getName()
                             + " was successful by the provider " + invoker.getUrl().getAddress()
                             + ", but there have been failed providers " + providers
                             + " (" + providers.size() + "/" + copyInvokers.size()
@@ -104,7 +104,7 @@ public class FailoverClusterInvoker<T> extends AbstractClusterInvoker<T> {
             }
         }
         throw new RpcException(le.getCode(), "Failed to invoke the method "
-                + methodName + " in the service " + getInterface().getName()
+                + methodName + " in the com.atlwj.aop.service " + getInterface().getName()
                 + ". Tried " + len + " times of the providers " + providers
                 + " (" + providers.size() + "/" + copyInvokers.size()
                 + ") from the registry " + directory.getUrl().getAddress()

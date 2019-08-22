@@ -90,7 +90,7 @@ public class Main {
                 container.start();
                 logger.info("Dubbo " + container.getClass().getSimpleName() + " started!");
             }
-            System.out.println(new SimpleDateFormat("[yyyy-MM-dd HH:mm:ss]").format(new Date()) + " Dubbo service server started!");
+            System.out.println(new SimpleDateFormat("[yyyy-MM-dd HH:mm:ss]").format(new Date()) + " Dubbo com.atlwj.aop.service server started!");
         } catch (RuntimeException e) {
             logger.error(e.getMessage(), e);
             System.exit(1);
@@ -99,7 +99,7 @@ public class Main {
             LOCK.lock();
             STOP.await();
         } catch (InterruptedException e) {
-            logger.warn("Dubbo service server stopped, interrupted by other thread!", e);
+            logger.warn("Dubbo com.atlwj.aop.service server stopped, interrupted by other thread!", e);
         } finally {
             LOCK.unlock();
         }

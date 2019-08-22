@@ -65,10 +65,10 @@ public abstract class AbstractInvoker<T> implements Invoker<T> {
 
     public AbstractInvoker(Class<T> type, URL url, Map<String, String> attachment) {
         if (type == null) {
-            throw new IllegalArgumentException("service type == null");
+            throw new IllegalArgumentException("com.atlwj.aop.service type == null");
         }
         if (url == null) {
-            throw new IllegalArgumentException("service url == null");
+            throw new IllegalArgumentException("com.atlwj.aop.service url == null");
         }
         this.type = type;
         this.url = url;
@@ -129,7 +129,7 @@ public abstract class AbstractInvoker<T> implements Invoker<T> {
     public Result invoke(Invocation inv) throws RpcException {
         // if invoker is destroyed due to address refresh from registry, let's allow the current invoke to proceed
         if (destroyed.get()) {
-            logger.warn("Invoker for service " + this + " on consumer " + NetUtils.getLocalHost() + " is destroyed, "
+            logger.warn("Invoker for com.atlwj.aop.service " + this + " on consumer " + NetUtils.getLocalHost() + " is destroyed, "
                     + ", dubbo version is " + Version.getVersion() + ", this invoker should not be used any longer");
         }
         RpcInvocation invocation = (RpcInvocation) inv;

@@ -30,7 +30,7 @@
 
     <bean id="demoService" class="org.apache.dubbo.config.spring.impl.DemoServiceImpl"/>
 
-    <dubbo:service id="demoServiceExport" p:service-paramA="service-paramA" registry="naRegistry" ref="demoService"
-                   interface="org.apache.dubbo.config.spring.api.DemoService"/>
+    <dubbo:com.atlwj.aop.service id="demoServiceExport" p:com.atlwj.aop.service-paramA="com.atlwj.aop.service-paramA" registry="naRegistry" ref="demoService"
+                   interface="org.apache.dubbo.config.spring.api.com.atlwj.aop.service.DemoService"/>
 
 </beans>

@@ -29,7 +29,7 @@ import org.apache.dubbo.common.extension.SPI;
  * @see org.apache.dubbo.rpc.cluster.Directory#list(org.apache.dubbo.rpc.Invocation)
  * <p>
  * Note Router has a different behaviour since 2.7.0, for each type of Router, there will only has one Router instance
- * for each service. See {@link CacheableRouterFactory} and {@link RouterChain} for how to extend a new Router or how
+ * for each com.atlwj.aop.service. See {@link CacheableRouterFactory} and {@link RouterChain} for how to extend a new Router or how
  * the Router instances are loaded.
  */
 @SPI

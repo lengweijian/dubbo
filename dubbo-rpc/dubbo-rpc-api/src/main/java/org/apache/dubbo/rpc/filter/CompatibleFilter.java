@@ -75,7 +75,7 @@ public class CompatibleFilter extends ListenableFilter {
                             Type gtype = method.getGenericReturnType();
                             newValue = PojoUtils.realize(value, type, gtype);
                         } else if (!type.isInstance(value)) {
-                            //if local service interface's method's return type is not instance of return value
+                            //if local com.atlwj.aop.service interface's method's return type is not instance of return value
                             newValue = PojoUtils.isPojo(type) ? PojoUtils.realize(value, type) : CompatibleTypeUtils.compatibleTypeConvert(value, type);
 
                         } else {

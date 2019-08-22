@@ -32,32 +32,32 @@ public abstract class AbstractServiceBuilder<T extends AbstractServiceConfig, B 
         extends AbstractInterfaceBuilder<T, B> {
 
     /**
-     * The service version
+     * The com.atlwj.aop.service version
      */
     protected String version;
 
     /**
-     * The service group
+     * The com.atlwj.aop.service group
      */
     protected String group;
 
     /**
-     * whether the service is deprecated
+     * whether the com.atlwj.aop.service is deprecated
      */
     protected Boolean deprecated;
 
     /**
-     * The time delay register service (milliseconds)
+     * The time delay register com.atlwj.aop.service (milliseconds)
      */
     protected Integer delay;
 
     /**
-     * Whether to export the service
+     * Whether to export the com.atlwj.aop.service
      */
     protected Boolean export;
 
     /**
-     * The service weight
+     * The com.atlwj.aop.service weight
      */
     protected Integer weight;
 
@@ -67,8 +67,8 @@ public abstract class AbstractServiceBuilder<T extends AbstractServiceConfig, B 
     protected String document;
 
     /**
-     * Whether to register as a dynamic service or not on register center, it the value is false, the status will be disabled
-     * after the service registered,and it needs to be enabled manually; if you want to disable the service, you also need
+     * Whether to register as a dynamic com.atlwj.aop.service or not on register center, it the value is false, the status will be disabled
+     * after the com.atlwj.aop.service registered,and it needs to be enabled manually; if you want to disable the com.atlwj.aop.service, you also need
      * manual processing
      */
     protected Boolean dynamic;
@@ -84,7 +84,7 @@ public abstract class AbstractServiceBuilder<T extends AbstractServiceConfig, B 
     protected String accesslog;
 
     /**
-     * The protocol list the service will export with
+     * The protocol list the com.atlwj.aop.service will export with
      */
     protected List<ProtocolConfig> protocols;
     protected String protocolIds;

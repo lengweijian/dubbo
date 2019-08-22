@@ -19,7 +19,7 @@ package org.apache.dubbo.config;
 import org.apache.dubbo.common.utils.StringUtils;
 
 /**
- * The service consumer default configuration
+ * The com.atlwj.aop.service consumer default configuration
  *
  * @export
  */

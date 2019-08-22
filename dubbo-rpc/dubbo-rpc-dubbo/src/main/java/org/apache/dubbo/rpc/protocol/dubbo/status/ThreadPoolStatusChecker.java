@@ -62,7 +62,7 @@ public class ThreadPoolStatusChecker implements StatusChecker {
                         + ", largest:" + tp.getLargestPoolSize()
                         + ", active:" + tp.getActiveCount()
                         + ", task:" + tp.getTaskCount()
-                        + ", service port: " + port);
+                        + ", com.atlwj.aop.service port: " + port);
             }
         }
         return msg.length() == 0 ? new Status(Status.Level.UNKNOWN) : new Status(level, msg.toString());

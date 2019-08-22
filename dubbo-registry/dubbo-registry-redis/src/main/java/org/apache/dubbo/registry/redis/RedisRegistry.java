@@ -298,7 +298,7 @@ public class RedisRegistry extends FailbackRegistry {
                     }
                 }
             } catch (Throwable t) {
-                exception = new RpcException("Failed to register service to redis registry. registry: " + entry.getKey() + ", service: " + url + ", cause: " + t.getMessage(), t);
+                exception = new RpcException("Failed to register com.atlwj.aop.service to redis registry. registry: " + entry.getKey() + ", com.atlwj.aop.service: " + url + ", cause: " + t.getMessage(), t);
             }
         }
         if (exception != null) {
@@ -328,7 +328,7 @@ public class RedisRegistry extends FailbackRegistry {
                     }
                 }
             } catch (Throwable t) {
-                exception = new RpcException("Failed to unregister service to redis registry. registry: " + entry.getKey() + ", service: " + url + ", cause: " + t.getMessage(), t);
+                exception = new RpcException("Failed to unregister com.atlwj.aop.service to redis registry. registry: " + entry.getKey() + ", com.atlwj.aop.service: " + url + ", cause: " + t.getMessage(), t);
             }
         }
         if (exception != null) {
@@ -379,7 +379,7 @@ public class RedisRegistry extends FailbackRegistry {
                     break; // Just read one server's data
                 }
             } catch (Throwable t) { // Try the next server
-                exception = new RpcException("Failed to subscribe service from redis registry. registry: " + entry.getKey() + ", service: " + url + ", cause: " + t.getMessage(), t);
+                exception = new RpcException("Failed to subscribe com.atlwj.aop.service from redis registry. registry: " + entry.getKey() + ", com.atlwj.aop.service: " + url + ", cause: " + t.getMessage(), t);
             }
         }
         if (exception != null) {
@@ -609,7 +609,7 @@ public class RedisRegistry extends FailbackRegistry {
                                         jedis.close();
                                     }
                                 } catch (Throwable t) { // Retry another server
-                                    logger.warn("Failed to subscribe service from redis registry. registry: " + entry.getKey() + ", cause: " + t.getMessage(), t);
+                                    logger.warn("Failed to subscribe com.atlwj.aop.service from redis registry. registry: " + entry.getKey() + ", cause: " + t.getMessage(), t);
                                     // If you only have a single redis, you need to take a rest to avoid overtaking a lot of CPU resources
                                     sleep(reconnectPeriod);
                                 }

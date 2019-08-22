@@ -37,12 +37,12 @@ import java.util.List;
 public abstract class AbstractInterfaceBuilder<T extends AbstractInterfaceConfig, B extends AbstractInterfaceBuilder<T, B>>
         extends AbstractMethodBuilder<T, B> {
     /**
-     * Local impl class name for the service interface
+     * Local impl class name for the com.atlwj.aop.service interface
      */
     protected String local;
 
     /**
-     * Local stub class name for the service interface
+     * Local stub class name for the com.atlwj.aop.service interface
      */
     protected String stub;
 
@@ -62,29 +62,29 @@ public abstract class AbstractInterfaceBuilder<T extends AbstractInterfaceConfig
     protected String cluster;
 
     /**
-     * The {@link Filter} when the provider side exposed a service or the customer side references a remote service used,
+     * The {@link Filter} when the provider side exposed a com.atlwj.aop.service or the customer side references a remote com.atlwj.aop.service used,
      * if there are more than one, you can use commas to separate them
      */
     protected String filter;
 
     /**
-     * The Listener when the provider side exposes a service or the customer side references a remote service used
+     * The Listener when the provider side exposes a com.atlwj.aop.service or the customer side references a remote com.atlwj.aop.service used
      * if there are more than one, you can use commas to separate them
      */
     protected String listener;
 
     /**
-     * The owner of the service providers
+     * The owner of the com.atlwj.aop.service providers
      */
     protected String owner;
 
     /**
-     * Connection limits, 0 means shared connection, otherwise it defines the connections delegated to the current service
+     * Connection limits, 0 means shared connection, otherwise it defines the connections delegated to the current com.atlwj.aop.service
      */
     protected Integer connections;
 
     /**
-     * The layer of service providers
+     * The layer of com.atlwj.aop.service providers
      */
     protected String layer;
 
@@ -118,7 +118,7 @@ public abstract class AbstractInterfaceBuilder<T extends AbstractInterfaceConfig
 
     // callback limits
     private Integer callbacks;
-    // the scope for referring/exporting a service, if it's local, it means searching in current JVM only.
+    // the scope for referring/exporting a com.atlwj.aop.service, if it's local, it means searching in current JVM only.
     private String scope;
 
     private String tag;

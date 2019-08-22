@@ -146,7 +146,7 @@ public class ZKTools {
                 "key: demo-consumer\n" +
                 "configs:\n" +
                 " - addresses: [30.5.121.156]\n" +
-                "   services: [org.apache.dubbo.demo.DemoService]\n" +
+                "   dubbo: [org.apache.dubbo.demo.DemoService]\n" +
                 "   side: consumer\n" +
                 "   rules:\n" +
                 "    cluster:\n" +

@@ -76,7 +76,7 @@ public class ThriftProtocol extends AbstractProtocol {
                 DubboExporter<?> exporter = (DubboExporter<?>) exporterMap.get(serviceKey);
                 if (exporter == null) {
                     throw new RemotingException(channel,
-                            "Not found exported service: "
+                            "Not found exported com.atlwj.aop.service: "
                                     + serviceKey
                                     + " in "
                                     + exporterMap.keySet()
@@ -126,12 +126,12 @@ public class ThriftProtocol extends AbstractProtocol {
         URL url = invoker.getUrl().addParameter(Constants.CODEC_KEY, ThriftCodec.NAME);
         // find server.
         String key = url.getAddress();
-        // client can expose a service for server to invoke only.
+        // client can expose a com.atlwj.aop.service for server to invoke only.
         boolean isServer = url.getParameter(IS_SERVER_KEY, true);
         if (isServer && !serverMap.containsKey(key)) {
             serverMap.put(key, getServer(url));
         }
-        // export service.
+        // export com.atlwj.aop.service.
         key = serviceKey(url);
         DubboExporter<T> exporter = new DubboExporter<T>(invoker, key, exporterMap);
         exporterMap.put(key, exporter);
@@ -195,7 +195,7 @@ public class ThriftProtocol extends AbstractProtocol {
         try {
             client = Exchangers.connect(url);
         } catch (RemotingException e) {
-            throw new RpcException("Fail to create remoting client for service(" + url
+            throw new RpcException("Fail to create remoting client for com.atlwj.aop.service(" + url
                     + "): " + e.getMessage(), e);
         }
 

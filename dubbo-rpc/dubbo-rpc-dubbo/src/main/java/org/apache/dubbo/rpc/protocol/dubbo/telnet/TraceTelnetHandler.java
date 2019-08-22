@@ -32,7 +32,7 @@ import java.lang.reflect.Method;
  * TraceTelnetHandler
  */
 @Activate
-@Help(parameter = "[service] [method] [times]", summary = "Trace the service.", detail = "Trace the service.")
+@Help(parameter = "[com.atlwj.aop.service] [method] [times]", summary = "Trace the com.atlwj.aop.service.", detail = "Trace the com.atlwj.aop.service.")
 public class TraceTelnetHandler implements TelnetHandler {
 
     @Override
@@ -40,7 +40,7 @@ public class TraceTelnetHandler implements TelnetHandler {
         String service = (String) channel.getAttribute(ChangeTelnetHandler.SERVICE_KEY);
         if ((service == null || service.length() == 0)
                 && (message == null || message.length() == 0)) {
-            return "Please input service name, eg: \r\ntrace XxxService\r\ntrace XxxService xxxMethod\r\ntrace XxxService xxxMethod 10\r\nor \"cd XxxService\" firstly.";
+            return "Please input com.atlwj.aop.service name, eg: \r\ntrace XxxService\r\ntrace XxxService xxxMethod\r\ntrace XxxService xxxMethod 10\r\nor \"cd XxxService\" firstly.";
         }
         String[] parts = message.split("\\s+");
         String method;
@@ -85,7 +85,7 @@ public class TraceTelnetHandler implements TelnetHandler {
             }
             TraceFilter.addTracer(invoker.getInterface(), method, channel, Integer.parseInt(times));
         } else {
-            return "No such service " + service;
+            return "No such com.atlwj.aop.service " + service;
         }
         return null;
     }

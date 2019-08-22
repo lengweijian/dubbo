@@ -46,6 +46,6 @@ enum PhoneType {
     WORK = 2;
 }
 
-service CDubboPBService {
+com.atlwj.aop.service CDubboPBService {
     rpc sayHello (org.apache.dubbo.common.serialize.protobuf.model.PBRequestType) returns (org.apache.dubbo.common.serialize.protobuf.model.PBResponseType);
 }

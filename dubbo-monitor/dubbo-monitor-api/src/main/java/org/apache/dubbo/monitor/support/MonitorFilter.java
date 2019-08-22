@@ -78,7 +78,7 @@ public class MonitorFilter extends ListenableFilter {
     /**
      * The invocation interceptor,it will collect the invoke data about this invocation and send it to monitor center
      *
-     * @param invoker    service
+     * @param invoker    com.atlwj.aop.service
      * @param invocation invocation.
      * @return {@link Result} the invoke result
      * @throws RpcException
@@ -141,7 +141,7 @@ public class MonitorFilter extends ListenableFilter {
                 URL statisticsURL = createStatisticsUrl(invoker, invocation, result, remoteHost, start, error);
                 monitor.collect(statisticsURL);
             } catch (Throwable t) {
-                logger.warn("Failed to monitor count service " + invoker.getUrl() + ", cause: " + t.getMessage(), t);
+                logger.warn("Failed to monitor count com.atlwj.aop.service " + invoker.getUrl() + ", cause: " + t.getMessage(), t);
             }
         }
 
@@ -157,11 +157,11 @@ public class MonitorFilter extends ListenableFilter {
          * @return
          */
         private URL createStatisticsUrl(Invoker<?> invoker, Invocation invocation, Result result, String remoteHost, long start, boolean error) {
-            // ---- service statistics ----
+            // ---- com.atlwj.aop.service statistics ----
             long elapsed = System.currentTimeMillis() - start; // invocation cost
             int concurrent = getConcurrent(invoker, invocation).get(); // current concurrent count
             String application = invoker.getUrl().getParameter(APPLICATION_KEY);
-            String service = invoker.getInterface().getName(); // service name
+            String service = invoker.getInterface().getName(); // com.atlwj.aop.service name
             String method = RpcUtils.getMethodName(invocation); // method name
             String group = invoker.getUrl().getParameter(GROUP_KEY);
             String version = invoker.getUrl().getParameter(VERSION_KEY);
@@ -169,12 +169,12 @@ public class MonitorFilter extends ListenableFilter {
             int localPort;
             String remoteKey, remoteValue;
             if (CONSUMER_SIDE.equals(invoker.getUrl().getParameter(SIDE_KEY))) {
-                // ---- for service consumer ----
+                // ---- for com.atlwj.aop.service consumer ----
                 localPort = 0;
                 remoteKey = MonitorService.PROVIDER;
                 remoteValue = invoker.getUrl().getAddress();
             } else {
-                // ---- for service provider ----
+                // ---- for com.atlwj.aop.service provider ----
                 localPort = invoker.getUrl().getPort();
                 remoteKey = MonitorService.CONSUMER;
                 remoteValue = remoteHost;

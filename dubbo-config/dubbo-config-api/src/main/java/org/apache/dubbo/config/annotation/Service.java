@@ -67,7 +67,7 @@ public @interface Service {
     String path() default "";
 
     /**
-     * Whether to export service, default value is true
+     * Whether to export com.atlwj.aop.service, default value is true
      */
     boolean export() default true;
 
@@ -77,27 +77,27 @@ public @interface Service {
     String token() default "";
 
     /**
-     * Whether the service is deprecated, default value is false
+     * Whether the com.atlwj.aop.service is deprecated, default value is false
      */
     boolean deprecated() default false;
 
     /**
-     * Whether the service is dynamic, default value is true
+     * Whether the com.atlwj.aop.service is dynamic, default value is true
      */
     boolean dynamic() default true;
 
     /**
-     * Access log for the service, default value is ""
+     * Access log for the com.atlwj.aop.service, default value is ""
      */
     String accesslog() default "";
 
     /**
-     * Maximum concurrent executes for the service, default value is 0 - no limits
+     * Maximum concurrent executes for the com.atlwj.aop.service, default value is 0 - no limits
      */
     int executes() default 0;
 
     /**
-     * Whether to register the service to register center, default value is true
+     * Whether to register the com.atlwj.aop.service to register center, default value is true
      */
     boolean register() default true;
 
@@ -112,7 +112,7 @@ public @interface Service {
     String document() default "";
 
     /**
-     * Delay time for service registration, default value is 0
+     * Delay time for com.atlwj.aop.service registration, default value is 0
      */
     int delay() default 0;
 
@@ -138,7 +138,7 @@ public @interface Service {
     String proxy() default "";
 
     /**
-     * Maximum connections service provider can accept, default value is 0 - connection is shared
+     * Maximum connections com.atlwj.aop.service provider can accept, default value is 0 - connection is shared
      */
     int connections() default 0;
 
@@ -209,24 +209,24 @@ public @interface Service {
     String validation() default "";
 
     /**
-     * Timeout value for service invocation, default value is 0
+     * Timeout value for com.atlwj.aop.service invocation, default value is 0
      */
     int timeout() default 0;
 
     /**
-     * Specify cache implementation for service invocation, legal values include: lru, threadlocal, jcache
+     * Specify cache implementation for com.atlwj.aop.service invocation, legal values include: lru, threadlocal, jcache
      */
     String cache() default "";
 
     /**
-     * Filters for service invocation
+     * Filters for com.atlwj.aop.service invocation
      *
      * @see Filter
      */
     String[] filter() default {};
 
     /**
-     * Listeners for service exporting and unexporting
+     * Listeners for com.atlwj.aop.service exporting and unexporting
      *
      * @see ExporterListener
      */

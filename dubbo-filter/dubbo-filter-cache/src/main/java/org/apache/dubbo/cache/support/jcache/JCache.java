@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit;
 import static org.apache.dubbo.common.constants.CommonConstants.METHOD_KEY;
 
 /**
- * This class store the cache value per thread. If a service,method,consumer or provided is configured with key <b>cache</b>
+ * This class store the cache value per thread. If a com.atlwj.aop.service,method,consumer or provided is configured with key <b>cache</b>
  * with value <b>jcache</b>, dubbo initialize the instance of this class using {@link JCacheFactory} to store method's returns value
  * to server from store without making method call.
  *

@@ -30,8 +30,8 @@
     <!-- protocol configuration -->
     <dubbo:protocol name="rmi" port="20813"/>
 
-    <!-- service configuration -->
-    <dubbo:service id="demoServiceConfig" register="true" interface="org.apache.dubbo.config.spring.api.DemoService"
+    <!-- com.atlwj.aop.service configuration -->
+    <dubbo:com.atlwj.aop.service id="demoServiceConfig" register="true" interface="org.apache.dubbo.config.spring.api.com.atlwj.aop.service.DemoService"
                    ref="demoService"/>
 
     <bean id="demoService" class="org.apache.dubbo.config.spring.impl.DemoServiceImpl"/>

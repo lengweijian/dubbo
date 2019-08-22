@@ -31,9 +31,9 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @org.apache.dubbo.config.annotation.Service(
         version = "2.5.7",
-        application = "${demo.service.application}",
-        protocol = "${demo.service.protocol}",
-        registry = "${demo.service.registry}",
+        application = "${demo.com.atlwj.aop.service.application}",
+        protocol = "${demo.com.atlwj.aop.service.protocol}",
+        registry = "${demo.com.atlwj.aop.service.registry}",
         methods = @Method(timeout = 100,name = "sayName")
 )
 @Service

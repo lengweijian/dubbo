@@ -75,7 +75,7 @@ public class ZookeeperDynamicConfiguration implements DynamicConfiguration {
     }
 
     /**
-     * @param key e.g., {service}.configurators, {service}.tagrouters, {group}.dubbo.properties
+     * @param key e.g., {com.atlwj.aop.service}.configurators, {com.atlwj.aop.service}.tagrouters, {group}.dubbo.properties
      * @return
      */
     @Override
@@ -84,7 +84,7 @@ public class ZookeeperDynamicConfiguration implements DynamicConfiguration {
     }
 
     /**
-     * For service governance, multi group is not supported by this implementation. So group is not used at present.
+     * For com.atlwj.aop.service governance, multi group is not supported by this implementation. So group is not used at present.
      */
     @Override
     public void addListener(String key, String group, ConfigurationListener listener) {

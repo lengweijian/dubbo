@@ -97,7 +97,7 @@ public class AnnotationUtils {
             // it's a generic reference
             String interfaceClassName = getAttribute(attributes, "interfaceName");
             Assert.hasText(interfaceClassName,
-                    "@Reference interfaceName() must be present when reference a generic service!");
+                    "@Reference interfaceName() must be present when reference a generic com.atlwj.aop.service!");
                 return interfaceClassName;
         }
         return resolveServiceInterfaceClass(attributes, defaultInterfaceClass).getName();

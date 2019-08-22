@@ -37,7 +37,7 @@ import java.util.List;
  * CountTelnetHandler
  */
 @Activate
-@Help(parameter = "[service] [method] [times]", summary = "Count the service.", detail = "Count the service.")
+@Help(parameter = "[com.atlwj.aop.service] [method] [times]", summary = "Count the com.atlwj.aop.service.", detail = "Count the com.atlwj.aop.service.")
 public class CountTelnetHandler implements TelnetHandler {
 
     @Override
@@ -45,11 +45,11 @@ public class CountTelnetHandler implements TelnetHandler {
         String service = (String) channel.getAttribute(ChangeTelnetHandler.SERVICE_KEY);
         if ((service == null || service.length() == 0)
                 && (message == null || message.length() == 0)) {
-            return "Please input service name, eg: \r\ncount XxxService\r\ncount XxxService xxxMethod\r\ncount XxxService xxxMethod 10\r\nor \"cd XxxService\" firstly.";
+            return "Please input com.atlwj.aop.service name, eg: \r\ncount XxxService\r\ncount XxxService xxxMethod\r\ncount XxxService xxxMethod 10\r\nor \"cd XxxService\" firstly.";
         }
         StringBuilder buf = new StringBuilder();
         if (service != null && service.length() > 0) {
-            buf.append("Use default service " + service + ".\r\n");
+            buf.append("Use default com.atlwj.aop.service " + service + ".\r\n");
         }
         String[] parts = message.split("\\s+");
         String method;
@@ -112,7 +112,7 @@ public class CountTelnetHandler implements TelnetHandler {
                 thread.start();
             }
         } else {
-            buf.append("No such service " + service);
+            buf.append("No such com.atlwj.aop.service " + service);
         }
         return buf.toString();
     }

@@ -70,7 +70,7 @@ public class MultiServiceProcessor implements TProcessor {
         TProcessor processor = processorMap.get(serviceName);
 
         if (processor == null) {
-            logger.error("Could not find processor for service " + serviceName);
+            logger.error("Could not find processor for com.atlwj.aop.service " + serviceName);
             return false;
         }
 

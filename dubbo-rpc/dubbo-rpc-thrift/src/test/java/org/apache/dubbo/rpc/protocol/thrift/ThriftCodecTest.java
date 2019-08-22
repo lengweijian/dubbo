@@ -93,7 +93,7 @@ public class ThriftCodecTest {
         short headerLength = protocol.readI16();
         // version
         Assertions.assertEquals(ThriftCodec.VERSION, protocol.readByte());
-        // service name
+        // com.atlwj.aop.service name
         Assertions.assertEquals(Demo.Iface.class.getName(), protocol.readString());
         // path
         Assertions.assertEquals(Demo.Iface.class.getName(), protocol.readString());

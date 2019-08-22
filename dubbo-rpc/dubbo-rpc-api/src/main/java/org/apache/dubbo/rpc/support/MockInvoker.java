@@ -120,7 +120,7 @@ final public class MockInvoker<T> implements Invoker<T> {
         } else if (mock.startsWith(THROW_PREFIX)) {
             mock = mock.substring(THROW_PREFIX.length()).trim();
             if (StringUtils.isBlank(mock)) {
-                throw new RpcException("mocked exception for service degradation.");
+                throw new RpcException("mocked exception for com.atlwj.aop.service degradation.");
             } else { // user customized class
                 Throwable t = getThrowable(mock);
                 throw new RpcException(RpcException.BIZ_EXCEPTION, t);
@@ -146,7 +146,7 @@ final public class MockInvoker<T> implements Invoker<T> {
             Class<?> bizException = ReflectUtils.forName(throwstr);
             Constructor<?> constructor;
             constructor = ReflectUtils.findConstructor(bizException, String.class);
-            t = (Throwable) constructor.newInstance(new Object[]{"mocked exception for service degradation."});
+            t = (Throwable) constructor.newInstance(new Object[]{"mocked exception for com.atlwj.aop.service degradation."});
             if (THROWABLE_MAP.size() < 1000) {
                 THROWABLE_MAP.put(throwstr, t);
             }

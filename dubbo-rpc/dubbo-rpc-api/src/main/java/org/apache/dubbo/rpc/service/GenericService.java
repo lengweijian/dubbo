@@ -19,7 +19,7 @@ package org.apache.dubbo.rpc.service;
 import java.util.concurrent.CompletableFuture;
 
 /**
- * Generic service interface
+ * Generic com.atlwj.aop.service interface
  *
  * @export
  */

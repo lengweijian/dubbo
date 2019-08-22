@@ -35,7 +35,7 @@ import static org.apache.dubbo.common.constants.RegistryConstants.CATEGORY_KEY;
 import static org.apache.dubbo.common.constants.RegistryConstants.DEFAULT_CATEGORY;
 
 /**
- * The service name of Nacos
+ * The com.atlwj.aop.service name of Nacos
  *
  * @since 2.7.3
  */
@@ -98,7 +98,7 @@ public class NacosServiceName {
     }
 
     /**
-     * Is the concrete service name or not
+     * Is the concrete com.atlwj.aop.service name or not
      *
      * @return if concrete , return <code>true</code>, or <code>false</code>
      */

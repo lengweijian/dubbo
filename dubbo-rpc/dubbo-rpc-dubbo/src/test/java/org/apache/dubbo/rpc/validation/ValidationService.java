@@ -29,7 +29,7 @@ import javax.validation.constraints.Size;
 /**
  * ValidationService
  * <p>
- * Use service interface to distinguish validation scenario, for example: @NotNull(groups = ValidationService.class)
+ * Use com.atlwj.aop.service interface to distinguish validation scenario, for example: @NotNull(groups = ValidationService.class)
  */
 public interface ValidationService {
 

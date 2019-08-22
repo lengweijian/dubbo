@@ -23,11 +23,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * This class store the cache value per thread. If a service,method,consumer or provided is configured with key <b>cache</b>
+ * This class store the cache value per thread. If a com.atlwj.aop.service,method,consumer or provided is configured with key <b>cache</b>
  * with value <b>threadlocal</b>, dubbo initialize the instance of this class using {@link ThreadLocalCacheFactory} to store method's returns value
  * to server from store without making method call.
  *  <pre>
- *      e.g. &lt;dubbo:service cache="threadlocal" /&gt;
+ *      e.g. &lt;dubbo:com.atlwj.aop.service cache="threadlocal" /&gt;
  *  </pre>
  * <pre>
  * As this ThreadLocalCache stores key-value in memory without any expiry or delete support per thread wise, if number threads and number of key-value are high then jvm should be

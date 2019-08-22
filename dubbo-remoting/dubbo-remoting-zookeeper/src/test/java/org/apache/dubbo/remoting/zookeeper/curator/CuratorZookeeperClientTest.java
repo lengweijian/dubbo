@@ -96,7 +96,7 @@ public class CuratorZookeeperClientTest {
     @Test
     public void testWithInvalidServer() {
         Assertions.assertThrows(IllegalStateException.class, () -> {
-            curatorClient = new CuratorZookeeperClient(URL.valueOf("zookeeper://127.0.0.1:1/service"));
+            curatorClient = new CuratorZookeeperClient(URL.valueOf("zookeeper://127.0.0.1:1/com.atlwj.aop.service"));
             curatorClient.create("/testPath", true);
         });
     }
@@ -164,7 +164,7 @@ public class CuratorZookeeperClientTest {
 
     @Test
     public void testAddTargetDataListener() throws Exception {
-        String listenerPath = "/dubbo/service.name/configuration";
+        String listenerPath = "/dubbo/com.atlwj.aop.service.name/configuration";
         String path = listenerPath + "/dat/data";
         String value = "vav";
 

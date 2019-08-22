@@ -4,7 +4,7 @@ namespace dubbo_cpp  org.apache.dubbo.rpc.gen.dubbo
 namespace java org.apache.dubbo.rpc.gen.thrift
 namespace cpp  org.apache.dubbo.rpc.gen.thrift
 
-service Demo {
+com.atlwj.aop.service Demo {
     bool echoBool( 1:required bool arg );
     byte echoByte( 1:required byte arg );
     i16  echoI16 ( 1:required i16  arg );

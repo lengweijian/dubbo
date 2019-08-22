@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * ProviderModel which is about published services
+ * ProviderModel which is about published dubbo
  */
 public class ProviderModel {
     private final String serviceName;

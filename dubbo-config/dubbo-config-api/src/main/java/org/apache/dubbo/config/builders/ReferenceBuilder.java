@@ -30,12 +30,12 @@ import java.util.List;
  */
 public class ReferenceBuilder<T> extends AbstractReferenceBuilder<ReferenceConfig, ReferenceBuilder<T>> {
     /**
-     * The interface name of the reference service
+     * The interface name of the reference com.atlwj.aop.service
      */
     private String interfaceName;
 
     /**
-     * The interface class of the reference service
+     * The interface class of the reference com.atlwj.aop.service
      */
     private Class<?> interfaceClass;
 
@@ -60,7 +60,7 @@ public class ReferenceBuilder<T> extends AbstractReferenceBuilder<ReferenceConfi
     private ConsumerConfig consumer;
 
     /**
-     * Only the service provider of the specified protocol is invoked, and other protocols are ignored.
+     * Only the com.atlwj.aop.service provider of the specified protocol is invoked, and other protocols are ignored.
      */
     private String protocol;
 

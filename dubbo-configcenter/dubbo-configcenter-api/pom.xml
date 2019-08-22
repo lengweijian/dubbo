@@ -24,7 +24,7 @@
     <artifactId>dubbo-configcenter-api</artifactId>
     <packaging>jar</packaging>
     <name>${project.artifactId}</name>
-    <description>The api definition of the service config-center module</description>
+    <description>The api definition of the com.atlwj.aop.service config-center module</description>
     <properties>
         <skip_maven_deploy>false</skip_maven_deploy>
     </properties>

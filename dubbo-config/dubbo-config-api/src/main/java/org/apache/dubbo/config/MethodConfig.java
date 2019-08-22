@@ -318,7 +318,7 @@ public class MethodConfig extends AbstractMethodConfig {
     }
 
     /**
-     * service and name must not be null.
+     * com.atlwj.aop.service and name must not be null.
      *
      * @return
      */
