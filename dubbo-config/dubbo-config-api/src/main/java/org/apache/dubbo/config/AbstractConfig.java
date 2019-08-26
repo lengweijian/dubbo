@@ -107,14 +107,14 @@ public abstract class AbstractConfig implements Serializable {
     private static final String[] SUFFIXES = new String[]{"Config", "Bean"};
 
     static {
-        LEGACY_PROPERTIES.put("dubbo.protocol.name", "dubbo.com.atlwj.aop.service.protocol");
-        LEGACY_PROPERTIES.put("dubbo.protocol.host", "dubbo.com.atlwj.aop.service.server.host");
-        LEGACY_PROPERTIES.put("dubbo.protocol.port", "dubbo.com.atlwj.aop.service.server.port");
-        LEGACY_PROPERTIES.put("dubbo.protocol.threads", "dubbo.com.atlwj.aop.service.max.thread.pool.size");
+        LEGACY_PROPERTIES.put("dubbo.protocol.name", "dubbo.com.atlwj.service.protocol");
+        LEGACY_PROPERTIES.put("dubbo.protocol.host", "dubbo.com.atlwj.service.server.host");
+        LEGACY_PROPERTIES.put("dubbo.protocol.port", "dubbo.com.atlwj.service.server.port");
+        LEGACY_PROPERTIES.put("dubbo.protocol.threads", "dubbo.com.atlwj.service.max.thread.pool.size");
         LEGACY_PROPERTIES.put("dubbo.consumer.timeout", "dubbo.service.invoke.timeout");
-        LEGACY_PROPERTIES.put("dubbo.consumer.retries", "dubbo.com.atlwj.aop.service.max.retry.providers");
-        LEGACY_PROPERTIES.put("dubbo.consumer.check", "dubbo.com.atlwj.aop.service.allow.no.provider");
-        LEGACY_PROPERTIES.put("dubbo.com.atlwj.aop.service.url", "dubbo.com.atlwj.aop.service.address");
+        LEGACY_PROPERTIES.put("dubbo.consumer.retries", "dubbo.com.atlwj.service.max.retry.providers");
+        LEGACY_PROPERTIES.put("dubbo.consumer.check", "dubbo.com.atlwj.service.allow.no.provider");
+        LEGACY_PROPERTIES.put("dubbo.com.atlwj.service.url", "dubbo.com.atlwj.service.address");
 
         // this is only for compatibility
         DubboShutdownHook.getDubboShutdownHook().register();
@@ -128,9 +128,9 @@ public abstract class AbstractConfig implements Serializable {
 
     private static String convertLegacyValue(String key, String value) {
         if (value != null && value.length() > 0) {
-            if ("dubbo.com.atlwj.aop.service.max.retry.providers".equals(key)) {
+            if ("dubbo.com.atlwj.service.max.retry.providers".equals(key)) {
                 return String.valueOf(Integer.parseInt(value) - 1);
-            } else if ("dubbo.com.atlwj.aop.service.allow.no.provider".equals(key)) {
+            } else if ("dubbo.com.atlwj.service.allow.no.provider".equals(key)) {
                 return String.valueOf(!Boolean.parseBoolean(value));
             }
         }

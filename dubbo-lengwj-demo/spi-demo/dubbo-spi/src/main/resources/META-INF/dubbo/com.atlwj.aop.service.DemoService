@@ -1,4 +1,4 @@
-01=com.atlwj.aop.service.impl.DemoServiceImpl_01
-02=com.atlwj.aop.service.impl.DemoServiceImpl_02
-com.atlwj.aop.service.impl.DemoServiceWrapper
-com.atlwj.aop.service.impl.DemoServiceWrapper02
+01=com.atlwj.service.impl.DemoServiceImpl_01
+02=com.atlwj.service.impl.DemoServiceImpl_02
+com.atlwj.service.impl.DemoServiceWrapper
+com.atlwj.service.impl.DemoServiceWrapper02

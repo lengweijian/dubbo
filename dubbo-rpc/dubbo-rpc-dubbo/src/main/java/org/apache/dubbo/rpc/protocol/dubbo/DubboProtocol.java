@@ -107,7 +107,7 @@ public class DubboProtocol extends AbstractProtocol {
     private final ConcurrentMap<String, Object> locks = new ConcurrentHashMap<>();
     private final Set<String> optimizers = new ConcurrentHashSet<>();
     /**
-     * consumer side export a stub com.atlwj.aop.service for dispatching event
+     * consumer side export a stub com.atlwj.service for dispatching event
      * servicekey-stubmethods
      */
     private final ConcurrentMap<String, String> stubServiceMethodsMap = new ConcurrentHashMap<>();
@@ -142,7 +142,7 @@ public class DubboProtocol extends AbstractProtocol {
                 }
                 if (!hasMethod) {
                     logger.warn(new IllegalStateException("The methodName " + inv.getMethodName()
-                            + " not found in callback com.atlwj.aop.service interface ,invoke will be ignored."
+                            + " not found in callback com.atlwj.service interface ,invoke will be ignored."
                             + " please update the api interface. url is:"
                             + invoker.getUrl()) + " ,invocation is :" + inv);
                     return null;
@@ -245,7 +245,7 @@ public class DubboProtocol extends AbstractProtocol {
         int port = channel.getLocalAddress().getPort();
         String path = inv.getAttachments().get(PATH_KEY);
 
-        // if it's callback com.atlwj.aop.service on client side
+        // if it's callback com.atlwj.service on client side
         isStubServiceInvoke = Boolean.TRUE.toString().equals(inv.getAttachments().get(STUB_EVENT_KEY));
         if (isStubServiceInvoke) {
             port = channel.getRemoteAddress().getPort();
@@ -262,7 +262,7 @@ public class DubboProtocol extends AbstractProtocol {
         DubboExporter<?> exporter = (DubboExporter<?>) exporterMap.get(serviceKey);
 
         if (exporter == null) {
-            throw new RemotingException(channel, "Not found exported com.atlwj.aop.service: " + serviceKey + " in " + exporterMap.keySet() + ", may be version or group mismatch " +
+            throw new RemotingException(channel, "Not found exported com.atlwj.service: " + serviceKey + " in " + exporterMap.keySet() + ", may be version or group mismatch " +
                     ", channel: consumer: " + channel.getRemoteAddress() + " --> provider: " + channel.getLocalAddress() + ", message:" + inv);
         }
 
@@ -282,12 +282,12 @@ public class DubboProtocol extends AbstractProtocol {
     public <T> Exporter<T> export(Invoker<T> invoker) throws RpcException {
         URL url = invoker.getUrl();
 
-        // export com.atlwj.aop.service.
+        // export com.atlwj.service.
         String key = serviceKey(url);
         DubboExporter<T> exporter = new DubboExporter<T>(invoker, key, exporterMap);
         exporterMap.put(key, exporter);
 
-        //export an stub com.atlwj.aop.service for dispatching event
+        //export an stub com.atlwj.service for dispatching event
         Boolean isStubSupportEvent = url.getParameter(STUB_EVENT_KEY, DEFAULT_STUB_EVENT);
         Boolean isCallbackservice = url.getParameter(IS_CALLBACK_SERVICE, false);
         if (isStubSupportEvent && !isCallbackservice) {
@@ -312,7 +312,7 @@ public class DubboProtocol extends AbstractProtocol {
     private void openServer(URL url) {
         // find server.
         String key = url.getAddress();
-        //client can export a com.atlwj.aop.service which's only for server to invoke
+        //client can export a com.atlwj.service which's only for server to invoke
         boolean isServer = url.getParameter(IS_SERVER_KEY, true);
         if (isServer) {
             ExchangeServer server = serverMap.get(key);
@@ -417,7 +417,7 @@ public class DubboProtocol extends AbstractProtocol {
 
         int connections = url.getParameter(CONNECTIONS_KEY, 0);
         List<ReferenceCountExchangeClient> shareClients = null;
-        // if not configured, connection is shared, otherwise, one connection for one com.atlwj.aop.service
+        // if not configured, connection is shared, otherwise, one connection for one com.atlwj.service
         if (connections == 0) {
             useShareConnect = true;
 
@@ -596,7 +596,7 @@ public class DubboProtocol extends AbstractProtocol {
             }
 
         } catch (RemotingException e) {
-            throw new RpcException("Fail to create remoting client for com.atlwj.aop.service(" + url + "): " + e.getMessage(), e);
+            throw new RpcException("Fail to create remoting client for com.atlwj.service(" + url + "): " + e.getMessage(), e);
         }
 
         return client;

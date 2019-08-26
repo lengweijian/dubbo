@@ -13,7 +13,7 @@ For compatibility with older versions, we provider the following most popular AP
 * com.alibaba.dubbo.common.extension.ExtensionFactory
 * com.alibaba.dubbo.common.serialize.Serialization / ObjectInput / ObjectOutput
 * com.alibaba.dubbo.cache.CacheFactory / Cache
-* com.alibaba.dubbo.rpc.com.atlwj.aop.service.EchoService / GenericService
+* com.alibaba.dubbo.rpc.com.atlwj.service.EchoService / GenericService
 
 The above APIs work fine with some unit tests in the test root. 
 

@@ -64,7 +64,7 @@ public class ListTelnetHandlerTest {
     @Test
     public void testListDetailService() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.aop.service")).willReturn("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
+        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
 
         ProviderModel providerModel = new ProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", new DemoServiceImpl(), DemoService.class);
         ApplicationModel.initProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", providerModel);
@@ -78,7 +78,7 @@ public class ListTelnetHandlerTest {
     @Test
     public void testListService() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.aop.service")).willReturn("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
+        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
 
         ProviderModel providerModel = new ProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", new DemoServiceImpl(), DemoService.class);
         ApplicationModel.initProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", providerModel);
@@ -92,7 +92,7 @@ public class ListTelnetHandlerTest {
     @Test
     public void testList() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.aop.service")).willReturn(null);
+        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(null);
 
         ProviderModel providerModel = new ProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", new DemoServiceImpl(), DemoService.class);
         ApplicationModel.initProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", providerModel);
@@ -104,7 +104,7 @@ public class ListTelnetHandlerTest {
     @Test
     public void testListDetail() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.aop.service")).willReturn(null);
+        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(null);
 
         ProviderModel providerModel = new ProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", new DemoServiceImpl(), DemoService.class);
         ApplicationModel.initProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", providerModel);
@@ -116,13 +116,13 @@ public class ListTelnetHandlerTest {
     @Test
     public void testListDefault() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.aop.service")).willReturn("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
+        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
 
         ProviderModel providerModel = new ProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", new DemoServiceImpl(), DemoService.class);
         ApplicationModel.initProviderModel("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService", providerModel);
 
         String result = list.telnet(mockChannel, "");
-        assertTrue(result.startsWith("Use default com.atlwj.aop.service org.apache.dubbo.rpc.protocol.dubbo.support.DemoService.\r\n" +
+        assertTrue(result.startsWith("Use default com.atlwj.service org.apache.dubbo.rpc.protocol.dubbo.support.DemoService.\r\n" +
                 "org.apache.dubbo.rpc.protocol.dubbo.support.DemoService (as provider):\r\n"));
         for (Method method : DemoService.class.getMethods()) {
             assertTrue(result.contains(method.getName()));
@@ -132,9 +132,9 @@ public class ListTelnetHandlerTest {
     @Test
     public void testInvalidMessage() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.aop.service")).willReturn(null);
+        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(null);
 
         String result = list.telnet(mockChannel, "xx");
-        assertEquals("No such com.atlwj.aop.service: xx", result);
+        assertEquals("No such com.atlwj.service: xx", result);
     }
 }

@@ -30,8 +30,8 @@
     <!-- protocol configuration -->
     <dubbo:protocol name="dubbo" port="20888"/>
 
-    <!-- com.atlwj.aop.service configuration -->
-    <dubbo:com.atlwj.aop.service interface="org.apache.dubbo.config.spring.api.com.atlwj.aop.service.DemoService" ref="demoService" delay="-1"/>
+    <!-- com.atlwj.service configuration -->
+    <dubbo:com.atlwj.service interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService" ref="demoService" delay="-1"/>
 
     <bean id="demoService" class="org.apache.dubbo.config.spring.impl.DemoServiceImpl"/>
 

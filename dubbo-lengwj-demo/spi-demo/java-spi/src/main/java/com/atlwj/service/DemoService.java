@@ -1,4 +1,4 @@
-package com.atlwj.aop.service;
+package com.atlwj.service;
 
 public interface DemoService {
     void sayHi(String msg);

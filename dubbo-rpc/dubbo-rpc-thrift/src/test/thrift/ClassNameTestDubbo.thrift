@@ -1,3 +1,3 @@
-com.atlwj.aop.service ClassNameTestDubbo {
+com.atlwj.service ClassNameTestDubbo {
     string echo(1:required string arg);
 }

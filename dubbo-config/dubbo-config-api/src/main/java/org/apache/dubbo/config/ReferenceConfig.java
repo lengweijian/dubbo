@@ -107,23 +107,23 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
     private static final Cluster CLUSTER = ExtensionLoader.getExtensionLoader(Cluster.class).getAdaptiveExtension();
 
     /**
-     * A {@link ProxyFactory} implementation that will generate a reference com.atlwj.aop.service's proxy,the JavassistProxyFactory is
+     * A {@link ProxyFactory} implementation that will generate a reference com.atlwj.service's proxy,the JavassistProxyFactory is
      * its default implementation
      */
     private static final ProxyFactory PROXY_FACTORY = ExtensionLoader.getExtensionLoader(ProxyFactory.class).getAdaptiveExtension();
 
     /**
-     * The url of the reference com.atlwj.aop.service
+     * The url of the reference com.atlwj.service
      */
     private final List<URL> urls = new ArrayList<URL>();
 
     /**
-     * The interface name of the reference com.atlwj.aop.service
+     * The interface name of the reference com.atlwj.service
      */
     private String interfaceName;
 
     /**
-     * The interface class of the reference com.atlwj.aop.service
+     * The interface class of the reference com.atlwj.service
      */
     private Class<?> interfaceClass;
 
@@ -148,7 +148,7 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
     private ConsumerConfig consumer;
 
     /**
-     * Only the com.atlwj.aop.service provider of the specified protocol is invoked, and other protocols are ignored.
+     * Only the com.atlwj.service provider of the specified protocol is invoked, and other protocols are ignored.
      */
     private String protocol;
 
@@ -158,7 +158,7 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
     private transient volatile T ref;
 
     /**
-     * The invoker of the reference com.atlwj.aop.service
+     * The invoker of the reference com.atlwj.service
      */
     private transient volatile Invoker<?> invoker;
 
@@ -288,7 +288,7 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
 
             String[] methods = Wrapper.getWrapper(interfaceClass).getMethodNames();
             if (methods.length == 0) {
-                logger.warn("No method found in com.atlwj.aop.service interface " + interfaceClass.getName());
+                logger.warn("No method found in com.atlwj.service interface " + interfaceClass.getName());
                 map.put(METHODS_KEY, ANY_VALUE);
             } else {
                 map.put(METHODS_KEY, StringUtils.join(new HashSet<String>(Arrays.asList(methods)), COMMA_SEPARATOR));
@@ -353,7 +353,7 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
             URL url = new URL(LOCAL_PROTOCOL, LOCALHOST_VALUE, 0, interfaceClass.getName()).addParameters(map);
             invoker = REF_PROTOCOL.refer(interfaceClass, url);
             if (logger.isInfoEnabled()) {
-                logger.info("Using injvm com.atlwj.aop.service " + interfaceClass.getName());
+                logger.info("Using injvm com.atlwj.service " + interfaceClass.getName());
             }
         } else {
             urls.clear(); // reference retry init will add url to urls, lead to OOM
@@ -415,10 +415,10 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
         }
 
         if (shouldCheck() && !invoker.isAvailable()) {
-            throw new IllegalStateException("Failed to check the status of the com.atlwj.aop.service " + interfaceName + ". No provider available for the com.atlwj.aop.service " + (group == null ? "" : group + "/") + interfaceName + (version == null ? "" : ":" + version) + " from the url " + invoker.getUrl() + " to the consumer " + NetUtils.getLocalHost() + " use dubbo version " + Version.getVersion());
+            throw new IllegalStateException("Failed to check the status of the com.atlwj.service " + interfaceName + ". No provider available for the com.atlwj.service " + (group == null ? "" : group + "/") + interfaceName + (version == null ? "" : ":" + version) + " from the url " + invoker.getUrl() + " to the consumer " + NetUtils.getLocalHost() + " use dubbo version " + Version.getVersion());
         }
         if (logger.isInfoEnabled()) {
-            logger.info("Refer dubbo com.atlwj.aop.service " + interfaceClass.getName() + " from url " + invoker.getUrl());
+            logger.info("Refer dubbo com.atlwj.service " + interfaceClass.getName() + " from url " + invoker.getUrl());
         }
         /**
          * @since 2.7.0
@@ -429,16 +429,16 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
             URL consumerURL = new URL(CONSUMER_PROTOCOL, map.remove(REGISTER_IP_KEY), 0, map.get(INTERFACE_KEY), map);
             metadataReportService.publishConsumer(consumerURL);
         }
-        // create com.atlwj.aop.service proxy
+        // create com.atlwj.service proxy
         return (T) PROXY_FACTORY.getProxy(invoker);
     }
 
     /**
-     * Figure out should refer the com.atlwj.aop.service in the same JVM from configurations. The default behavior is true
+     * Figure out should refer the com.atlwj.service in the same JVM from configurations. The default behavior is true
      * 1. if injvm is specified, then use it
      * 2. then if a url is specified, then assume it's a remote call
      * 3. otherwise, check scope parameter
-     * 4. if scope is not specified but the target com.atlwj.aop.service is provided in the same JVM, then prefer to make the local
+     * 4. if scope is not specified but the target com.atlwj.service is provided in the same JVM, then prefer to make the local
      * call, which is the default behavior
      */
     protected boolean shouldJvmRefer(Map<String, String> map) {
@@ -449,7 +449,7 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
             if (url != null && url.length() > 0) {
                 isJvmRefer = false;
             } else {
-                // by default, reference local com.atlwj.aop.service if there is
+                // by default, reference local com.atlwj.service if there is
                 isJvmRefer = InjvmProtocol.getInjvmProtocol().isInjvmRefer(tmpUrl);
             }
         } else {
@@ -654,9 +654,9 @@ public class ReferenceConfig<T> extends AbstractReferenceConfig {
             url = resolve;
             if (logger.isWarnEnabled()) {
                 if (resolveFile != null) {
-                    logger.warn("Using default dubbo resolve file " + resolveFile + " replace " + interfaceName + "" + resolve + " to p2p invoke remote com.atlwj.aop.service.");
+                    logger.warn("Using default dubbo resolve file " + resolveFile + " replace " + interfaceName + "" + resolve + " to p2p invoke remote com.atlwj.service.");
                 } else {
-                    logger.warn("Using -D" + interfaceName + "=" + resolve + " to p2p invoke remote com.atlwj.aop.service.");
+                    logger.warn("Using -D" + interfaceName + "=" + resolve + " to p2p invoke remote com.atlwj.service.");
                 }
             }
         }

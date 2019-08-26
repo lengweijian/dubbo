@@ -30,7 +30,7 @@ conditions:
 - method=routeMethod1 =>
 ...
 
-# application level, only applies to a specific com.atlwj.aop.service
+# application level, only applies to a specific com.atlwj.service
 ---
 scope: application
 force: true
@@ -44,7 +44,7 @@ conditions:
 ...
 
 ---
-scope: com.atlwj.aop.service
+scope: com.atlwj.service
 force: true
 runtime: false
 enabled: true

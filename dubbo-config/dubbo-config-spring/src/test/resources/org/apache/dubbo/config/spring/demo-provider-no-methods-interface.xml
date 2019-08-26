@@ -27,8 +27,8 @@
     <!-- registry center configuration -->
     <dubbo:registry address="N/A"/>
 
-    <!-- com.atlwj.aop.service configuration -->
-    <dubbo:com.atlwj.aop.service id="com.atlwj.aop.service" interface="org.apache.dubbo.config.spring.api.DemoServiceSon" ref="demoService"/>
+    <!-- com.atlwj.service configuration -->
+    <dubbo:com.atlwj.service id="com.atlwj.service" interface="org.apache.dubbo.config.spring.api.DemoServiceSon" ref="demoService"/>
 
     <bean id="demoService" class="org.apache.dubbo.config.spring.impl.DemoServiceSonImpl"/>
 

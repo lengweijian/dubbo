@@ -22,7 +22,7 @@ import java.util.List;
  *
  */
 public class ConfiguratorConfig {
-    public static final String SCOPE_SERVICE = "com.atlwj.aop.service";
+    public static final String SCOPE_SERVICE = "com.atlwj.service";
     public static final String SCOPE_APPLICATION = "application";
 
     private String configVersion;

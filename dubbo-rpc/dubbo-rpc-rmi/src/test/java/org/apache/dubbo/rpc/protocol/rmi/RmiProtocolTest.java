@@ -139,20 +139,20 @@ public class RmiProtocolTest {
 	/*@Test
     public void testRpcInvokerGroup() throws Exception
 	{
-		DemoService com.atlwj.aop.service = new DemoServiceImpl();
-		RpcUtils.export("demo://127.0.0.1:9030/org.apache.dubbo.rpc.TestService",DemoService.class,com.atlwj.aop.service);
-		RpcUtils.export("dubbo://127.0.0.1:9031/TestService",DemoService.class,com.atlwj.aop.service);
-		RpcUtils.export("rmi://127.0.0.1:9032/org.apache.dubbo.rpc.TestService",DemoService.class,com.atlwj.aop.service);
-		RpcUtils.export("rmi://127.0.0.1:9033/org.apache.dubbo.rpc.TestService",DemoService.class,com.atlwj.aop.service);
+		DemoService com.atlwj.service = new DemoServiceImpl();
+		RpcUtils.export("demo://127.0.0.1:9030/org.apache.dubbo.rpc.TestService",DemoService.class,com.atlwj.service);
+		RpcUtils.export("dubbo://127.0.0.1:9031/TestService",DemoService.class,com.atlwj.service);
+		RpcUtils.export("rmi://127.0.0.1:9032/org.apache.dubbo.rpc.TestService",DemoService.class,com.atlwj.service);
+		RpcUtils.export("rmi://127.0.0.1:9033/org.apache.dubbo.rpc.TestService",DemoService.class,com.atlwj.service);
 
-		com.atlwj.aop.service = RpcUtils.createProxy(DemoService.class,
+		com.atlwj.service = RpcUtils.createProxy(DemoService.class,
 				new String[]{
 					"demo://127.0.0.1:9030/org.apache.dubbo.rpc.TestService?weight=20",
 					"dubbo://127.0.0.1:9031/TestService?weight=20",
 					"rmi://127.0.0.1:9032/org.apache.dubbo.rpc.TestService",
 				});
-		assertEquals(com.atlwj.aop.service.getSize(null), -1);
-		assertEquals(com.atlwj.aop.service.getSize(new String[]{"","",""}), 3);
+		assertEquals(com.atlwj.service.getSize(null), -1);
+		assertEquals(com.atlwj.service.getSize(new String[]{"","",""}), 3);
 
 		// cast to EchoService
 		EchoService echo = RpcUtils.createProxy(EchoService.class,
@@ -168,11 +168,11 @@ public class RmiProtocolTest {
 
 	/*public void testForkInvoke() throws Exception
 	{
-		DemoService com.atlwj.aop.service = new DemoServiceImpl();
-		protocol.export(proxy.createInvoker("dubbo://127.0.0.1:9040/TestService", DemoService.class, com.atlwj.aop.service);
-		protocol.export(proxy.createInvoker("dubbo://127.0.0.1:9041/TestService", DemoService.class, com.atlwj.aop.service);
-		protocol.export(proxy.createInvoker("rmi://127.0.0.1:9042/org.apache.dubbo.rpc.TestService", DemoService.class, com.atlwj.aop.service);
-		protocol.export(proxy.createInvoker("rmi://127.0.0.1:9043/org.apache.dubbo.rpc.TestService", DemoService.class, com.atlwj.aop.service);
+		DemoService com.atlwj.service = new DemoServiceImpl();
+		protocol.export(proxy.createInvoker("dubbo://127.0.0.1:9040/TestService", DemoService.class, com.atlwj.service);
+		protocol.export(proxy.createInvoker("dubbo://127.0.0.1:9041/TestService", DemoService.class, com.atlwj.service);
+		protocol.export(proxy.createInvoker("rmi://127.0.0.1:9042/org.apache.dubbo.rpc.TestService", DemoService.class, com.atlwj.service);
+		protocol.export(proxy.createInvoker("rmi://127.0.0.1:9043/org.apache.dubbo.rpc.TestService", DemoService.class, com.atlwj.service);
 
 		RpcInvokerGroup group = Proxies.createInvoker(DemoService.class, new String[]{
 			"dubbo://127.0.0.1:9040/TestService",
@@ -197,8 +197,8 @@ public class RmiProtocolTest {
 			}
 		});
 
-		com.atlwj.aop.service = proxy.createProxy(protocol.refer(DemoService.class, group);
-		com.atlwj.aop.service.echo("test");
+		com.atlwj.service = proxy.createProxy(protocol.refer(DemoService.class, group);
+		com.atlwj.service.echo("test");
 
 		// cast to EchoService
 		EchoService echo = proxy.createProxy(protocol.refer(EchoService.class, group);

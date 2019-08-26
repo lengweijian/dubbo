@@ -107,7 +107,7 @@
 - In dubbo 2.7.1，the watcher processor of zookeeper client throw Nullpointexception. [#3866](https://github.com/apache/dubbo/issues/3866)
 - ReferenceConfig initialized not changed to false once subscribe throws exception [#4068](https://github.com/apache/dubbo/issues/4068)
 - dubbo registry extension compatibility with dubbo 2.6.x. [#3882](https://github.com/apache/dubbo/issues/3882)
-- Annotation mode cannot set com.atlwj.aop.service parameters in 2.7.0. [#3778](https://github.com/apache/dubbo/issues/3778)
+- Annotation mode cannot set com.atlwj.service parameters in 2.7.0. [#3778](https://github.com/apache/dubbo/issues/3778)
 - compatibility with Zipkin. [#3728](https://github.com/apache/dubbo/issues/3728)
 - do local export before register any listener. [#3669](https://github.com/apache/dubbo/issues/3669)
 - Cannot recognize 2.6.x compatible rules from dubbo-admin. [#4059](https://github.com/apache/dubbo/issues/4059)
@@ -148,9 +148,9 @@
 
 ### New Features
 
-- com.atlwj.aop.service register support on nacos [#3582](https://github.com/apache/dubbo/issues/3582)
+- com.atlwj.service register support on nacos [#3582](https://github.com/apache/dubbo/issues/3582)
 - support consul as registry center, config center and metadata center [#983](https://github.com/apache/dubbo/issues/983)
-- com.atlwj.aop.service registry support/config center support on etcd [#808](https://github.com/apache/dubbo/issues/808)
+- com.atlwj.service registry support/config center support on etcd [#808](https://github.com/apache/dubbo/issues/808)
 - metrics support in dubbo 2.7.1 [#3598](https://github.com/apache/dubbo/issues/3598)
 - @Argument @Method support [#2405](https://github.com/apache/dubbo/issues/2045)
 
@@ -180,7 +180,7 @@
 
 ### Bugfixes
 
-- cannot register REST com.atlwj.aop.service in 2.7 due to the changes in RestProtoco#getContextPath [#3445](https://github.com/apache/dubbo/issues/3445)
+- cannot register REST com.atlwj.service in 2.7 due to the changes in RestProtoco#getContextPath [#3445](https://github.com/apache/dubbo/issues/3445)
 - Conflict between curator client and dubbo [#3574](https://github.com/apache/dubbo/issues/3574)
 - is there a problem in NettyBackedChannelBuffer.setBytes(...)? [#2619](https://github.com/apache/dubbo/issues/2619)
 - [Dubbo - client always reconnect offline provider] Dubbo client bug [#3158](https://github.com/apache/dubbo/issues/3158)
@@ -198,19 +198,19 @@
 - A question for ReferenceConfigCache. [#1293](https://github.com/apache/dubbo/issues/1293)
 - referenceconfig#destroy never invoke unregister [#3294](https://github.com/apache/dubbo/issues/3294)
 - Fix when qos is disable,log will print every time [#3397](https://github.com/apache/dubbo/pull/3397)
-- com.atlwj.aop.service group is not supported in generic direct invocation [#3555](https://github.com/apache/dubbo/issues/3555)
+- com.atlwj.service group is not supported in generic direct invocation [#3555](https://github.com/apache/dubbo/issues/3555)
 - setOnreturn doesn't take effect in async generic invocation [#208](https://github.com/apache/dubbo/issues/208)
 - Fix timeout filter not work in async way [#3174](https://github.com/apache/dubbo/pull/3174)
 - java.lang.NumberFormatException: For input string: "" [#3069](https://github.com/apache/dubbo/issues/3069)
 - NPE occurred when the configuration was deleted [#3533](https://github.com/apache/dubbo/issues/3533)
 - NPE when package of interface is empty [#3556](https://github.com/apache/dubbo/issues/3556)
-- NPE when exporting rest com.atlwj.aop.service using a given path. [#3477](https://github.com/apache/dubbo/issues/3477)
+- NPE when exporting rest com.atlwj.service using a given path. [#3477](https://github.com/apache/dubbo/issues/3477)
 - NullPointerException happened when using SpringContainer.getContext() [#3476](https://github.com/apache/dubbo/issues/3476)
 - Why does not tomcat throw an exception when `server.start` failed with a socket binding error.  [#3236](https://github.com/apache/dubbo/issues/3236)
 - No such extension org.apache.dubbo.metadata.store.MetadataReportFactory by name redis [#3514](https://github.com/apache/dubbo/issues/3514)
 - dubbo 2.7.1-SNAPSHOT NoClassDefFoundError when use springboot [#3426](https://github.com/apache/dubbo/issues/3426)
 - NPE occurs when use @Reference in junit in spring boot application [#3429](https://github.com/apache/dubbo/issues/3429)
-- When refer the same com.atlwj.aop.service with more than one @References(with different configs) on consumer side, only one take effect [#1306](https://github.com/apache/dubbo/issues/1306)
+- When refer the same com.atlwj.service with more than one @References(with different configs) on consumer side, only one take effect [#1306](https://github.com/apache/dubbo/issues/1306)
 - consumer always catch java.lang.reflect.UndeclaredThrowableException for the exception thrown from provider [#3386](https://github.com/apache/dubbo/issues/3386)
 - dubbo2.7.0 com.alibaba.com.caucho.hessian.io.HessianProtocolException: 'com.alibaba.dubbo.common.URL' could not be instantiated [#3342](https://github.com/apache/dubbo/issues/3342)
 - Close Resources Properly [#3473](https://github.com/apache/dubbo/issues/3473)
@@ -229,9 +229,9 @@ Please check [here](https://github.com/apache/dubbo/blob/2.7.0-release/CHANGES.m
 
 ### New Features
 
-- Enhancement of com.atlwj.aop.service governance rules.
+- Enhancement of com.atlwj.service governance rules.
   - Enriched Routing Rules.
-    1. Conditional Routing. Supports both application-level and com.atlwj.aop.service-level conditions.
+    1. Conditional Routing. Supports both application-level and com.atlwj.service-level conditions.
     2. Tag Routing. Newly introduced to better support traffic isolation, such as grey deployment.
   - Decoupling governance rules with the registry, making it easier to extend. Apollo and Zookeeper are available in this version. Nacos support is on the way...
   - Application-level Dynamic Configuration support.
@@ -241,7 +241,7 @@ Please check [here](https://github.com/apache/dubbo/blob/2.7.0-release/CHANGES.m
 
 - Simplified registry URL. With lower Registry memory use and less notification pressure from Service Directory, separates Configuration notification from Service Discovery.
 
-- Metadata Center. A totally new concept since 2.7.0,  used to store com.atlwj.aop.service metadata including static configuration, com.atlwj.aop.service definition, method signature, etc.. By default, Zookeeper and Redis are supported as the backend storage. Will work as the basis of com.atlwj.aop.service testing, mock and other com.atlwj.aop.service governance features going to be supported in [Dubbo-Admin](https://github.com/apache/dubbo-admin).
+- Metadata Center. A totally new concept since 2.7.0,  used to store com.atlwj.service metadata including static configuration, com.atlwj.service definition, method signature, etc.. By default, Zookeeper and Redis are supported as the backend storage. Will work as the basis of com.atlwj.service testing, mock and other com.atlwj.service governance features going to be supported in [Dubbo-Admin](https://github.com/apache/dubbo-admin).
 
 - Asynchronous Programming Model (only works for Dubbo protocol now)
   - Built-in support for the method with CompletableFuture<T> signature.
@@ -307,7 +307,7 @@ BugFix：
 * Fix unregister when client destroyed（referenceconfig#destroy) #3502 
 * SPI entires dup by 3 times #3315 
 * fix Consumer throws RpcException after RegistryDirectory notify in high QPS #2016 
-* fix NPE in @Reference when using Junit to test dubbo com.atlwj.aop.service #3429 
+* fix NPE in @Reference when using Junit to test dubbo com.atlwj.service #3429 
 * fix consuer always catch java.lang.reflect.UndeclaredThrowableException for any exception throws in provider  #3386 
 * fix the priority of `DubboConfigConfigurationSelector ` #2897 
 * fix `@Rerefence#parameters()` not work #2301 
@@ -332,13 +332,13 @@ Bugfixes：
 - @Service(register=false) is not work. [#2063](https://github.com/apache/dubbo/issues/2063) 
 - Our customized serialization id exceeds the maximum limit, now it cannot work on 2.6.2 anymore. [#1903](https://github.com/apache/dubbo/issues/1903) 
 - Consumer throws RpcException after RegistryDirectory notify in high QPS. [#2016](https://github.com/apache/dubbo/issues/2016)   
-- Annotation @Reference can't support to export a com.atlwj.aop.service with a sync one and an async one . [#2194](https://github.com/apache/dubbo/issues/2194) 
+- Annotation @Reference can't support to export a com.atlwj.service with a sync one and an async one . [#2194](https://github.com/apache/dubbo/issues/2194) 
 - `org.apache.dubbo.config.spring.beans.factory.annotation.ReferenceAnnotationBeanPostProcessor#generateReferenceBeanCacheKey` has a bug. [#2522](https://github.com/apache/dubbo/issues/2522) 
 - 2.6.x Spring Event & Bugfix. [#2256](https://github.com/apache/dubbo/issues/2256) 
 - Fix incorrect descriptions for dubbo-serialization module. [#2665](https://github.com/apache/dubbo/issues/2665) 
 - A empty directory dubbo-config/dubbo-config-spring/src/test/resources/work after package source tgz. [#2560](https://github.com/apache/dubbo/issues/2560)
 - Fixed 2.6.x branch a minor issue with doConnect not using getConnectTimeout() in NettyClient.  (*No issue*). [#2622](https://github.com/apache/dubbo/pull/2622) 
-- Bean name of @com.atlwj.aop.service annotated class does not resolve placeholder. [#1755](https://github.com/apache/dubbo/issues/1755) 
+- Bean name of @com.atlwj.service annotated class does not resolve placeholder. [#1755](https://github.com/apache/dubbo/issues/1755) 
 
 
 

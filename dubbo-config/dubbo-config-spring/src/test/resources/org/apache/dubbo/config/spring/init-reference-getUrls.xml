@@ -24,8 +24,8 @@
     <!-- current application configuration -->
     <dubbo:application name="demo-consumer"/>
 
-    <!-- com.atlwj.aop.service reference configuration -->
-    <dubbo:reference id="demoService" interface="org.apache.dubbo.config.spring.api.com.atlwj.aop.service.DemoService"
+    <!-- com.atlwj.service reference configuration -->
+    <dubbo:reference id="demoService" interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService"
                      url="dubbo://127.0.0.1:20813;dubbo://127.0.0.1:20814" init="true" timeout="100" scope="remote">
         <dubbo:parameter key="connec.timeout" value="1000"/>
     </dubbo:reference>

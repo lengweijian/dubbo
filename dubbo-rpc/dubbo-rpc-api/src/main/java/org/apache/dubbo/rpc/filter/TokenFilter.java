@@ -48,7 +48,7 @@ public class TokenFilter implements Filter {
             Map<String, String> attachments = inv.getAttachments();
             String remoteToken = attachments == null ? null : attachments.get(TOKEN_KEY);
             if (!token.equals(remoteToken)) {
-                throw new RpcException("Invalid token! Forbid invoke remote com.atlwj.aop.service " + serviceType + " method " + inv.getMethodName() + "() from consumer " + RpcContext.getContext().getRemoteHost() + " to provider " + RpcContext.getContext().getLocalHost());
+                throw new RpcException("Invalid token! Forbid invoke remote com.atlwj.service " + serviceType + " method " + inv.getMethodName() + "() from consumer " + RpcContext.getContext().getRemoteHost() + " to provider " + RpcContext.getContext().getLocalHost());
             }
         }
         return invoker.invoke(inv);

@@ -63,7 +63,7 @@ class ChannelWrappedInvoker<T> extends AbstractInvoker<T> {
     @Override
     protected Result doInvoke(Invocation invocation) throws Throwable {
         RpcInvocation inv = (RpcInvocation) invocation;
-        // use interface's name as com.atlwj.aop.service path to export if it's not found on client side
+        // use interface's name as com.atlwj.service path to export if it's not found on client side
         inv.setAttachment(PATH_KEY, getInterface().getName());
         inv.setAttachment(CALLBACK_SERVICE_KEY, serviceKey);
 

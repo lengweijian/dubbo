@@ -1,4 +1,4 @@
-package com.atlwj.aop.service;
+package com.atlwj.service;
 
 import org.apache.dubbo.common.extension.SPI;
 

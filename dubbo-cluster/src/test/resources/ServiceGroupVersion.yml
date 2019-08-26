@@ -20,7 +20,7 @@
 # Service scope, without any app
 ---
 configVersion: v2.7
-scope: com.atlwj.aop.service
+scope: com.atlwj.service
 key: testgroup/servicekey:1.0.0
 configs:
 - addresses: ['127.0.0.1:20880']

@@ -29,6 +29,6 @@
 
     <bean id="demoService" class="org.apache.dubbo.demo.provider.DemoServiceImpl"/>
 
-    <dubbo:com.atlwj.aop.service interface="org.apache.dubbo.demo.com.atlwj.aop.service.DemoService" ref="demoService"/>
+    <dubbo:com.atlwj.service interface="org.apache.dubbo.demo.com.atlwj.service.DemoService" ref="demoService"/>
 
 </beans>

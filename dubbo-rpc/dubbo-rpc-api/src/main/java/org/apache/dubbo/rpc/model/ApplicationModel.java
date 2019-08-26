@@ -37,11 +37,11 @@ public class ApplicationModel {
     protected static final Logger LOGGER = LoggerFactory.getLogger(ApplicationModel.class);
 
     /**
-     * full qualified class name -> provided com.atlwj.aop.service
+     * full qualified class name -> provided com.atlwj.service
      */
     private static final ConcurrentMap<String, ProviderModel> PROVIDED_SERVICES = new ConcurrentHashMap<>();
     /**
-     * full qualified class name -> subscribe com.atlwj.aop.service
+     * full qualified class name -> subscribe com.atlwj.service
      */
     private static final ConcurrentMap<String, ConsumerModel> CONSUMED_SERVICES = new ConcurrentHashMap<>();
 

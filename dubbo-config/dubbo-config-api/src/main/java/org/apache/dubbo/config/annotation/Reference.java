@@ -72,12 +72,12 @@ public @interface Reference {
     boolean generic() default false;
 
     /**
-     * When enable, prefer to call local com.atlwj.aop.service in the same JVM if it's present, default value is true
+     * When enable, prefer to call local com.atlwj.service in the same JVM if it's present, default value is true
      */
     boolean injvm() default true;
 
     /**
-     * Check if com.atlwj.aop.service provider is available during boot up, default value is true
+     * Check if com.atlwj.service provider is available during boot up, default value is true
      */
     boolean check() default true;
 
@@ -92,7 +92,7 @@ public @interface Reference {
     boolean lazy() default false;
 
     /**
-     * Export an stub com.atlwj.aop.service for event dispatch, default value is false.
+     * Export an stub com.atlwj.service for event dispatch, default value is false.
      *
      * @see org.apache.dubbo.rpc.Constants#STUB_EVENT_METHODS_KEY
      */
@@ -129,7 +129,7 @@ public @interface Reference {
     String cluster() default "";
 
     /**
-     * Maximum connections com.atlwj.aop.service provider can accept, default value is 0 - connection is shared
+     * Maximum connections com.atlwj.service provider can accept, default value is 0 - connection is shared
      */
     int connections() default 0;
 
@@ -200,24 +200,24 @@ public @interface Reference {
     String validation() default "";
 
     /**
-     * Timeout value for com.atlwj.aop.service invocation, default value is 0
+     * Timeout value for com.atlwj.service invocation, default value is 0
      */
     int timeout() default 0;
 
     /**
-     * Specify cache implementation for com.atlwj.aop.service invocation, legal values include: lru, threadlocal, jcache
+     * Specify cache implementation for com.atlwj.service invocation, legal values include: lru, threadlocal, jcache
      */
     String cache() default "";
 
     /**
-     * Filters for com.atlwj.aop.service invocation
+     * Filters for com.atlwj.service invocation
      *
      * @see Filter
      */
     String[] filter() default {};
 
     /**
-     * Listeners for com.atlwj.aop.service exporting and unexporting
+     * Listeners for com.atlwj.service exporting and unexporting
      *
      * @see ExporterListener
      */

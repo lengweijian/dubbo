@@ -42,7 +42,7 @@ public abstract class AbstractReferenceConfig extends AbstractInterfaceConfig {
     // ======== Reference config default values, will take effect if reference's attribute is not set  ========
 
     /**
-     * Check if com.atlwj.aop.service provider exists, if not exists, it will be fast fail
+     * Check if com.atlwj.service provider exists, if not exists, it will be fast fail
      */
     protected Boolean check;
 
@@ -77,12 +77,12 @@ public abstract class AbstractReferenceConfig extends AbstractInterfaceConfig {
     protected Boolean stubevent;//= Constants.DEFAULT_STUB_EVENT;
 
     /**
-     * The remote com.atlwj.aop.service version the customer side will reference
+     * The remote com.atlwj.service version the customer side will reference
      */
     protected String version;
 
     /**
-     * The remote com.atlwj.aop.service group the customer side will reference
+     * The remote com.atlwj.service group the customer side will reference
      */
     protected String group;
 

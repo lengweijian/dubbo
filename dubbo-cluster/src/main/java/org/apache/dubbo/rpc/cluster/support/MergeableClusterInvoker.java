@@ -71,7 +71,7 @@ public class MergeableClusterInvoker<T> extends AbstractClusterInvoker<T> {
                         return invoker.invoke(invocation);
                     } catch (RpcException e) {
                         if (e.isNoInvokerAvailableAfterFilter()) {
-                            log.debug("No available provider for com.atlwj.aop.service" + directory.getUrl().getServiceKey() + " on group " + invoker.getUrl().getParameter(GROUP_KEY) + ", will continue to try another group.");
+                            log.debug("No available provider for com.atlwj.service" + directory.getUrl().getServiceKey() + " on group " + invoker.getUrl().getParameter(GROUP_KEY) + ", will continue to try another group.");
                         } else {
                             throw e;
                         }
@@ -112,7 +112,7 @@ public class MergeableClusterInvoker<T> extends AbstractClusterInvoker<T> {
                     resultList.add(r);
                 }
             } catch (Exception e) {
-                throw new RpcException("Failed to invoke com.atlwj.aop.service " + entry.getKey() + ": " + e.getMessage(), e);
+                throw new RpcException("Failed to invoke com.atlwj.service " + entry.getKey() + ": " + e.getMessage(), e);
             }
         }
 

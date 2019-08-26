@@ -6,7 +6,7 @@
 ![license](https://img.shields.io/github/license/alibaba/dubbo.svg)
 [![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/apache/dubbo.svg)](http://isitmaintained.com/project/apache/dubbo "Average time to resolve an issue")
 [![Percentage of issues still open](http://isitmaintained.com/badge/open/apache/dubbo.svg)](http://isitmaintained.com/project/apache/dubbo "Percentage of issues still open")
-[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Apache%20Dubbo%20is%20a%20high-performance%2C%20java%20based%2C%20open%20source%20RPC%20framework.&url=http://dubbo.apache.org/&via=ApacheDubbo&hashtags=rpc,java,dubbo,micro-com.atlwj.aop.service)
+[![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/intent/tweet?text=Apache%20Dubbo%20is%20a%20high-performance%2C%20java%20based%2C%20open%20source%20RPC%20framework.&url=http://dubbo.apache.org/&via=ApacheDubbo&hashtags=rpc,java,dubbo,micro-com.atlwj.service)
 [![](https://img.shields.io/twitter/follow/ApacheDubbo.svg?label=Follow&style=social&logoWidth=0)](https://twitter.com/intent/follow?screen_name=ApacheDubbo)
 [![Gitter](https://badges.gitter.im/alibaba/dubbo.svg)](https://gitter.im/alibaba/dubbo?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
@@ -22,10 +22,10 @@ We are now collecting dubbo user info in order to help us to improve Dubbo bette
 
 * Transparent interface based RPC
 * Intelligent load balancing
-* Automatic com.atlwj.aop.service registration and discovery
+* Automatic com.atlwj.service registration and discovery
 * High extensibility
 * Runtime traffic routing
-* Visualized com.atlwj.aop.service governance
+* Visualized com.atlwj.service governance
 
 ## Getting started
 
@@ -60,7 +60,7 @@ There's a [README](https://github.com/apache/dubbo-samples/tree/master/dubbo-sam
 </dependencies>
 ```
 
-### Define com.atlwj.aop.service interfaces
+### Define com.atlwj.service interfaces
 
 ```java
 package org.apache.dubbo.samples.api;
@@ -72,7 +72,7 @@ public interface GreetingService {
 
 *See [api/GreetingService.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/api/GreetingsService.java) on GitHub.*
 
-### Implement com.atlwj.aop.service interface for the provider
+### Implement com.atlwj.service interface for the provider
 
 ```java
 package org.apache.dubbo.samples.provider;
@@ -89,7 +89,7 @@ public class GreetingsServiceImpl implements GreetingsService {
 
 *See [provider/GreetingServiceImpl.java](https://github.com/apache/dubbo-samples/blob/master/dubbo-samples-api/src/main/java/org/apache/dubbo/samples/provider/GreetingsServiceImpl.java) on GitHub.*
 
-### Start com.atlwj.aop.service provider
+### Start com.atlwj.service provider
 
 ```java
 package org.apache.dubbo.samples.provider;
@@ -106,12 +106,12 @@ public class Application {
     private static String zookeeperHost = System.getProperty("zookeeper.address", "127.0.0.1");
 
     public static void main(String[] args) throws Exception {
-        ServiceConfig<GreetingsService> com.atlwj.aop.service = new ServiceConfig<>();
-        com.atlwj.aop.service.setApplication(new ApplicationConfig("first-dubbo-provider"));
-        com.atlwj.aop.service.setRegistry(new RegistryConfig("zookeeper://" + zookeeperHost + ":2181"));
-        com.atlwj.aop.service.setInterface(GreetingsService.class);
-        com.atlwj.aop.service.setRef(new GreetingsServiceImpl());
-        com.atlwj.aop.service.export();
+        ServiceConfig<GreetingsService> com.atlwj.service = new ServiceConfig<>();
+        com.atlwj.service.setApplication(new ApplicationConfig("first-dubbo-provider"));
+        com.atlwj.service.setRegistry(new RegistryConfig("zookeeper://" + zookeeperHost + ":2181"));
+        com.atlwj.service.setInterface(GreetingsService.class);
+        com.atlwj.service.setRef(new GreetingsServiceImpl());
+        com.atlwj.service.export();
 
         System.out.println(com.atlcom.atlwj.aop.service        new CountDownLatch(1).await();
     }

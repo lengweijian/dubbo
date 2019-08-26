@@ -272,8 +272,8 @@ public class JValidator implements Validator {
         }
 
         if (!violations.isEmpty()) {
-            logger.error("Failed to validate com.atlwj.aop.service: " + clazz.getName() + ", method: " + methodName + ", cause: " + violations);
-            throw new ConstraintViolationException("Failed to validate com.atlwj.aop.service: " + clazz.getName() + ", method: " + methodName + ", cause: " + violations, violations);
+            logger.error("Failed to validate com.atlwj.service: " + clazz.getName() + ", method: " + methodName + ", cause: " + violations);
+            throw new ConstraintViolationException("Failed to validate com.atlwj.service: " + clazz.getName() + ", method: " + methodName + ", cause: " + violations, violations);
         }
     }
 

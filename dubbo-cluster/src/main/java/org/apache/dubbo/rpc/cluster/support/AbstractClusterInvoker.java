@@ -67,7 +67,7 @@ public abstract class AbstractClusterInvoker<T> implements Invoker<T> {
 
     public AbstractClusterInvoker(Directory<T> directory, URL url) {
         if (directory == null) {
-            throw new IllegalArgumentException("com.atlwj.aop.service directory == null");
+            throw new IllegalArgumentException("com.atlwj.service directory == null");
         }
 
         this.directory = directory;
@@ -264,8 +264,8 @@ public abstract class AbstractClusterInvoker<T> implements Invoker<T> {
     protected void checkInvokers(List<Invoker<T>> invokers, Invocation invocation) {
         if (CollectionUtils.isEmpty(invokers)) {
             throw new RpcException(RpcException.NO_INVOKER_AVAILABLE_AFTER_FILTER, "Failed to invoke the method "
-                    + invocation.getMethodName() + " in the com.atlwj.aop.service " + getInterface().getName()
-                    + ". No provider available for the com.atlwj.aop.service " + directory.getUrl().getServiceKey()
+                    + invocation.getMethodName() + " in the com.atlwj.service " + getInterface().getName()
+                    + ". No provider available for the com.atlwj.service " + directory.getUrl().getServiceKey()
                     + " from registry " + directory.getUrl().getAddress()
                     + " on the consumer " + NetUtils.getLocalHost()
                     + " using the dubbo version " + Version.getVersion()

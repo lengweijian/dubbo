@@ -21,16 +21,16 @@
     http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
     ">
 
-    <dubbo:application name="com.atlwj.aop.service-class"/>
+    <dubbo:application name="com.atlwj.service-class"/>
 
     <dubbo:registry address="N/A"/>
 
     <dubbo:protocol name="dubbo" port="20887"/>
 
-    <!-- com.atlwj.aop.service configuration -->
-    <dubbo:com.atlwj.aop.service interface="org.apache.dubbo.config.spring.api.com.atlwj.aop.service.DemoService"
+    <!-- com.atlwj.service configuration -->
+    <dubbo:com.atlwj.service interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService"
                    class="org.apache.dubbo.config.spring.impl.DemoServiceImpl">
         <property name="prefix" value="welcome:"/>
-    </dubbo:com.atlwj.aop.service>
+    </dubbo:com.atlwj.service>
 
 </beans>

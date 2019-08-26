@@ -42,7 +42,7 @@ public final class AccessLogData {
 
     private static final String VERSION = "version";
     private static final String GROUP = "group";
-    private static final String SERVICE = "com.atlwj.aop.service";
+    private static final String SERVICE = "com.atlwj.service";
     private static final String METHOD_NAME = "method-name";
     private static final String INVOCATION_TIME = "invocation-time";
     private static final String TYPES = "types";
@@ -89,7 +89,7 @@ public final class AccessLogData {
     }
 
     /**
-     * Add com.atlwj.aop.service name.
+     * Add com.atlwj.service name.
      *
      * @param serviceName
      */
@@ -143,7 +143,7 @@ public final class AccessLogData {
     }
 
     /**
-     * Set local port of exported com.atlwj.aop.service
+     * Set local port of exported com.atlwj.service
      *
      * @param localPort
      */
@@ -179,7 +179,7 @@ public final class AccessLogData {
     }
 
     /**
-     * Return gthe com.atlwj.aop.service of access log entry
+     * Return gthe com.atlwj.service of access log entry
      *
      * @return
      */

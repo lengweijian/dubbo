@@ -60,7 +60,7 @@ public interface DynamicConfiguration extends Configuration {
 
     /**
      * Register a configuration listener for a specified key
-     * The listener only works for com.atlwj.aop.service governance purpose, so the target group would always be the value user
+     * The listener only works for com.atlwj.service governance purpose, so the target group would always be the value user
      * specifies at startup or 'dubbo' by default. This method will only register listener, which means it will not
      * trigger a notification that contains the current value.
      *

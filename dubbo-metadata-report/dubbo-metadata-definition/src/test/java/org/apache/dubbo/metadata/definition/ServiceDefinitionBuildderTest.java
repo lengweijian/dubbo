@@ -81,9 +81,9 @@ public class ServiceDefinitionBuildderTest {
         Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject").getType(), ComplexObject.InnerObject.class.getName());
         Assertions.assertEquals(topTypeDefinition.getProperties().get("intList").getType(), "java.util.List<java.lang.Integer>");
         Assertions.assertEquals(topTypeDefinition.getProperties().get("strArrays").getType(), "java.lang.String[]");
-        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject3").getType(), "org.apache.dubbo.metadata.definition.com.atlwj.aop.service.ComplexObject.InnerObject3[]");
-        Assertions.assertEquals(topTypeDefinition.getProperties().get("testEnum").getType(), "org.apache.dubbo.metadata.definition.com.atlwj.aop.service.ComplexObject.TestEnum");
-        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject2").getType(), "java.util.Set<org.apache.dubbo.metadata.definition.com.atlwj.aop.service.ComplexObject$InnerObject2>");
+        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject3").getType(), "org.apache.dubbo.metadata.definition.com.atlwj.service.ComplexObject.InnerObject3[]");
+        Assertions.assertEquals(topTypeDefinition.getProperties().get("testEnum").getType(), "org.apache.dubbo.metadata.definition.com.atlwj.service.ComplexObject.TestEnum");
+        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject2").getType(), "java.util.Set<org.apache.dubbo.metadata.definition.com.atlwj.service.ComplexObject$InnerObject2>");
 
         Assertions.assertSame(innerTypeDefinition.getProperties().get("innerA").getType(), "java.lang.String");
         Assertions.assertSame(innerTypeDefinition.getProperties().get("innerB").getType(), "int");

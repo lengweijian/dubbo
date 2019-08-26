@@ -49,7 +49,7 @@ import static org.apache.dubbo.common.constants.CommonConstants.VERSION_KEY;
 import static org.apache.dubbo.rpc.Constants.ACCESS_LOG_KEY;
 
 /**
- * Record access log for the com.atlwj.aop.service.
+ * Record access log for the com.atlwj.service.
  * <p>
  * Logger key is <code><b>dubbo.accesslog</b></code>.
  * In order to configure access log appear in the specified appender only, additivity need to be configured in log4j's
@@ -91,11 +91,11 @@ public class AccessLogFilter implements Filter {
     }
 
     /**
-     * This method logs the access log for com.atlwj.aop.service method invocation call.
+     * This method logs the access log for com.atlwj.service method invocation call.
      *
-     * @param invoker com.atlwj.aop.service
-     * @param inv     Invocation com.atlwj.aop.service method.
-     * @return Result from com.atlwj.aop.service method.
+     * @param invoker com.atlwj.service
+     * @param inv     Invocation com.atlwj.service method.
+     * @return Result from com.atlwj.service method.
      * @throws RpcException
      */
     @Override
@@ -107,7 +107,7 @@ public class AccessLogFilter implements Filter {
                 log(accessLogKey, logData);
             }
         } catch (Throwable t) {
-            logger.warn("Exception in AccessLogFilter of com.atlwj.aop.service(" + invoker + " -> " + inv + ")", t);
+            logger.warn("Exception in AccessLogFilter of com.atlwj.service(" + invoker + " -> " + inv + ")", t);
         }
         return invoker.invoke(inv);
     }

@@ -1,9 +1,7 @@
 package com.atlwj;
 
-import com.atlwj.aop.service.DemoService;
+import com.atlwj.service.DemoService;
 import com.atlwj.di.service.WheelMaker;
-import com.atlwj.di.service.impl.AdaptiveWheelMaker;
-import org.apache.dubbo.common.URL;
 import org.apache.dubbo.common.extension.ExtensionLoader;
 
 /**

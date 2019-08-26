@@ -198,8 +198,8 @@ public class RegistryProtocol implements Protocol {
         URL providerUrl = getProviderUrl(originInvoker);
 
         // Subscribe the override data
-        // FIXME When the provider subscribes, it will affect the scene : a certain JVM exposes the com.atlwj.aop.service and call
-        //  the same com.atlwj.aop.service. Because the subscribed is cached key with the name of the com.atlwj.aop.service, it causes the
+        // FIXME When the provider subscribes, it will affect the scene : a certain JVM exposes the com.atlwj.service and call
+        //  the same com.atlwj.service. Because the subscribed is cached key with the name of the com.atlwj.service, it causes the
         //  subscription information to cover.
         final URL overrideSubscribeUrl = getSubscribedOverrideUrl(providerUrl);
         final OverrideListener overrideSubscribeListener = new OverrideListener(overrideSubscribeUrl, originInvoker);
@@ -577,7 +577,7 @@ public class RegistryProtocol implements Protocol {
                     overrideUrl = url.addParameter(CATEGORY_KEY, CONFIGURATORS_CATEGORY);
                 }
 
-                // Check whether url is to be applied to the current com.atlwj.aop.service
+                // Check whether url is to be applied to the current com.atlwj.service
                 if (UrlUtils.isMatch(currentSubscribe, overrideUrl)) {
                     result.add(url);
                 }

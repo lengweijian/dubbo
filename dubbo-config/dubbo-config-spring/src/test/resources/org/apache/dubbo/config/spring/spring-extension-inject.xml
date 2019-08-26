@@ -29,8 +29,8 @@
 
     <bean id="mockDao" class="org.apache.dubbo.config.spring.filter.MockDaoImpl"/>
 
-    <!-- com.atlwj.aop.service configuration -->
-    <dubbo:com.atlwj.aop.service id="demoServiceConfig" interface="org.apache.dubbo.config.spring.api.com.atlwj.aop.service.DemoService" ref="demoService"
+    <!-- com.atlwj.service configuration -->
+    <dubbo:com.atlwj.service id="demoServiceConfig" interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService" ref="demoService"
                    filter="mymock,default"/>
 
     <bean id="demoService" class="org.apache.dubbo.config.spring.impl.DemoServiceImpl"/>

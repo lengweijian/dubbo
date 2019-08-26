@@ -1,6 +1,5 @@
-package com.atlwj.aop.service;
+package com.atlwj.service;
 
-import javafx.fxml.Initializable;
 import org.apache.dubbo.rpc.RpcContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

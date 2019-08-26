@@ -29,7 +29,7 @@ import java.util.List;
 public interface RegistryService {
 
     /**
-     * Register data, such as : provider com.atlwj.aop.service, consumer address, route rule, override rule and other data.
+     * Register data, such as : provider com.atlwj.service, consumer address, route rule, override rule and other data.
      * <p>
      * Registering is required to support the contract:<br>
      * 1. When the URL sets the check=false parameter. When the registration fails, the exception is not thrown and retried in the background. Otherwise, the exception will be thrown.<br>

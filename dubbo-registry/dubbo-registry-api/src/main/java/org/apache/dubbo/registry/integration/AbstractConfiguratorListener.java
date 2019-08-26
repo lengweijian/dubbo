@@ -68,7 +68,7 @@ public abstract class AbstractConfiguratorListener implements ConfigurationListe
     private boolean genConfiguratorsFromRawRule(String rawConfig) {
         boolean parseSuccess = true;
         try {
-            // parseConfigurators will recognize app/com.atlwj.aop.service config automatically.
+            // parseConfigurators will recognize app/com.atlwj.service config automatically.
             configurators = Configurator.toConfigurators(ConfigParser.parseConfigurators(rawConfig))
                     .orElse(configurators);
         } catch (Exception e) {

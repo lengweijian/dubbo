@@ -119,7 +119,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
     private static final Protocol protocol = ExtensionLoader.getExtensionLoader(Protocol.class).getAdaptiveExtension();
 
     /**
-     * A {@link ProxyFactory} implementation that will generate a exported com.atlwj.aop.service proxy,the JavassistProxyFactory is its
+     * A {@link ProxyFactory} implementation that will generate a exported com.atlwj.service proxy,the JavassistProxyFactory is its
      * default implementation
      */
     private static final ProxyFactory PROXY_FACTORY = ExtensionLoader.getExtensionLoader(ProxyFactory.class).getAdaptiveExtension();
@@ -130,7 +130,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
     private static final Map<String, Integer> RANDOM_PORT_MAP = new HashMap<String, Integer>();
 
     /**
-     * A delayed exposure com.atlwj.aop.service timer
+     * A delayed exposure com.atlwj.service timer
      */
     private static final ScheduledExecutorService DELAY_EXPORT_EXECUTOR = Executors.newSingleThreadScheduledExecutor(new NamedThreadFactory("DubboServiceDelayExporter", true));
 
@@ -145,12 +145,12 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
     private final List<Exporter<?>> exporters = new ArrayList<Exporter<?>>();
 
     /**
-     * The interface name of the exported com.atlwj.aop.service
+     * The interface name of the exported com.atlwj.service
      */
     private String interfaceName;
 
     /**
-     * The interface class of the exported com.atlwj.aop.service
+     * The interface class of the exported com.atlwj.service
      */
     private Class<?> interfaceClass;
 
@@ -160,7 +160,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
     private T ref;
 
     /**
-     * The com.atlwj.aop.service name
+     * The com.atlwj.service name
      */
     private String path;
 
@@ -185,7 +185,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
     private transient volatile boolean exported;
 
     /**
-     * The flag whether a com.atlwj.aop.service has unexported ,if the method unexported is invoked, the value is true
+     * The flag whether a com.atlwj.service has unexported ,if the method unexported is invoked, the value is true
      */
     private transient volatile boolean unexported;
 
@@ -305,7 +305,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
         checkMetadataReport();
 
         if (StringUtils.isEmpty(interfaceName)) {
-            throw new IllegalStateException("<dubbo:com.atlwj.aop.service interface=\"\" /> interface not allow null!");
+            throw new IllegalStateException("<dubbo:com.atlwj.service interface=\"\" /> interface not allow null!");
         }
 
         if (ref instanceof GenericService) {
@@ -402,7 +402,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
 
     protected synchronized void doExport() {
         if (unexported) {
-            throw new IllegalStateException("The com.atlwj.aop.service " + interfaceClass.getName() + " has already unexported!");
+            throw new IllegalStateException("The com.atlwj.service " + interfaceClass.getName() + " has already unexported!");
         }
         if (exported) {
             return;
@@ -543,7 +543,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
 
             String[] methods = Wrapper.getWrapper(interfaceClass).getMethodNames();
             if (methods.length == 0) {
-                logger.warn("No method found in com.atlwj.aop.service interface " + interfaceClass.getName());
+                logger.warn("No method found in com.atlwj.service interface " + interfaceClass.getName());
                 map.put(METHODS_KEY, ANY_VALUE);
             } else {
                 map.put(METHODS_KEY, StringUtils.join(new HashSet<String>(Arrays.asList(methods)), ","));
@@ -556,7 +556,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
                 map.put(TOKEN_KEY, token);
             }
         }
-        // export com.atlwj.aop.service
+        // export com.atlwj.service
         String host = this.findConfigedHosts(protocolConfig, registryURLs, map);
         Integer port = this.findConfigedPorts(protocolConfig, name, map);
         URL url = new URL(name, host, port, getContextPath(protocolConfig).map(p -> p + "/" + path).orElse(path), map);
@@ -578,7 +578,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
             // export to remote if the config is not local (export to local only when config is local)
             if (!SCOPE_LOCAL.equalsIgnoreCase(scope)) {
                 if (!isOnlyInJvm() && logger.isInfoEnabled()) {
-                    logger.info("Export dubbo com.atlwj.aop.service " + interfaceClass.getName() + " to url " + url);
+                    logger.info("Export dubbo com.atlwj.service " + interfaceClass.getName() + " to url " + url);
                 }
                 if (CollectionUtils.isNotEmpty(registryURLs)) {
                     for (URL registryURL : registryURLs) {
@@ -592,7 +592,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
                             url = url.addParameterAndEncoded(MONITOR_KEY, monitorUrl.toFullString());
                         }
                         if (logger.isInfoEnabled()) {
-                            logger.info("Register dubbo com.atlwj.aop.service " + interfaceClass.getName() + " url " + url + " to registry " + registryURL);
+                            logger.info("Register dubbo com.atlwj.service " + interfaceClass.getName() + " url " + url + " to registry " + registryURL);
                         }
 
                         // For providers, this is used to enable custom proxy to generate invoker
@@ -640,7 +640,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
         Exporter<?> exporter = protocol.export(
                 PROXY_FACTORY.getInvoker(ref, (Class) interfaceClass, local));
         exporters.add(exporter);
-        logger.info("Export dubbo com.atlwj.aop.service " + interfaceClass.getName() + " to local registry url : " + local);
+        logger.info("Export dubbo com.atlwj.service " + interfaceClass.getName() + " to local registry url : " + local);
     }
 
     private Optional<String> getContextPath(ProtocolConfig protocolConfig) {
@@ -656,7 +656,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
     }
 
     /**
-     * Register & bind IP address for com.atlwj.aop.service provider, can be configured separately.
+     * Register & bind IP address for com.atlwj.service provider, can be configured separately.
      * Configuration priority: environment variables -> java system properties -> host property in config file ->
      * /etc/hosts -> default network address -> first available network address
      *
@@ -903,7 +903,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
                 }
             });
             if (tmpProtocols.size() > arr.length) {
-                throw new IllegalStateException("Too much protocols found, the protocols comply to this com.atlwj.aop.service are :" + protocolIds + " but got " + protocols
+                throw new IllegalStateException("Too much protocols found, the protocols comply to this com.atlwj.service are :" + protocolIds + " but got " + protocols
                         .size() + " registries!");
             }
             setProtocols(tmpProtocols);
@@ -1051,6 +1051,6 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
     @Override
     @Parameter(excluded = true)
     public String getPrefix() {
-        return DUBBO + ".com.atlwj.aop.service." + interfaceName;
+        return DUBBO + ".com.atlwj.service." + interfaceName;
     }
 }

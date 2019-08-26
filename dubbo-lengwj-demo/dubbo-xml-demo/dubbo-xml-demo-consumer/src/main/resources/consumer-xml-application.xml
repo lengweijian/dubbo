@@ -9,6 +9,6 @@
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"></dubbo:registry>
 
-    <dubbo:reference interface="com.atlwj.com.atlwj.aop.service.HelloService" id="helloService" version="1.0.0"></dubbo:reference>
+    <dubbo:reference interface="com.atlwj.service.HelloService" id="helloService" version="1.0.0"></dubbo:reference>
 
 </beans>

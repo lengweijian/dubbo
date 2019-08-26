@@ -69,7 +69,7 @@ public class UrlTestBase {
             {"document", "document", "string", "", "http://b2b-doc.alibaba-inc.com/display/RC/dubbo_devguide.htm?testquery=你好你好", "", "", "", "", ""},
             {"weight", "weight", "int", 0, 90, "", "", "", "", ""},
 
-            //{"filter", "com.atlwj.aop.service.filter", "string", "", "", "", "", "", "", ""},
+            //{"filter", "com.atlwj.service.filter", "string", "", "", "", "", "", "", ""},
             //{"listener", "listener", "string", "", "", "", "", "", "", ""},
 
     };
@@ -84,7 +84,7 @@ public class UrlTestBase {
     protected Object provConfTable[][] = {{"cluster", "cluster", "string", "string", "failover", "failfast", "failsafe", "", "", ""}, {"async", "async", "boolean", false, true, "", "", "", "", ""}, {"loadbalance", "loadbalance", "string", "random", "leastactive", "", "", "", "", ""}, {"connections", "connections", "int", 0, 60, "", "", "", "", ""}, {"retries", "retries", "int", 2, 60, "", "", "", "", ""}, {"timeout", "timeout", "int", 5000, 60, "", "", "", "", ""},
             //change by fengting listener 没有缺省值
             //{"listener", "exporter.listener", "string", "", "", "", "", "", "", ""},
-            //{"filter", "com.atlwj.aop.service.filter", "string", "", "", "", "", "", "", ""},
+            //{"filter", "com.atlwj.service.filter", "string", "", "", "", "", "", "", ""},
 
     };
     protected Object methodConfForServiceTable[][] = {
@@ -178,7 +178,7 @@ public class UrlTestBase {
                                                  Object[][] dataTable, String configName, int column) {
         final String FAILLOG_HEADER = "The following config items are not found in URLONE: ";
 
-        log.warn("Verifying com.atlwj.aop.service url for " + configName + "... ");
+        log.warn("Verifying com.atlwj.service url for " + configName + "... ");
         log.warn("Consumer url string: " + paramStringFromDb);
 
         String failLog = FAILLOG_HEADER;

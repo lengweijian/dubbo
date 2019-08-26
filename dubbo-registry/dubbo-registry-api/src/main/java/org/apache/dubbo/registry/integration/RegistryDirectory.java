@@ -116,7 +116,7 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
      */
     private volatile List<Configurator> configurators; // The initial value is null and the midway may be assigned to null, please use the local variable reference
 
-    // Map<url, Invoker> cache com.atlwj.aop.service url to invoker mapping.
+    // Map<url, Invoker> cache com.atlwj.service url to invoker mapping.
     private volatile Map<String, Invoker<T>> urlInvokerMap; // The initial value is null and the midway may be assigned to null, please use the local variable reference
     private volatile List<Invoker<T>> invokers;
 
@@ -130,7 +130,7 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
     public RegistryDirectory(Class<T> serviceType, URL url) {
         super(url);
         if (serviceType == null) {
-            throw new IllegalArgumentException("com.atlwj.aop.service type is null.");
+            throw new IllegalArgumentException("com.atlwj.service type is null.");
         }
         if (url.getServiceKey() == null || url.getServiceKey().length() == 0) {
             throw new IllegalArgumentException("registry serviceKey is null.");
@@ -185,7 +185,7 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
                 registry.unregister(getRegisteredConsumerUrl());
             }
         } catch (Throwable t) {
-            logger.warn("unexpected error when unregister com.atlwj.aop.service " + serviceKey + "from registry" + registry.getUrl(), t);
+            logger.warn("unexpected error when unregister com.atlwj.service " + serviceKey + "from registry" + registry.getUrl(), t);
         }
         // unsubscribe.
         try {
@@ -195,13 +195,13 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
             DynamicConfiguration.getDynamicConfiguration()
                     .removeListener(ApplicationModel.getApplication(), CONSUMER_CONFIGURATION_LISTENER);
         } catch (Throwable t) {
-            logger.warn("unexpected error when unsubscribe com.atlwj.aop.service " + serviceKey + "from registry" + registry.getUrl(), t);
+            logger.warn("unexpected error when unsubscribe com.atlwj.service " + serviceKey + "from registry" + registry.getUrl(), t);
         }
         super.destroy(); // must be executed after unsubscribing
         try {
             destroyAllInvokers();
         } catch (Throwable t) {
-            logger.warn("Failed to destroy com.atlwj.aop.service " + serviceKey, t);
+            logger.warn("Failed to destroy com.atlwj.service " + serviceKey, t);
         }
     }
 
@@ -478,7 +478,7 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
         // override url with configurator from configurator from "app-name.configurators"
         providerUrl = overrideWithConfigurators(CONSUMER_CONFIGURATION_LISTENER.getConfigurators(), providerUrl);
 
-        // override url with configurator from configurators from "com.atlwj.aop.service-name.configurators"
+        // override url with configurator from configurators from "com.atlwj.service-name.configurators"
         if (serviceConfigurationListener != null) {
             providerUrl = overrideWithConfigurators(serviceConfigurationListener.getConfigurators(), providerUrl);
         }
@@ -505,7 +505,7 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
                 try {
                     invoker.destroy();
                 } catch (Throwable t) {
-                    logger.warn("Failed to destroy com.atlwj.aop.service " + serviceKey + " to provider " + invoker.getUrl(), t);
+                    logger.warn("Failed to destroy com.atlwj.service " + serviceKey + " to provider " + invoker.getUrl(), t);
                 }
             }
             localUrlInvokerMap.clear();
@@ -561,9 +561,9 @@ public class RegistryDirectory<T> extends AbstractDirectory<T> implements Notify
     @Override
     public List<Invoker<T>> doList(Invocation invocation) {
         if (forbidden) {
-            // 1. No com.atlwj.aop.service provider 2. Service providers are disabled
+            // 1. No com.atlwj.service provider 2. Service providers are disabled
             throw new RpcException(RpcException.FORBIDDEN_EXCEPTION, "No provider available from registry " +
-                    getUrl().getAddress() + " for com.atlwj.aop.service " + getConsumerUrl().getServiceKey() + " on consumer " +
+                    getUrl().getAddress() + " for com.atlwj.service " + getConsumerUrl().getServiceKey() + " on consumer " +
                     NetUtils.getLocalHost() + " use dubbo version " + Version.getVersion() +
                     ", please check status of providers(disabled, not registered or in blacklist).");
         }

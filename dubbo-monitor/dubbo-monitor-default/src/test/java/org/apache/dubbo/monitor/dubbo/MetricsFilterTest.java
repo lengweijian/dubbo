@@ -81,7 +81,7 @@ public class MetricsFilterTest {
     }
 
     private URL getUrl() {
-        return URL.valueOf("dubbo://" + NetUtils.getLocalHost() + ":20880/org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService");
+        return URL.valueOf("dubbo://" + NetUtils.getLocalHost() + ":20880/org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService");
     }
 
     private void onInvokeReturns(AppResponse response) {
@@ -95,7 +95,7 @@ public class MetricsFilterTest {
         }
 
         public URL getUrl() {
-            return URL.valueOf("dubbo://" + NetUtils.getLocalHost() + ":20880/org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService");
+            return URL.valueOf("dubbo://" + NetUtils.getLocalHost() + ":20880/org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService");
         }
 
         @Override
@@ -129,7 +129,7 @@ public class MetricsFilterTest {
         FastCompass dubboClient = metricManager.getFastCompass(DUBBO_GROUP, new MetricName(DUBBO_CONSUMER, MetricLevel.MAJOR));
         FastCompass dubboMethod = metricManager.getFastCompass(DUBBO_GROUP, new MetricName(DUBBO_CONSUMER_METHOD, new HashMap<String, String>(4) {
             {
-                put(SERVICE, "org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService");
+                put(SERVICE, "org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService");
                 put(METHOD, "void sayName(Integer)");
             }
         }, MetricLevel.NORMAL));
@@ -162,7 +162,7 @@ public class MetricsFilterTest {
         FastCompass dubboClient = metricManager.getFastCompass(DUBBO_GROUP, new MetricName(DUBBO_CONSUMER, MetricLevel.MAJOR));
         FastCompass dubboMethod = metricManager.getFastCompass(DUBBO_GROUP, new MetricName(DUBBO_CONSUMER_METHOD, new HashMap<String, String>(4) {
             {
-                put(SERVICE, "org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService");
+                put(SERVICE, "org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService");
                 put(METHOD, "void timeoutException()");
             }
         }, MetricLevel.NORMAL));
@@ -190,7 +190,7 @@ public class MetricsFilterTest {
         FastCompass dubboClient = metricManager.getFastCompass(DUBBO_GROUP, new MetricName(DUBBO_PROVIDER, MetricLevel.MAJOR));
         FastCompass dubboMethod = metricManager.getFastCompass(DUBBO_GROUP, new MetricName(DUBBO_PROVIDER_METHOD, new HashMap<String, String>(4) {
             {
-                put(SERVICE, "org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService");
+                put(SERVICE, "org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService");
                 put(METHOD, "void sayName()");
             }
         }, MetricLevel.NORMAL));
@@ -290,7 +290,7 @@ public class MetricsFilterTest {
         Map<String, Map<String, Object>> methodMetricMap = new HashMap<>();
         for (int i = 0; i < metricObjectList.size(); i++) {
             MetricObject object = metricObjectList.get(i);
-            String service = object.getTags().get("com.atlwj.aop.service");
+            String service = object.getTags().get("com.atlwj.service");
             String method = service + "." + object.getTags().get("method");
             String metric = object.getMetric().substring(object.getMetric().lastIndexOf(".") + 1);
             Map map = methodMetricMap.get(method);
@@ -302,23 +302,23 @@ public class MetricsFilterTest {
         }
 
         Assertions.assertEquals(50.0,
-            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService.void sayName()").get("success_bucket_count"));
+            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService.void sayName()").get("success_bucket_count"));
         Assertions.assertEquals(50.0,
-            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService.void echo(Integer)").get("success_bucket_count"));
+            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService.void echo(Integer)").get("success_bucket_count"));
 
         Assertions.assertEquals(50.0,
-            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService.void sayName()").get("timeoutError_bucket_count"));
+            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService.void sayName()").get("timeoutError_bucket_count"));
         Assertions.assertEquals(50.0,
-            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService.void echo(Integer)").get("timeoutError_bucket_count"));
+            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService.void echo(Integer)").get("timeoutError_bucket_count"));
 
         Assertions.assertEquals(100.0 / 15,
-            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService.void sayName()").get("qps"));
+            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService.void sayName()").get("qps"));
         Assertions.assertEquals(100.0 / 15,
-            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService.void echo(Integer)").get("qps"));
+            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService.void echo(Integer)").get("qps"));
 
         Assertions.assertEquals(50.0 / 100.0,
-            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService.void sayName()").get("success_rate"));
+            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService.void sayName()").get("success_rate"));
         Assertions.assertEquals(50.0 / 100.0,
-            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.aop.service.DemoService.void echo(Integer)").get("success_rate"));
+            methodMetricMap.get("org.apache.dubbo.monitor.dubbo.com.atlwj.service.DemoService.void echo(Integer)").get("success_rate"));
     }
 }

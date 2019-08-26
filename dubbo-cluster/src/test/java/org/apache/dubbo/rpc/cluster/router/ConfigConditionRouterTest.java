@@ -84,7 +84,7 @@ public class ConfigConditionRouterTest {
     @Test
     public void normalConditionRuleServiceLevelTest() {
         String serviceStr = "---\n" +
-                "scope: com.atlwj.aop.service\n" +
+                "scope: com.atlwj.service\n" +
                 "force: true\n" +
                 "runtime: true\n" +
                 "enabled: true\n" +
@@ -109,7 +109,7 @@ public class ConfigConditionRouterTest {
     @Test
     public void abnormalNoruleConditionRuleTest() {
         String serviceStr = "---\n" +
-                "scope: com.atlwj.aop.service\n" +
+                "scope: com.atlwj.service\n" +
                 "force: true\n" +
                 "runtime: false\n" +
                 "enabled: true\n" +

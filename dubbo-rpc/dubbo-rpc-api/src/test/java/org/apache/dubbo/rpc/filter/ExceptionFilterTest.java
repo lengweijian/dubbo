@@ -65,7 +65,7 @@ public class ExceptionFilterTest {
             exceptionFilter.listener().onError(e, invoker, invocation);
         }
 
-        Mockito.verify(logger).error(eq("Got unchecked and undeclared exception which called by 127.0.0.1. com.atlwj.aop.service: "
+        Mockito.verify(logger).error(eq("Got unchecked and undeclared exception which called by 127.0.0.1. com.atlwj.service: "
                 + DemoService.class.getName() + ", method: sayHello, exception: "
                 + RpcException.class.getName() + ": TestRpcException"), eq(exception));
         RpcContext.removeContext();

@@ -17,7 +17,7 @@
 package org.apache.dubbo.rpc.service;
 
 /**
- * Echo com.atlwj.aop.service.
+ * Echo com.atlwj.service.
  * @export
  */
 public interface EchoService {
