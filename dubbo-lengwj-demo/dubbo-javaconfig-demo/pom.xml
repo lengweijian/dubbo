@@ -16,38 +16,15 @@
         <module>dubbo-javaconfig-consumer-demo</module>
     </modules>
 
-    <properties>
-        <skip_maven_deploy>true</skip_maven_deploy>
-        <spring-boot-maven-plugin.version>2.1.4.RELEASE</spring-boot-maven-plugin.version>
-    </properties>
-
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <version>${spring-boot-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>repackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-        </plugins>
-    </build>
-
     <dependencies>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
-            <version>5.0.1.RELEASE</version>
+            <version>4.3.12.RELEASE</version>
         </dependency>
-
         <dependency>
             <groupId>org.apache.dubbo</groupId>
-            <artifactId>dubbo-demo-api</artifactId>
+            <artifactId>dubbo-lengwj-api</artifactId>
         </dependency>
     </dependencies>
 </project>

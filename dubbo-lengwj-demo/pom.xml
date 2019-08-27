@@ -13,10 +13,10 @@
     <packaging>pom</packaging>
     <modules>
         <module>dubbo-xml-demo</module>
-        <module>dubbo-demo-api</module>
         <module>dubbo-annotation-demo</module>
         <module>spi-demo</module>
         <module>dubbo-javaconfig-demo</module>
+        <module>dubbo-lengwj-api</module>
     </modules>
 
     <dependencyManagement>
