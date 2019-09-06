@@ -1,0 +1,49 @@
+2019-09-05 07:30:00,078 [myid:] - INFO  [main:QuorumPeerConfig@136] - Reading configuration from: /Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../conf/zoo.cfg
+2019-09-05 07:30:00,083 [myid:] - INFO  [main:DatadirCleanupManager@78] - autopurge.snapRetainCount set to 3
+2019-09-05 07:30:00,083 [myid:] - INFO  [main:DatadirCleanupManager@79] - autopurge.purgeInterval set to 0
+2019-09-05 07:30:00,083 [myid:] - INFO  [main:DatadirCleanupManager@101] - Purge task is not scheduled.
+2019-09-05 07:30:00,083 [myid:] - WARN  [main:QuorumPeerMain@116] - Either no config or no quorum defined in config, running  in standalone mode
+2019-09-05 07:30:00,093 [myid:] - INFO  [main:QuorumPeerConfig@136] - Reading configuration from: /Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../conf/zoo.cfg
+2019-09-05 07:30:00,094 [myid:] - INFO  [main:ZooKeeperServerMain@98] - Starting server
+2019-09-05 07:30:00,101 [myid:] - INFO  [main:Environment@100] - Server environment:zookeeper.version=3.4.14-4c25d480e66aadd371de8bd2fd8da255ac140bcf, built on 03/06/2019 16:18 GMT
+2019-09-05 07:30:00,101 [myid:] - INFO  [main:Environment@100] - Server environment:host.name=localhost
+2019-09-05 07:30:00,101 [myid:] - INFO  [main:Environment@100] - Server environment:java.version=1.8.0_211
+2019-09-05 07:30:00,102 [myid:] - INFO  [main:Environment@100] - Server environment:java.vendor=Oracle Corporation
+2019-09-05 07:30:00,102 [myid:] - INFO  [main:Environment@100] - Server environment:java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_211.jdk/Contents/Home/jre
+2019-09-05 07:30:00,102 [myid:] - INFO  [main:Environment@100] - Server environment:java.class.path=/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../zookeeper-server/target/classes:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../build/classes:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../zookeeper-server/target/lib/*.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../build/lib/*.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../lib/slf4j-log4j12-1.7.25.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../lib/slf4j-api-1.7.25.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../lib/netty-3.10.6.Final.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../lib/log4j-1.2.17.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../lib/jline-0.9.94.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../lib/audience-annotations-0.5.0.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../zookeeper-3.4.14.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../zookeeper-server/src/main/resources/lib/*.jar:/Users/lengweijian/module/zookeeper-home/zookeeper-3.4.14/bin/../conf:
+2019-09-05 07:30:00,102 [myid:] - INFO  [main:Environment@100] - Server environment:java.library.path=/Users/lengweijian/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+2019-09-05 07:30:00,102 [myid:] - INFO  [main:Environment@100] - Server environment:java.io.tmpdir=/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T/
+2019-09-05 07:30:00,102 [myid:] - INFO  [main:Environment@100] - Server environment:java.compiler=<NA>
+2019-09-05 07:30:00,103 [myid:] - INFO  [main:Environment@100] - Server environment:os.name=Mac OS X
+2019-09-05 07:30:00,103 [myid:] - INFO  [main:Environment@100] - Server environment:os.arch=x86_64
+2019-09-05 07:30:00,103 [myid:] - INFO  [main:Environment@100] - Server environment:os.version=10.14.6
+2019-09-05 07:30:00,103 [myid:] - INFO  [main:Environment@100] - Server environment:user.name=root
+2019-09-05 07:30:00,103 [myid:] - INFO  [main:Environment@100] - Server environment:user.home=/var/root
+2019-09-05 07:30:00,103 [myid:] - INFO  [main:Environment@100] - Server environment:user.dir=/Users/lengweijian/workspace/myworkspace/LengWJ-dubbo/dubbo
+2019-09-05 07:30:00,112 [myid:] - INFO  [main:ZooKeeperServer@836] - tickTime set to 2000
+2019-09-05 07:30:00,112 [myid:] - INFO  [main:ZooKeeperServer@845] - minSessionTimeout set to -1
+2019-09-05 07:30:00,113 [myid:] - INFO  [main:ZooKeeperServer@854] - maxSessionTimeout set to -1
+2019-09-05 07:30:00,122 [myid:] - INFO  [main:ServerCnxnFactory@117] - Using org.apache.zookeeper.server.NIOServerCnxnFactory as server connection factory
+2019-09-05 07:30:00,133 [myid:] - INFO  [main:NIOServerCnxnFactory@89] - binding to port 0.0.0.0/0.0.0.0:2181
+2019-09-05 07:30:39,614 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@222] - Accepted socket connection from /127.0.0.1:50232
+2019-09-05 07:30:39,622 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /127.0.0.1:50232
+2019-09-05 07:30:39,624 [myid:] - INFO  [SyncThread:0:FileTxnLog@216] - Creating new log file: log.1
+2019-09-05 07:30:39,638 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x100001849f80000 with negotiated timeout 40000 for client /127.0.0.1:50232
+2019-09-05 07:30:39,784 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@222] - Accepted socket connection from /127.0.0.1:50233
+2019-09-05 07:30:39,785 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x0, likely client has closed socket
+2019-09-05 07:30:39,785 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /127.0.0.1:50233 (no session established for client)
+2019-09-05 07:31:12,848 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@222] - Accepted socket connection from /127.0.0.1:50242
+2019-09-05 07:31:12,860 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /127.0.0.1:50242
+2019-09-05 07:31:12,862 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x100001849f80001 with negotiated timeout 40000 for client /127.0.0.1:50242
+2019-09-05 07:31:13,676 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x100001849f80001
+2019-09-05 07:31:13,677 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /127.0.0.1:50242 which had sessionid 0x100001849f80001
+2019-09-05 07:32:28,426 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x100001849f80000
+2019-09-05 07:32:28,426 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /127.0.0.1:50232 which had sessionid 0x100001849f80000
+2019-09-05 07:32:28,433 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxnFactory@222] - Accepted socket connection from /127.0.0.1:50264
+2019-09-05 07:32:28,433 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:ZooKeeperServer@949] - Client attempting to establish new session at /127.0.0.1:50264
+2019-09-05 07:32:28,434 [myid:] - INFO  [SyncThread:0:ZooKeeperServer@694] - Established session 0x100001849f80002 with negotiated timeout 40000 for client /127.0.0.1:50264
+2019-09-05 07:32:28,437 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@653] - Got user-level KeeperException when processing sessionid:0x100001849f80002 type:delete cxid:0x1 zxid:0x10 txntype:-1 reqpath:n/a Error Path:/dubbo/org.apache.dubbo.demo.DemoService/providers/dubbo%3A%2F%2F192.168.124.9%3A20880%2Forg.apache.dubbo.demo.DemoService%3Fanyhost%3Dtrue%26application%3Ddubbo-demo-annotation-provider%26bean.name%3DServiceBean%3Aorg.apache.dubbo.demo.DemoService%26deprecated%3Dfalse%26dubbo%3D2.0.2%26dynamic%3Dtrue%26generic%3Dfalse%26interface%3Dorg.apache.dubbo.demo.DemoService%26methods%3DsayHello%26pid%3D1476%26register%3Dtrue%26release%3D%26side%3Dprovider%26timestamp%3D1567639839768 Error:KeeperErrorCode = NoNode for /dubbo/org.apache.dubbo.demo.DemoService/providers/dubbo%3A%2F%2F192.168.124.9%3A20880%2Forg.apache.dubbo.demo.DemoService%3Fanyhost%3Dtrue%26application%3Ddubbo-demo-annotation-provider%26bean.name%3DServiceBean%3Aorg.apache.dubbo.demo.DemoService%26deprecated%3Dfalse%26dubbo%3D2.0.2%26dynamic%3Dtrue%26generic%3Dfalse%26interface%3Dorg.apache.dubbo.demo.DemoService%26methods%3DsayHello%26pid%3D1476%26register%3Dtrue%26release%3D%26side%3Dprovider%26timestamp%3D1567639839768
+2019-09-05 07:32:28,814 [myid:] - WARN  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@376] - Unable to read additional data from client sessionid 0x100001849f80002, likely client has closed socket
+2019-09-05 07:32:28,815 [myid:] - INFO  [NIOServerCxn.Factory:0.0.0.0/0.0.0.0:2181:NIOServerCnxn@1056] - Closed socket connection for client /127.0.0.1:50264 which had sessionid 0x100001849f80002
+2019-09-05 07:33:10,346 [myid:] - INFO  [SessionTracker:ZooKeeperServer@355] - Expiring session 0x100001849f80002, timeout of 40000ms exceeded
+2019-09-05 07:33:10,347 [myid:] - INFO  [ProcessThread(sid:0 cport:2181)::PrepRequestProcessor@487] - Processed session termination for sessionid: 0x100001849f80002

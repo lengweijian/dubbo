@@ -1,0 +1,5 @@
+ext01=com.atlwj.service.Impl.ExtHelloServiceImpl
+ext02=com.atlwj.service.Impl.ExtHelloServiceImpl02
+ext03=com.atlwj.service.Impl.ExtHelloServiceImpl03
+com.atlwj.service.wrapper.ExtHelloServiceWrapper
+com.atlwj.service.wrapper.ExtHelloServiceWrapper02
