@@ -66,7 +66,7 @@ public class ConsulRegistry extends FailbackRegistry {
     private static final String URL_META_KEY = "url";
     private static final String WATCH_TIMEOUT = "consul-watch-timeout";
     private static final String CHECK_PASS_INTERVAL = "consul-check-pass-interval";
-    private static final String DEREGISTER_AFTER = "consul-deregister-critical-service-after";
+    private static final String DEREGISTER_AFTER = "consul-deregister-critical-com.atlwj.service-after";
 
     private static final int DEFAULT_PORT = 8500;
     // default watch timeout in millisecond
@@ -202,7 +202,7 @@ public class ConsulRegistry extends FailbackRegistry {
         for (URL url : getRegistered()) {
             String checkId = buildId(url);
             try {
-                client.agentCheckPass("service:" + checkId);
+                client.agentCheckPass("com.atlwj.service:" + checkId);
                 if (logger.isDebugEnabled()) {
                     logger.debug("check pass for url: " + url + " with check id: " + checkId);
                 }
@@ -292,7 +292,7 @@ public class ConsulRegistry extends FailbackRegistry {
     }
 
     private String buildId(URL url) {
-        // let's simply use url's hashcode to generate unique service id for now
+        // let's simply use url's hashcode to generate unique com.atlwj.service id for now
         return Integer.toHexString(url.hashCode());
     }
 

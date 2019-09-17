@@ -110,7 +110,7 @@ public class ServiceBean<T> extends ServiceConfig<T> implements InitializingBean
         System.out.println("onApplicationEvent......");
         if (!isExported() && !isUnexported()) {
             if (logger.isInfoEnabled()) {
-                logger.info("The service ready on spring started. service: " + getInterface());
+                logger.info("The com.atlwj.service ready on spring started. com.atlwj.service: " + getInterface());
             }
             export();
         }

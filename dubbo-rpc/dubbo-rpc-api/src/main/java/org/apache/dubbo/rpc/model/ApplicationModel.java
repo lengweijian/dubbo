@@ -27,8 +27,8 @@ import java.util.concurrent.ConcurrentMap;
  * Represent a application which is using Dubbo and store basic metadata info for using
  * during the processing of RPC invoking.
  *
- * ApplicationModel includes many ProviderModel which is about published services
- * and many Consumer Model which is about subscribed services.
+ * ApplicationModel includes many ProviderModel which is about published dubbo
+ * and many Consumer Model which is about subscribed dubbo.
  *
  * adjust project structure in order to fully utilize the methods introduced here.
  */
@@ -37,11 +37,11 @@ public class ApplicationModel {
     protected static final Logger LOGGER = LoggerFactory.getLogger(ApplicationModel.class);
 
     /**
-     * full qualified class name -> provided service
+     * full qualified class name -> provided com.atlwj.service
      */
     private static final ConcurrentMap<String, ProviderModel> PROVIDED_SERVICES = new ConcurrentHashMap<>();
     /**
-     * full qualified class name -> subscribe service
+     * full qualified class name -> subscribe com.atlwj.service
      */
     private static final ConcurrentMap<String, ConsumerModel> CONSUMED_SERVICES = new ConcurrentHashMap<>();
 

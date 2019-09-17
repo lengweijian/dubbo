@@ -28,7 +28,7 @@ public abstract class AbstractReferenceBuilder<T extends AbstractReferenceConfig
         extends AbstractInterfaceBuilder<T, B> {
 
     /**
-     * Check if service provider exists, if not exists, it will be fast fail
+     * Check if com.atlwj.service provider exists, if not exists, it will be fast fail
      */
     protected Boolean check;
 
@@ -57,12 +57,12 @@ public abstract class AbstractReferenceBuilder<T extends AbstractReferenceConfig
     protected Boolean sticky;
 
     /**
-     * The remote service version the customer side will reference
+     * The remote com.atlwj.service version the customer side will reference
      */
     protected String version;
 
     /**
-     * The remote service group the customer side will reference
+     * The remote com.atlwj.service group the customer side will reference
      */
     protected String group;
 

@@ -23,11 +23,11 @@ import org.apache.dubbo.common.utils.LRUCache;
 import java.util.Map;
 
 /**
- * This class store the cache value per thread. If a service,method,consumer or provided is configured with key <b>cache</b>
+ * This class store the cache value per thread. If a com.atlwj.service,method,consumer or provided is configured with key <b>cache</b>
  * with value <b>lru</b>, dubbo initialize the instance of this class using {@link LruCacheFactory} to store method's returns value
  * to server from store without making method call.
  * <pre>
- *     e.g. 1) &lt;dubbo:service cache="lru" cache.size="5000"/&gt;
+ *     e.g. 1) &lt;dubbo:com.atlwj.service cache="lru" cache.size="5000"/&gt;
  *          2) &lt;dubbo:consumer cache="lru" /&gt;
  * </pre>
  * <pre>

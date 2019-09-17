@@ -40,7 +40,7 @@ public class CuratorZookeeperTransporterTest {
         zkServerPort = NetUtils.getAvailablePort();
         zkServer = new TestingServer(zkServerPort, true);
         zookeeperClient = new CuratorZookeeperTransporter().connect(URL.valueOf("zookeeper://127.0.0.1:" +
-                zkServerPort + "/service"));
+                zkServerPort + "/com.atlwj.service"));
         curatorZookeeperTransporter = new CuratorZookeeperTransporter();
     }
 

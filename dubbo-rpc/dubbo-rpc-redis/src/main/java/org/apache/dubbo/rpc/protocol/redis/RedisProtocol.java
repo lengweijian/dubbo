@@ -63,7 +63,7 @@ public class RedisProtocol extends AbstractProtocol {
 
     @Override
     public <T> Exporter<T> export(final Invoker<T> invoker) throws RpcException {
-        throw new UnsupportedOperationException("Unsupported export redis service. url: " + invoker.getUrl());
+        throw new UnsupportedOperationException("Unsupported export redis com.atlwj.service. url: " + invoker.getUrl());
     }
 
     private Serialization getSerialization(URL url) {
@@ -146,10 +146,10 @@ public class RedisProtocol extends AbstractProtocol {
                             jedis.del(String.valueOf(invocation.getArguments()[0]).getBytes());
                             return AsyncRpcResult.newDefaultAsyncResult(invocation);
                         } else {
-                            throw new UnsupportedOperationException("Unsupported method " + invocation.getMethodName() + " in redis service.");
+                            throw new UnsupportedOperationException("Unsupported method " + invocation.getMethodName() + " in redis com.atlwj.service.");
                         }
                     } catch (Throwable t) {
-                        RpcException re = new RpcException("Failed to invoke redis service method. interface: " + type.getName() + ", method: " + invocation.getMethodName() + ", url: " + url + ", cause: " + t.getMessage(), t);
+                        RpcException re = new RpcException("Failed to invoke redis com.atlwj.service method. interface: " + type.getName() + ", method: " + invocation.getMethodName() + ", url: " + url + ", cause: " + t.getMessage(), t);
                         if (t instanceof TimeoutException || t instanceof SocketTimeoutException) {
                             re.setCode(RpcException.TIMEOUT_EXCEPTION);
                         } else if (t instanceof JedisConnectionException || t instanceof IOException) {
@@ -180,7 +180,7 @@ public class RedisProtocol extends AbstractProtocol {
                 }
             };
         } catch (Throwable t) {
-            throw new RpcException("Failed to refer redis service. interface: " + type.getName() + ", url: " + url + ", cause: " + t.getMessage(), t);
+            throw new RpcException("Failed to refer redis com.atlwj.service. interface: " + type.getName() + ", url: " + url + ", cause: " + t.getMessage(), t);
         }
     }
 

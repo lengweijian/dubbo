@@ -17,7 +17,7 @@
 #
 #
 
-# Application scope, no service means apply to all
+# Application scope, no com.atlwj.service means apply to all
 ---
 configVersion: v2.7
 scope: application

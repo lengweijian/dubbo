@@ -30,9 +30,9 @@ import org.apache.dubbo.rpc.filter.tps.TPSLimiter;
 import static org.apache.dubbo.rpc.Constants.TPS_LIMIT_RATE_KEY;
 
 /**
- * TpsLimitFilter limit the TPS (transaction per second) for all method of a service or a particular method.
+ * TpsLimitFilter limit the TPS (transaction per second) for all method of a com.atlwj.service or a particular method.
  * Service or method url can define <b>tps</b> or <b>tps.interval</b> to control this control.It use {@link DefaultTPSLimiter}
- * as it limit checker. If a provider service method is configured with <b>tps</b>(optionally with <b>tps.interval</b>),then
+ * as it limit checker. If a provider com.atlwj.service method is configured with <b>tps</b>(optionally with <b>tps.interval</b>),then
  * if invocation count exceed the configured <b>tps</b> value (default is -1 which means unlimited) then invocation will get
  * RpcException.
  * */
@@ -46,11 +46,11 @@ public class TpsLimitFilter implements Filter {
 
         if (!tpsLimiter.isAllowable(invoker.getUrl(), invocation)) {
             throw new RpcException(
-                    "Failed to invoke service " +
+                    "Failed to invoke com.atlwj.service " +
                             invoker.getInterface().getName() +
                             "." +
                             invocation.getMethodName() +
-                            " because exceed max service tps.");
+                            " because exceed max com.atlwj.service tps.");
         }
 
         return invoker.invoke(invocation);

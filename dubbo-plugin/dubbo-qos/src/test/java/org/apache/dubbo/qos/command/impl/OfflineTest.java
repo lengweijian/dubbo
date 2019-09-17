@@ -65,6 +65,6 @@ public class OfflineTest {
         }
 
         output = offline.execute(mock(CommandContext.class), new String[]{"org.apache.dubbo.FooService"});
-        assertThat(output, containsString("service not found"));
+        assertThat(output, containsString("com.atlwj.service not found"));
     }
 }

@@ -107,7 +107,7 @@ public class InvokerSideConfigUrlTest extends UrlTestBase {
             {"actives", "actives", "int", 0, 30, "", "", "", "", ""},
             {"cluster", "cluster", "string", "failover", "failfast", "failsafe", "failback", "forking", "", ""},
             //excluded = true
-//            {"filter", "service.filter", "string", "default", "-generic", "", "", "", "", ""},
+//            {"filter", "com.atlwj.service.filter", "string", "default", "-generic", "", "", "", "", ""},
             //excluded = true
 //            {"listener", "exporter.listener", "string", "default", "-deprecated", "", "", "", "", ""},
             //{"", "", "", "", "", "", "", "", "", ""},

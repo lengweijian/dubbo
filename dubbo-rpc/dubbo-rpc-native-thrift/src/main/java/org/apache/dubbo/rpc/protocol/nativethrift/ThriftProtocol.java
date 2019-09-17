@@ -164,7 +164,7 @@ public class ThriftProtocol extends AbstractProxyProtocol {
                     TMultiplexedProtocol protocol = new TMultiplexedProtocol(tprotocol,typeName);
                     thriftClient = (T) constructor.newInstance(protocol);
                     transport.open();
-                    logger.info("nativethrift client opened for service(" + url + ")");
+                    logger.info("nativethrift client opened for com.atlwj.service(" + url + ")");
                 } catch (Exception e) {
                     logger.error(e.getMessage(), e);
                     throw new RpcException("Fail to create remote client:" + e.getMessage(), e);
@@ -173,7 +173,7 @@ public class ThriftProtocol extends AbstractProxyProtocol {
             return thriftClient;
         } catch (Exception e) {
             logger.error(e.getMessage(), e);
-            throw new RpcException("Fail to create remote client for service(" + url + "): " + e.getMessage(), e);
+            throw new RpcException("Fail to create remote client for com.atlwj.service(" + url + "): " + e.getMessage(), e);
         }
     }
 

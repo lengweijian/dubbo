@@ -63,7 +63,7 @@ public class RegistryBuilder extends AbstractBuilder<RegistryConfig, RegistryBui
     private String cluster;
 
     /**
-     * The group the services registry in
+     * The group the dubbo registry in
      */
     private String group;
 
@@ -95,17 +95,17 @@ public class RegistryBuilder extends AbstractBuilder<RegistryConfig, RegistryBui
     private Boolean check;
 
     /**
-     * Whether to allow dynamic service to register on the register center
+     * Whether to allow dynamic com.atlwj.service to register on the register center
      */
     private Boolean dynamic;
 
     /**
-     * Whether to export service on the register center
+     * Whether to export com.atlwj.service on the register center
      */
     private Boolean register;
 
     /**
-     * Whether allow to subscribe service on the register center
+     * Whether allow to subscribe com.atlwj.service on the register center
      */
     private Boolean subscribe;
 

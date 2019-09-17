@@ -282,7 +282,7 @@ public class ValidationTest {
                     validationService.$invoke("save", new String[]{ValidationParameter.class.getName()}, new Object[]{parameter});
                     Assertions.fail();
                 } catch (GenericException e) {
-                    Assertions.assertTrue(e.getMessage().contains("Failed to validate service"));
+                    Assertions.assertTrue(e.getMessage().contains("Failed to validate com.atlwj.service"));
                 }
 
                 // Delete OK
@@ -293,22 +293,22 @@ public class ValidationTest {
                     validationService.$invoke("delete", new String[]{long.class.getName(), String.class.getName()}, new Object[]{0, "abc"});
                     Assertions.fail();
                 } catch (GenericException e) {
-                    Assertions.assertTrue(e.getMessage().contains("Failed to validate service"));
+                    Assertions.assertTrue(e.getMessage().contains("Failed to validate com.atlwj.service"));
                 }
                 try {
                     validationService.$invoke("delete", new String[]{long.class.getName(), String.class.getName()}, new Object[]{2, null});
                     Assertions.fail();
                 } catch (GenericException e) {
-                    Assertions.assertTrue(e.getMessage().contains("Failed to validate service"));
+                    Assertions.assertTrue(e.getMessage().contains("Failed to validate com.atlwj.service"));
                 }
                 try {
                     validationService.$invoke("delete", new String[]{long.class.getName(), String.class.getName()}, new Object[]{0, null});
                     Assertions.fail();
                 } catch (GenericException e) {
-                    Assertions.assertTrue(e.getMessage().contains("Failed to validate service"));
+                    Assertions.assertTrue(e.getMessage().contains("Failed to validate com.atlwj.service"));
                 }
             } catch (GenericException e) {
-                Assertions.assertTrue(e.getMessage().contains("Failed to validate service"));
+                Assertions.assertTrue(e.getMessage().contains("Failed to validate com.atlwj.service"));
             } finally {
                 reference.destroy();
             }

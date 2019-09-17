@@ -78,7 +78,7 @@ public class RegistryConfig extends AbstractConfig {
     private String cluster;
 
     /**
-     * The group the services registry in
+     * The group the dubbo registry in
      */
     private String group;
 

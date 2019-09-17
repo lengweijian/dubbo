@@ -30,8 +30,8 @@
     <!-- protocol configuration -->
     <dubbo:protocol name="dubbo" port="20813"/>
 
-    <!-- service configuration -->
-    <dubbo:service interface="org.apache.dubbo.config.spring.api.DemoService" ref="demoService"/>
+    <!-- com.atlwj.service configuration -->
+    <dubbo:com.atlwj.service interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService" ref="demoService"/>
 
     <bean id="demoService" class="org.apache.dubbo.config.spring.impl.UnserializableBoxDemoServiceImpl"/>
 

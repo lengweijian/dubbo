@@ -42,7 +42,7 @@ import static org.apache.dubbo.rpc.cluster.Constants.FAIL_BACK_TASKS_KEY;
 
 /**
  * When fails, record failure requests and schedule for retry on a regular interval.
- * Especially useful for services of notification.
+ * Especially useful for dubbo of notification.
  *
  * <a href="http://en.wikipedia.org/wiki/Failback">Failback</a>
  */

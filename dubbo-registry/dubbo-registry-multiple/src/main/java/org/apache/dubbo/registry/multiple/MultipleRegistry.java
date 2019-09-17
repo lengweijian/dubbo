@@ -41,7 +41,7 @@ import static org.apache.dubbo.common.constants.RegistryConstants.EMPTY_PROTOCOL
  */
 public class MultipleRegistry extends AbstractRegistry {
 
-    public static final String REGISTRY_FOR_SERVICE = "service-registry";
+    public static final String REGISTRY_FOR_SERVICE = "com.atlwj.service-registry";
     public static final String REGISTRY_FOR_REFERENCE = "reference-registry";
 
     protected RegistryFactory registryFactory = ExtensionLoader.getExtensionLoader(RegistryFactory.class).getAdaptiveExtension();

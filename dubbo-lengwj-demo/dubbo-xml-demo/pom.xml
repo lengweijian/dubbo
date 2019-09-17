@@ -27,6 +27,19 @@
         <spring-boot-maven-plugin.version>2.1.4.RELEASE</spring-boot-maven-plugin.version>
     </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-xml-api</artifactId>
+            <version>2.7.4-SNAPSHOT</version>
+            <scope>compile</scope>
+        </dependency>
+    </dependencies>
+    <properties>
+        <skip_maven_deploy>true</skip_maven_deploy>
+        <spring-boot-maven-plugin.version>2.1.4.RELEASE</spring-boot-maven-plugin.version>
+    </properties>
+
 
     <build>
         <plugins>

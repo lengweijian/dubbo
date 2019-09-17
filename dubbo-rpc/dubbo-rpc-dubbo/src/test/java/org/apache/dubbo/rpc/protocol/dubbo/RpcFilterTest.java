@@ -41,7 +41,7 @@ public class RpcFilterTest {
     @Test
     public void testRpcFilter() throws Exception {
         DemoService service = new DemoServiceImpl();
-        URL url = URL.valueOf("dubbo://127.0.0.1:9010/org.apache.dubbo.rpc.DemoService?service.filter=echo");
+        URL url = URL.valueOf("dubbo://127.0.0.1:9010/org.apache.dubbo.rpc.DemoService?com.atlwj.service.filter=echo");
         protocol.export(proxy.getInvoker(service, DemoService.class, url));
         service = proxy.getProxy(protocol.refer(DemoService.class, url));
         Assertions.assertEquals("123", service.echo("123"));

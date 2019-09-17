@@ -32,7 +32,7 @@ import static org.apache.dubbo.common.constants.CommonConstants.TIMEOUT_KEY;
 import static org.apache.dubbo.rpc.Constants.ACTIVES_KEY;
 
 /**
- * ActiveLimitFilter restrict the concurrent client invocation for a service or service's method from client side.
+ * ActiveLimitFilter restrict the concurrent client invocation for a com.atlwj.service or com.atlwj.service's method from client side.
  * To use active limit filter, configured url with <b>actives</b> and provide valid >0 integer value.
  * <pre>
  *     e.g. <dubbo:reference id="demoService" check="false" interface="org.apache.dubbo.demo.DemoService" "actives"="2"/>
@@ -73,7 +73,7 @@ public class ActiveLimitFilter extends ListenableFilter {
                     remain = timeout - elapsed;
                     if (remain <= 0) {
                         throw new RpcException(RpcException.LIMIT_EXCEEDED_EXCEPTION,
-                                "Waiting concurrent invoke timeout in client-side for service:  " +
+                                "Waiting concurrent invoke timeout in client-side for com.atlwj.service:  " +
                                         invoker.getInterface().getName() + ", method: " + invocation.getMethodName() +
                                         ", elapsed: " + elapsed + ", timeout: " + timeout + ". concurrent invokes: " +
                                         rpcStatus.getActive() + ". max concurrent invoke limit: " + max);

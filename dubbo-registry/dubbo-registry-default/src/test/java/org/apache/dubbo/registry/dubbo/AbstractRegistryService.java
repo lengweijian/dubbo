@@ -39,26 +39,26 @@ public abstract class AbstractRegistryService implements RegistryService {
     // Log output
     protected final Logger logger = LoggerFactory.getLogger(getClass());
 
-    // Registered services
+    // Registered dubbo
     // Map<serviceName, Map<url, queryString>>
     private final ConcurrentMap<String, List<URL>> registered = new ConcurrentHashMap<String, List<URL>>();
 
-    // Subscribed services
+    // Subscribed dubbo
     // Map<serviceName, queryString>
     private final ConcurrentMap<String, Map<String, String>> subscribed = new ConcurrentHashMap<String, Map<String, String>>();
 
-    // Notified services
+    // Notified dubbo
     // Map<serviceName, Map<url, queryString>>
     private final ConcurrentMap<String, List<URL>> notified = new ConcurrentHashMap<String, List<URL>>();
 
-    // Listeners list for subscribed services
+    // Listeners list for subscribed dubbo
     // Map<serviceName, List<notificationListener>>
     private final ConcurrentMap<String, List<NotifyListener>> notifyListeners = new ConcurrentHashMap<String, List<NotifyListener>>();
 
     @Override
     public void register(URL url) {
         if (logger.isInfoEnabled()) {
-            logger.info("Register service: " + url.getServiceKey() + ",url:" + url);
+            logger.info("Register com.atlwj.service: " + url.getServiceKey() + ",url:" + url);
         }
         register(url.getServiceKey(), url);
     }
@@ -66,7 +66,7 @@ public abstract class AbstractRegistryService implements RegistryService {
     @Override
     public void unregister(URL url) {
         if (logger.isInfoEnabled()) {
-            logger.info("Unregister service: " + url.getServiceKey() + ",url:" + url);
+            logger.info("Unregister com.atlwj.service: " + url.getServiceKey() + ",url:" + url);
         }
         unregister(url.getServiceKey(), url);
     }
@@ -74,7 +74,7 @@ public abstract class AbstractRegistryService implements RegistryService {
     @Override
     public void subscribe(URL url, NotifyListener listener) {
         if (logger.isInfoEnabled()) {
-            logger.info("Subscribe service: " + url.getServiceKey() + ",url:" + url);
+            logger.info("Subscribe com.atlwj.service: " + url.getServiceKey() + ",url:" + url);
         }
         subscribe(url.getServiceKey(), url, listener);
     }
@@ -82,7 +82,7 @@ public abstract class AbstractRegistryService implements RegistryService {
     @Override
     public void unsubscribe(URL url, NotifyListener listener) {
         if (logger.isInfoEnabled()) {
-            logger.info("Unsubscribe service: " + url.getServiceKey() + ",url:" + url);
+            logger.info("Unsubscribe com.atlwj.service: " + url.getServiceKey() + ",url:" + url);
         }
         unsubscribe(url.getServiceKey(), url, listener);
     }
@@ -94,7 +94,7 @@ public abstract class AbstractRegistryService implements RegistryService {
 
     public void register(String service, URL url) {
         if (service == null) {
-            throw new IllegalArgumentException("service == null");
+            throw new IllegalArgumentException("com.atlwj.service == null");
         }
         if (url == null) {
             throw new IllegalArgumentException("url == null");
@@ -111,7 +111,7 @@ public abstract class AbstractRegistryService implements RegistryService {
 
     public void unregister(String service, URL url) {
         if (service == null) {
-            throw new IllegalArgumentException("service == null");
+            throw new IllegalArgumentException("com.atlwj.service == null");
         }
         if (url == null) {
             throw new IllegalArgumentException("url == null");
@@ -133,7 +133,7 @@ public abstract class AbstractRegistryService implements RegistryService {
 
     public void subscribe(String service, URL url, NotifyListener listener) {
         if (service == null) {
-            throw new IllegalArgumentException("service == null");
+            throw new IllegalArgumentException("com.atlwj.service == null");
         }
         if (url == null) {
             throw new IllegalArgumentException("parameters == null");
@@ -147,7 +147,7 @@ public abstract class AbstractRegistryService implements RegistryService {
 
     public void unsubscribe(String service, URL url, NotifyListener listener) {
         if (service == null) {
-            throw new IllegalArgumentException("service == null");
+            throw new IllegalArgumentException("com.atlwj.service == null");
         }
         if (url == null) {
             throw new IllegalArgumentException("parameters == null");
@@ -159,7 +159,7 @@ public abstract class AbstractRegistryService implements RegistryService {
         removeListener(service, listener);
     }
 
-    //The listener of the consumer and the provider can be stored together, all based on the service name
+    //The listener of the consumer and the provider can be stored together, all based on the com.atlwj.service name
     private void addListener(final String service, final NotifyListener listener) {
         if (listener == null) {
             return;
@@ -192,7 +192,7 @@ public abstract class AbstractRegistryService implements RegistryService {
                 try {
                     notify(service, urls, listener);
                 } catch (Throwable t) {
-                    logger.error("Failed to notify registry event, service: " + service + ", urls: " + urls + ", cause: " + t.getMessage(), t);
+                    logger.error("Failed to notify registry event, com.atlwj.service: " + service + ", urls: " + urls + ", cause: " + t.getMessage(), t);
                 }
             }
         }

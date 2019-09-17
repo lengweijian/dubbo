@@ -69,7 +69,7 @@ public class SimpleRegistryService extends AbstractRegistryService {
     public void subscribe(String service, URL url, NotifyListener listener) {
         String client = RpcContext.getContext().getRemoteAddressString();
         if (logger.isInfoEnabled()) {
-            logger.info("[subscribe] service: " + service + ",client:" + client);
+            logger.info("[subscribe] com.atlwj.service: " + service + ",client:" + client);
         }
         List<URL> urls = getRegistered().get(service);
         if ((RegistryService.class.getName() + ":0.0.0").equals(service)

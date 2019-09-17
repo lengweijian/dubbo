@@ -72,7 +72,7 @@ public interface Constants {
 
     String INVOKER_LISTENER_KEY = "invoker.listener";
 
-    String SERVICE_FILTER_KEY = "service.filter";
+    String SERVICE_FILTER_KEY = "com.atlwj.service.filter";
 
     String EXPORTER_LISTENER_KEY = "exporter.listener";
 
@@ -109,12 +109,12 @@ public interface Constants {
     String INPUT_KEY = "input";
     String OUTPUT_KEY = "output";
     /**
-     * The limit of callback service instances for one interface on every client
+     * The limit of callback com.atlwj.service instances for one interface on every client
      */
     String CALLBACK_INSTANCES_LIMIT_KEY = "callbacks";
 
     /**
-     * The default limit number for callback service instances
+     * The default limit number for callback com.atlwj.service instances
      *
      * @see #CALLBACK_INSTANCES_LIMIT_KEY
      */

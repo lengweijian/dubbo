@@ -51,7 +51,7 @@ import static org.springframework.util.StringUtils.hasText;
 
 /**
  * {@link org.springframework.beans.factory.config.BeanPostProcessor} implementation
- * that Consumer service {@link Reference} annotated fields
+ * that Consumer com.atlwj.service {@link Reference} annotated fields
  *
  * @since 2.5.7
  */

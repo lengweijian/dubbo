@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * {@link DemoService} provider demo
  */
-@EnableDubbo(scanBasePackages = "org.apache.dubbo.demo.service")
+@EnableDubbo(scanBasePackages = "org.apache.dubbo.demo.com.atlwj.service")
 @PropertySource(value = "classpath:/provider-config.properties")
 public class DemoServiceProviderBootstrap {
 

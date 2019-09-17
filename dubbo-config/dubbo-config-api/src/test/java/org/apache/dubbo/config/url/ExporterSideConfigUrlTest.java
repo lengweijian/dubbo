@@ -81,7 +81,7 @@ public class ExporterSideConfigUrlTest extends UrlTestBase {
         ////////////////////////////////////////////////////////////
         fillConfigs(config, dataTable, TESTVALUE1);
 
-        // 2. export service and get url parameter string from db
+        // 2. export com.atlwj.service and get url parameter string from db
         ////////////////////////////////////////////////////////////
         servConf.export();
         String paramStringFromDb = getProviderParamString();
@@ -95,7 +95,7 @@ public class ExporterSideConfigUrlTest extends UrlTestBase {
         assertUrlStringWithLocalTable(paramStringFromDb, dataTable, config.getClass().getName(), TESTVALUE1);
 
 
-        // 4. unexport service
+        // 4. unexport com.atlwj.service
         ////////////////////////////////////////////////////////////
         servConf.unexport();
     }

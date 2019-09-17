@@ -32,7 +32,7 @@ import static org.apache.dubbo.rpc.Constants.EXECUTES_KEY;
 
 /**
  *
- * The maximum parallel execution request count per method per service for the provider.If the max configured
+ * The maximum parallel execution request count per method per com.atlwj.service for the provider.If the max configured
  * <b>executes</b> is set to 10 and if invoke request where it is already 10 then it will throws exception. It
  * continue the same behaviour un till it is <10.
  *
@@ -54,7 +54,7 @@ public class ExecuteLimitFilter extends ListenableFilter {
         if (!RpcStatus.beginCount(url, methodName, max)) {
             throw new RpcException(RpcException.LIMIT_EXCEEDED_EXCEPTION,
                     "Failed to invoke method " + invocation.getMethodName() + " in provider " +
-                            url + ", cause: The service using threads greater than <dubbo:service executes=\"" + max +
+                            url + ", cause: The com.atlwj.service using threads greater than <dubbo:com.atlwj.service executes=\"" + max +
                             "\" /> limited.");
         }
 

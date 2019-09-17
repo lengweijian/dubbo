@@ -42,8 +42,8 @@ import static org.apache.dubbo.common.utils.PojoUtils.realize;
  * InvokeTelnetHandler
  */
 @Activate
-@Help(parameter = "[service.]method(args) ", summary = "Invoke the service method.",
-        detail = "Invoke the service method.")
+@Help(parameter = "[com.atlwj.service.]method(args) ", summary = "Invoke the com.atlwj.service method.",
+        detail = "Invoke the com.atlwj.service method.")
 public class InvokeTelnetHandler implements TelnetHandler {
 
     public static final String INVOKE_MESSAGE_KEY = "telnet.invoke.method.message";
@@ -64,7 +64,7 @@ public class InvokeTelnetHandler implements TelnetHandler {
         int i = message.indexOf("(");
 
         if (i < 0 || !message.endsWith(")")) {
-            return "Invalid parameters, format: service.method(args)";
+            return "Invalid parameters, format: com.atlwj.service.method(args)";
         }
 
         String method = message.substring(0, i).trim();
@@ -117,7 +117,7 @@ public class InvokeTelnetHandler implements TelnetHandler {
 
 
         if (!StringUtils.isEmpty(service)) {
-            buf.append("Use default service ").append(service).append(".");
+            buf.append("Use default com.atlwj.service ").append(service).append(".");
         }
         if (selectedProvider != null) {
             if (invokeMethod != null) {
@@ -142,10 +142,10 @@ public class InvokeTelnetHandler implements TelnetHandler {
                     return "Failed to invoke method " + invokeMethod.getName() + ", cause: " + StringUtils.toString(t);
                 }
             } else {
-                buf.append("\r\nNo such method ").append(method).append(" in service ").append(service);
+                buf.append("\r\nNo such method ").append(method).append(" in com.atlwj.service ").append(service);
             }
         } else {
-            buf.append("\r\nNo such service ").append(service);
+            buf.append("\r\nNo such com.atlwj.service ").append(service);
         }
         return buf.toString();
     }

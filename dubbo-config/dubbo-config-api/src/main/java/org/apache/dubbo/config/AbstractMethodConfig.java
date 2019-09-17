@@ -69,10 +69,10 @@ public abstract class AbstractMethodConfig extends AbstractConfig {
     protected Boolean sent;
 
     /**
-     * The name of mock class which gets called when a service fails to execute
+     * The name of mock class which gets called when a com.atlwj.service fails to execute
      *
      * note that: the mock doesn't support on the provider side，and the mock is executed when a non-business exception
-     * occurs after a remote service call
+     * occurs after a remote com.atlwj.service call
      */
     protected String mock;
 

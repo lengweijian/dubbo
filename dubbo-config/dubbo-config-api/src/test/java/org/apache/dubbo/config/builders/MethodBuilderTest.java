@@ -145,8 +145,8 @@ class MethodBuilderTest {
     @Test
     void service() {
         MethodBuilder builder = new MethodBuilder();
-        builder.service("service");
-        Assertions.assertEquals("service", builder.build().getService());
+        builder.service("com.atlwj.service");
+        Assertions.assertEquals("com.atlwj.service", builder.build().getService());
     }
 
     @Test
@@ -161,7 +161,7 @@ class MethodBuilderTest {
         ArgumentConfig argument = new ArgumentConfig();
         MethodBuilder builder = new MethodBuilder();
         builder.name("name").stat(1).retry(true).reliable(false).executes(2).deprecated(true).sticky(false)
-                .isReturn(true).oninvoke("on-invoke-object").oninvokeMethod("on-invoke-method").service("service")
+                .isReturn(true).oninvoke("on-invoke-object").oninvokeMethod("on-invoke-method").service("com.atlwj.service")
                 .onreturn("on-return-object").onreturnMethod("on-return-method").serviceId("serviceId")
                 .onthrow("on-throw-object").onthrowMethod("on-throw-method").addArgument(argument);
 
@@ -182,7 +182,7 @@ class MethodBuilderTest {
         Assertions.assertEquals("on-throw-object", config.getOnthrow());
         Assertions.assertEquals("on-throw-method", config.getOnthrowMethod());
         Assertions.assertEquals("name", config.getName());
-        Assertions.assertEquals("service", config.getService());
+        Assertions.assertEquals("com.atlwj.service", config.getService());
         Assertions.assertEquals("serviceId", config.getServiceId());
         Assertions.assertNotSame(config, config2);
     }

@@ -76,7 +76,7 @@ public abstract class AbstractProtocol implements Protocol {
             if (exporter != null) {
                 try {
                     if (logger.isInfoEnabled()) {
-                        logger.info("Unexport service: " + exporter.getInvoker().getUrl());
+                        logger.info("Unexport com.atlwj.service: " + exporter.getInvoker().getUrl());
                     }
                     exporter.unexport();
                 } catch (Throwable t) {

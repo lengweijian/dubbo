@@ -98,7 +98,7 @@ public class ConfigTest {
 
     @Test
     public void testServiceClass() {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/service-class.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/com.atlwj.service-class.xml");
         ctx.start();
         try {
             DemoService demoService = refer("dubbo://127.0.0.1:30887");
@@ -130,7 +130,7 @@ public class ConfigTest {
     @Test
     @SuppressWarnings("unchecked")
     public void testProviderNestedService() {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/provider-nested-service.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/provider-nested-com.atlwj.service.xml");
         ctx.start();
         try {
             ServiceConfig<DemoService> serviceConfig = (ServiceConfig<DemoService>) ctx.getBean("serviceConfig");
@@ -372,7 +372,7 @@ public class ConfigTest {
             List<URL> urls = service.toUrls();
             assertNotNull(urls);
             assertEquals(1, urls.size());
-            assertEquals("classloader,monitor,accesslog,trace", urls.get(0).getParameter("service.filter"));
+            assertEquals("classloader,monitor,accesslog,trace", urls.get(0).getParameter("com.atlwj.service.filter"));
 
             ConsumerConfig consumer = new ConsumerConfig();
             consumer.setFilter("classloader,monitor");
@@ -423,7 +423,7 @@ public class ConfigTest {
         ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/demo-provider-no-methods-interface.xml");
         ctx.start();
         try {
-            ServiceBean bean = (ServiceBean) ctx.getBean("service");
+            ServiceBean bean = (ServiceBean) ctx.getBean("com.atlwj.service");
             List<URL> urls = bean.getExportedUrls();
             assertEquals(1, urls.size());
             URL url = urls.get(0);
@@ -659,7 +659,7 @@ public class ConfigTest {
         System.setProperty("dubbo.registry.address", "N/A");
         System.setProperty("dubbo.protocol.name", "dubbo");
         System.setProperty("dubbo.protocol.port", "20819");
-        System.setProperty("dubbo.service.register", "false");
+        System.setProperty("dubbo.com.atlwj.service.register", "false");
         ClassPathXmlApplicationContext providerContext = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/system-properties-override.xml");
         providerContext.start();
         try {
@@ -678,7 +678,7 @@ public class ConfigTest {
             System.setProperty("dubbo.registry.address", "");
             System.setProperty("dubbo.protocol.name", "");
             System.setProperty("dubbo.protocol.port", "");
-            System.setProperty("dubbo.service.register", "");
+            System.setProperty("dubbo.com.atlwj.service.register", "");
             providerContext.stop();
             providerContext.close();
         }
@@ -833,7 +833,7 @@ public class ConfigTest {
         ServiceBean<DemoService> serviceBean = (ServiceBean<DemoService>) context.getBean("demoServiceExport");
         URL url = (URL) serviceBean.toUrls().get(0);
         assertEquals("protocol-paramA", url.getParameter("protocol.paramA"));
-        assertEquals("service-paramA", url.getParameter("service.paramA"));
+        assertEquals("com.atlwj.service-paramA", url.getParameter("com.atlwj.service.paramA"));
     }
 
     @Test

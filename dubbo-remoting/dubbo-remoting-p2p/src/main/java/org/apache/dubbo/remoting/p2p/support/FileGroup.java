@@ -41,7 +41,7 @@ import java.util.concurrent.TimeUnit;
 public class FileGroup extends AbstractGroup {
 
     private final File file;
-    // Scheduled executor service
+    // Scheduled executor com.atlwj.service
     private final ScheduledExecutorService scheduledExecutorService = Executors.newScheduledThreadPool(3, new NamedThreadFactory("FileGroupModifiedChecker", true));
     // Reconnect the timer to check whether the connection is available at a time, and when unavailable, an infinite reconnection
     private final ScheduledFuture<?> checkModifiedFuture;

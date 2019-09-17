@@ -24,7 +24,7 @@
     <artifactId>dubbo-configcenter</artifactId>
     <packaging>pom</packaging>
     <name>${project.artifactId}</name>
-    <description>The service config-center module of the Dubbo project</description>
+    <description>The com.atlwj.service config-center module of the Dubbo project</description>
     <properties>
         <skip_maven_deploy>false</skip_maven_deploy>
     </properties>

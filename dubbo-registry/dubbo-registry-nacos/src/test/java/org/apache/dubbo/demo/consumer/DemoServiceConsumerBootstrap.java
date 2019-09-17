@@ -34,7 +34,7 @@ import java.util.concurrent.TimeUnit;
 @PropertySource(value = "classpath:/consumer-config.properties")
 public class DemoServiceConsumerBootstrap {
 
-    @Reference(version = "${demo.service.version}")
+    @Reference(version = "${demo.com.atlwj.service.version}")
     private DemoService demoService;
 
     @PostConstruct

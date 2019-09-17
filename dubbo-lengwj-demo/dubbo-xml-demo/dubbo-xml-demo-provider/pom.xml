@@ -11,6 +11,7 @@
 
     <artifactId>dubbo-xml-demo-provider</artifactId>
 
+
     <properties>
         <skip_maven_deploy>true</skip_maven_deploy>
         <slf4j-log4j12.version>1.7.25</slf4j-log4j12.version>

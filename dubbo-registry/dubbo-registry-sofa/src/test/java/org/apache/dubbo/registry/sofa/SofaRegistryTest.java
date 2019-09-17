@@ -114,7 +114,7 @@ public class SofaRegistryTest {
         HelloService service2 = referenceConfig2.get();
         Assertions.assertEquals("rrr11", service2.sayHello("xxx"));
 
-        // export one service
+        // export one com.atlwj.service
         ServiceConfig<HelloService> serviceConfig3 = new ServiceConfig<>();
         serviceConfig3.setInterface(HelloService.class);
         serviceConfig3.setRef(new HelloServiceImpl("rrr12"));
@@ -129,7 +129,7 @@ public class SofaRegistryTest {
         referenceConfig1.destroy();
         Assertions.assertTrue(service2.sayHello("xxx").startsWith("rrr1"));
 
-        // unexport one service
+        // unexport one com.atlwj.service
         serviceConfig1.unexport();
         Thread.sleep(2000);
         Assertions.assertTrue(service2.sayHello("xxx").startsWith("rrr1"));

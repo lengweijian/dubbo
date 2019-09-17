@@ -20,7 +20,7 @@ import org.apache.dubbo.common.URL;
 import org.apache.dubbo.rpc.Invocation;
 
 /**
- * Provide boolean information whether a invocation of a provider service's methods or a particular method
+ * Provide boolean information whether a invocation of a provider com.atlwj.service's methods or a particular method
  * is allowed within a last invocation and current invocation.
  * <pre>
  *     e.g. if tps for a method m1 is 5 for a minute then if 6th call is made within the span of 1 minute then 6th

@@ -34,13 +34,13 @@ public abstract class AbstractExporter<T> implements Exporter<T> {
 
     public AbstractExporter(Invoker<T> invoker) {
         if (invoker == null) {
-            throw new IllegalStateException("service invoker == null");
+            throw new IllegalStateException("com.atlwj.service invoker == null");
         }
         if (invoker.getInterface() == null) {
-            throw new IllegalStateException("service type == null");
+            throw new IllegalStateException("com.atlwj.service type == null");
         }
         if (invoker.getUrl() == null) {
-            throw new IllegalStateException("service url == null");
+            throw new IllegalStateException("com.atlwj.service url == null");
         }
         this.invoker = invoker;
     }

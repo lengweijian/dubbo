@@ -22,13 +22,13 @@ import java.util.Map;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParametersTest {
-    final String ServiceName = "org.apache.dubbo.rpc.service.GenericService";
+    final String ServiceName = "org.apache.dubbo.rpc.com.atlwj.service.GenericService";
     final String ServiceVersion = "1.0.15";
     final String LoadBalance = "lcr";
 
     public void testMap2Parameters() throws Exception {
         Map<String, String> map = new HashMap<String, String>();
-        map.put("name", "org.apache.dubbo.rpc.service.GenericService");
+        map.put("name", "org.apache.dubbo.rpc.com.atlwj.service.GenericService");
         map.put("version", "1.0.15");
         map.put("lb", "lcr");
         map.put("max.active", "500");
@@ -38,7 +38,7 @@ public class ParametersTest {
     }
 
     public void testString2Parameters() throws Exception {
-        String qs = "name=org.apache.dubbo.rpc.service.GenericService&version=1.0.15&lb=lcr";
+        String qs = "name=org.apache.dubbo.rpc.com.atlwj.service.GenericService&version=1.0.15&lb=lcr";
         Map<String, String> map = StringUtils.parseQueryString(qs);
         assertEquals(map.get("name"), ServiceName);
         assertEquals(map.get("version"), ServiceVersion);

@@ -86,6 +86,11 @@ import static org.apache.dubbo.common.constants.CommonConstants.VERSION_KEY;
  *
  * @see java.net.URL
  * @see java.net.URI
+ *
+ * /dubbo/com.atlwj.service.HelloService/consumers/consumer://192.16.2.147/
+ * com.atlwj.service.HelloService?application=dubbo-xml-demo-consumer&category=consumers
+ * &check=false&dubbo=2.0.2&interface=com.atlwj.service.HelloService&lazy=false&methods=sayHello
+ * &pid=3218&revision=1.0.0&side=consumer&sticky=false&timestamp=1566811938000&version=1.0.0
  */
 public /*final**/
 class URL implements Serializable {

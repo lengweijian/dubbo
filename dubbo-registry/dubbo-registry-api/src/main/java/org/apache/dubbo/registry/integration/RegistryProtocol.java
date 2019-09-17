@@ -125,7 +125,7 @@ public class RegistryProtocol implements Protocol {
     private final Map<URL, NotifyListener> overrideListeners = new ConcurrentHashMap<>();
     private final Map<String, ServiceConfigurationListener> serviceConfigurationListeners = new ConcurrentHashMap<>();
     private final ProviderConfigurationListener providerConfigurationListener = new ProviderConfigurationListener();
-    //To solve the problem of RMI repeated exposure port conflicts, the services that have been exposed are no longer exposed.
+    //To solve the problem of RMI repeated exposure port conflicts, the dubbo that have been exposed are no longer exposed.
     //providerurl <--> exporter
     private final ConcurrentMap<String, ExporterChangeableWrapper<?>> bounds = new ConcurrentHashMap<>();
     private Cluster cluster;
@@ -198,8 +198,8 @@ public class RegistryProtocol implements Protocol {
         URL providerUrl = getProviderUrl(originInvoker);
 
         // Subscribe the override data
-        // FIXME When the provider subscribes, it will affect the scene : a certain JVM exposes the service and call
-        //  the same service. Because the subscribed is cached key with the name of the service, it causes the
+        // FIXME When the provider subscribes, it will affect the scene : a certain JVM exposes the com.atlwj.service and call
+        //  the same com.atlwj.service. Because the subscribed is cached key with the name of the com.atlwj.service, it causes the
         //  subscription information to cover.
         final URL overrideSubscribeUrl = getSubscribedOverrideUrl(providerUrl);
         final OverrideListener overrideSubscribeListener = new OverrideListener(overrideSubscribeUrl, originInvoker);
@@ -577,7 +577,7 @@ public class RegistryProtocol implements Protocol {
                     overrideUrl = url.addParameter(CATEGORY_KEY, CONFIGURATORS_CATEGORY);
                 }
 
-                // Check whether url is to be applied to the current service
+                // Check whether url is to be applied to the current com.atlwj.service
                 if (UrlUtils.isMatch(currentSubscribe, overrideUrl)) {
                     result.add(url);
                 }

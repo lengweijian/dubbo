@@ -20,7 +20,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
     http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <dubbo:application name="service-class"/>
+    <dubbo:application name="com.atlwj.service-class"/>
 
     <dubbo:registry address="N/A"/>
 
@@ -28,15 +28,15 @@
 
     <dubbo:provider timeout="2000"/>
 
-    <dubbo:service id="serviceConfig" interface="org.apache.dubbo.config.spring.api.DemoService" ref="demoService"/>
+    <dubbo:com.atlwj.service id="serviceConfig" interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService" ref="demoService"/>
 
     <dubbo:provider timeout="1000" default="true" delay="1000">
-        <dubbo:service id="serviceConfig2" interface="org.apache.dubbo.config.spring.api.DemoService" ref="demoService"
-                       group="demo2"/>
+        <dubbo:com.atlwj.service id="serviceConfig2" interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService" ref="demoService"
+                                     group="demo2"/>
     </dubbo:provider>
     <dubbo:provider default="true" delay="500">
-        <dubbo:service interface="org.apache.dubbo.config.spring.api.DemoService" ref="demoService"
-                       group="demo2"/>
+        <dubbo:com.atlwj.service interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService" ref="demoService"
+                                     group="demo2"/>
     </dubbo:provider>
 
     <bean id="demoService" class="org.apache.dubbo.config.spring.impl.DemoServiceImpl"/>

@@ -17,7 +17,7 @@
 #
 #
 
-# Application scope, apply to the specified services
+# Application scope, apply to the specified dubbo
 ---
 configVersion: v2.7
 scope: application

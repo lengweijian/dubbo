@@ -29,6 +29,6 @@
 
     <bean id="demoService" class="org.apache.dubbo.rpc.protocol.thrift.ThriftDemoImpl"/>
 
-    <dubbo:service protocol="thrift" interface="org.apache.dubbo.rpc.gen.thrift.Demo$Iface" ref="demoService"/>
+    <dubbo:com.atlwj.service protocol="thrift" interface="org.apache.dubbo.rpc.gen.thrift.Demo$Iface" ref="demoService"/>
 
 </beans>

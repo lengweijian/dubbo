@@ -37,9 +37,9 @@ public interface Constants {
     /**
      * callback inst id
      */
-    String CALLBACK_SERVICE_KEY = "callback.service.instid";
+    String CALLBACK_SERVICE_KEY = "callback.com.atlwj.service.instid";
 
-    String CALLBACK_SERVICE_PROXY_KEY = "callback.service.proxy";
+    String CALLBACK_SERVICE_PROXY_KEY = "callback.com.atlwj.service.proxy";
 
     String IS_CALLBACK_SERVICE = "is_callback_service";
 
