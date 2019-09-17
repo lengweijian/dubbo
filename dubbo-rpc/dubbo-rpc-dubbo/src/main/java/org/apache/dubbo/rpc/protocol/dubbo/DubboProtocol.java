@@ -213,6 +213,7 @@ public class DubboProtocol extends AbstractProtocol {
     public static DubboProtocol getDubboProtocol() {
         if (INSTANCE == null) {
             // load
+            // 获取dubbo协议服务
             ExtensionLoader.getExtensionLoader(Protocol.class).getExtension(DubboProtocol.NAME);
         }
 
@@ -280,8 +281,8 @@ public class DubboProtocol extends AbstractProtocol {
 
     @Override
     public <T> Exporter<T> export(Invoker<T> invoker) throws RpcException {
+        // 获取url
         URL url = invoker.getUrl();
-
         // export service.
         String key = serviceKey(url);
         DubboExporter<T> exporter = new DubboExporter<T>(invoker, key, exporterMap);
@@ -303,7 +304,12 @@ public class DubboProtocol extends AbstractProtocol {
             }
         }
 
+        /**
+         * 打开server
+         */
         openServer(url);
+
+        // 初始化序列化优化器
         optimizeSerialization(url);
 
         return exporter;
@@ -316,10 +322,14 @@ public class DubboProtocol extends AbstractProtocol {
         boolean isServer = url.getParameter(IS_SERVER_KEY, true);
         if (isServer) {
             ExchangeServer server = serverMap.get(key);
+            // 先尝试获取一个server，如果没有就创建一个server
             if (server == null) {
                 synchronized (this) {
                     server = serverMap.get(key);
                     if (server == null) {
+                        /**
+                         * 创建一个server,并缓存到serverMap中
+                         */
                         serverMap.put(key, createServer(url));
                     }
                 }
@@ -346,6 +356,10 @@ public class DubboProtocol extends AbstractProtocol {
 
         ExchangeServer server;
         try {
+
+            /**
+             * 绑定url
+             */
             server = Exchangers.bind(url, requestHandler);
         } catch (RemotingException e) {
             throw new RpcException("Fail to start server(url: " + url + ") " + e.getMessage(), e);

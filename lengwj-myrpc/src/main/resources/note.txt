@@ -1,0 +1,6 @@
+Provider模块：提供API，实现API，暴露（启动tomcat，NettyServer），服务本地注册（），服务注册中心注册
+Consumer模块：根据接口名从注册中心获取服务地址，调用服务。
+Registry模块：保存服务配置信息（服务名：List<URL>）
+RpcProtocol模块：1.基于tomcat的HttpProtocol。2.基于Netty的DubboProtocol。
+framework模块：框架实现。
+

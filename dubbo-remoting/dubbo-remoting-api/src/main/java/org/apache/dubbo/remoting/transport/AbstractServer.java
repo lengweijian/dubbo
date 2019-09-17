@@ -58,8 +58,9 @@ public abstract class AbstractServer extends AbstractEndpoint implements Server 
     public AbstractServer(URL url, ChannelHandler handler) throws RemotingException {
         super(url, handler);
         localAddress = getUrl().toInetSocketAddress();
-
+        // ip
         String bindIp = getUrl().getParameter(Constants.BIND_IP_KEY, getUrl().getHost());
+        //port
         int bindPort = getUrl().getParameter(Constants.BIND_PORT_KEY, getUrl().getPort());
         if (url.getParameter(ANYHOST_KEY, false) || NetUtils.isInvalidLocalHost(bindIp)) {
             bindIp = ANYHOST_VALUE;
@@ -68,6 +69,9 @@ public abstract class AbstractServer extends AbstractEndpoint implements Server 
         this.accepts = url.getParameter(ACCEPTS_KEY, DEFAULT_ACCEPTS);
         this.idleTimeout = url.getParameter(IDLE_TIMEOUT_KEY, DEFAULT_IDLE_TIMEOUT);
         try {
+            /**
+             * 开启服务
+             */
             doOpen();
             if (logger.isInfoEnabled()) {
                 logger.info("Start " + getClass().getSimpleName() + " bind " + getBindAddress() + ", export " + getLocalAddress());
@@ -81,6 +85,13 @@ public abstract class AbstractServer extends AbstractEndpoint implements Server 
         executor = (ExecutorService) dataStore.get(Constants.EXECUTOR_SERVICE_COMPONENT_KEY, Integer.toString(url.getPort()));
     }
 
+    /**
+     * NettyServer
+     * Netty4Server
+     * GrizzylyServer
+     * MinaServer
+     * @throws Throwable
+     */
     protected abstract void doOpen() throws Throwable;
 
     protected abstract void doClose() throws Throwable;

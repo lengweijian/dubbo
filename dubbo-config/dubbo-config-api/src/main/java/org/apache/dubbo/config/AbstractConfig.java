@@ -548,6 +548,7 @@ public abstract class AbstractConfig implements Serializable {
      */
     public void refresh() {
         try {
+            // 合成配置
             CompositeConfiguration compositeConfiguration = Environment.getInstance().getConfiguration(getPrefix(), getId());
             Configuration config = new ConfigConfigurationAdapter(this);
             if (Environment.getInstance().isConfigCenterFirst()) {

@@ -33,6 +33,10 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  * Logger factory
+ * 指定日志的三种方式
+ * 1.java -Ddubbo.application.logger=log4j
+ * 2.dubbo.application.logger=log4j
+ * 3.<dubbo:application logger="log4j" />
  */
 public class LoggerFactory {
 
@@ -40,6 +44,8 @@ public class LoggerFactory {
     private static volatile LoggerAdapter LOGGER_ADAPTER;
 
     // search common-used logging frameworks
+    // search 公用的日志框架
+    // 根据配置项，进行对应的 LoggerAdapter 对象
     static {
         String logger = System.getProperty("dubbo.application.logger", "");
         switch (logger) {
@@ -59,6 +65,7 @@ public class LoggerFactory {
                 setLoggerAdapter(new Log4j2LoggerAdapter());
                 break;
             default:
+                // 未配置，按照 log4j > slf4j > apache common logger > jdk logger
                 List<Class<? extends LoggerAdapter>> candidates = Arrays.asList(
                         Log4jLoggerAdapter.class,
                         Slf4jLoggerAdapter.class,

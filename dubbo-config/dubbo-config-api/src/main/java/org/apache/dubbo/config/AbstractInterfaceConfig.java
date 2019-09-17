@@ -319,8 +319,8 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
     /**
      *
      * Load the registry and conversion it to {@link URL}, the priority order is: system property > dubbo registry config
-     *
-     * @param provider whether it is the provider side
+     * 加载注册中心 URL 数组
+     * @param provider whether it is the provider side  是否是服务提供者
      * @return
      */
     protected List<URL> loadRegistries(boolean provider) {
@@ -341,9 +341,11 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
                     if (!map.containsKey(PROTOCOL_KEY)) {
                         map.put(PROTOCOL_KEY, DUBBO_PROTOCOL);
                     }
+                    // 解析地址，创建 Dubbo URL 数组。（数组大小可以为一）
                     List<URL> urls = UrlUtils.parseURLs(address, map);
 
                     for (URL url : urls) {
+                        // 设置 `registry=${protocol}` 和 `protocol=registry` 到 URL
                         url = URLBuilder.from(url)
                                 .addParameter(REGISTRY_KEY, url.getProtocol())
                                 .setProtocol(REGISTRY_PROTOCOL)
@@ -807,6 +809,7 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
     }
 
     public void setMonitor(MonitorConfig monitor) {
+        // 单例模式
         ConfigManager.getInstance().setMonitor(monitor);
         this.monitor = monitor;
     }

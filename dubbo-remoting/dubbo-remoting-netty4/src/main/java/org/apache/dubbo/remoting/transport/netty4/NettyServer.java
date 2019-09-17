@@ -81,13 +81,12 @@ public class NettyServer extends AbstractServer implements Server {
 
     /**
      * Init and start netty server
-     *
+     * 初始化并开启netty server
      * @throws Throwable
      */
     @Override
     protected void doOpen() throws Throwable {
         bootstrap = new ServerBootstrap();
-
         bossGroup = new NioEventLoopGroup(1, new DefaultThreadFactory("NettyServerBoss", true));
         workerGroup = new NioEventLoopGroup(getUrl().getPositiveParameter(IO_THREADS_KEY, Constants.DEFAULT_IO_THREADS),
                 new DefaultThreadFactory("NettyServerWorker", true));

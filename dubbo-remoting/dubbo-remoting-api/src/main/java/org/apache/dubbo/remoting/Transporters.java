@@ -53,6 +53,9 @@ public class Transporters {
         } else {
             handler = new ChannelHandlerDispatcher(handlers);
         }
+        /**
+         * 获取传输器，绑定url和处理器，返回一个server
+         */
         return getTransporter().bind(url, handler);
     }
 

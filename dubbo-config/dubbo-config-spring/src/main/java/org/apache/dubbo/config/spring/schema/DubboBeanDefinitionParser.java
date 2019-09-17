@@ -74,6 +74,14 @@ public class DubboBeanDefinitionParser implements BeanDefinitionParser {
         this.required = required;
     }
 
+    /**
+     * Dubbo 标签解析
+     * @param element
+     * @param parserContext
+     * @param beanClass
+     * @param required
+     * @return
+     */
     @SuppressWarnings("unchecked")
     private static BeanDefinition parse(Element element, ParserContext parserContext, Class<?> beanClass, boolean required) {
         RootBeanDefinition beanDefinition = new RootBeanDefinition();

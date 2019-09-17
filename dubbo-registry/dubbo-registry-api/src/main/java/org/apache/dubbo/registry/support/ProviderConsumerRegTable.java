@@ -31,11 +31,33 @@ import java.util.concurrent.ConcurrentMap;
 
 /**
  * @date 2017/11/23
+ *
+ * 服务提供者和消费者注册表，存储 JVM 进程内自己的服务提供者和消费者的 Invoker 。
  */
 public class ProviderConsumerRegTable {
+
+    /**
+     * 服务提供者 Invoker 集合
+     *
+     * key：服务提供者 URL 服务键
+     */
     public static ConcurrentHashMap<String, ConcurrentMap<Invoker, ProviderInvokerWrapper>> providerInvokers = new ConcurrentHashMap<>();
+
+    /**
+     * 服务消费者 Invoker 集合
+     *
+     * key：服务消费者 URL 服务键
+     */
     public static ConcurrentHashMap<String, Set<ConsumerInvokerWrapper>> consumerInvokers = new ConcurrentHashMap<>();
 
+    /**
+     * 注册服务提供者的Invoker
+     * @param invoker
+     * @param registryUrl
+     * @param providerUrl
+     * @param <T>
+     * @return
+     */
     public static <T> ProviderInvokerWrapper<T> registerProvider(Invoker<T> invoker, URL registryUrl, URL providerUrl) {
         ProviderInvokerWrapper<T> wrapperInvoker = new ProviderInvokerWrapper<>(invoker, registryUrl, providerUrl);
         String serviceUniqueName = providerUrl.getServiceKey();
@@ -57,6 +79,11 @@ public class ProviderConsumerRegTable {
         return invokers.remove(new ProviderIndvokerWrapper(invoker, null, null));
     }*/
 
+    /**
+     * 获得指定服务提供者集
+     * @param serviceUniqueName
+     * @return
+     */
     public static Set<ProviderInvokerWrapper> getProviderInvoker(String serviceUniqueName) {
         ConcurrentMap<Invoker, ProviderInvokerWrapper> invokers = providerInvokers.get(serviceUniqueName);
         if (invokers == null) {
@@ -65,6 +92,13 @@ public class ProviderConsumerRegTable {
         return new HashSet<>(invokers.values());
     }
 
+    /**
+     * 获得ProviderInvokerWrapper
+     * @param registeredProviderUrl
+     * @param invoker
+     * @param <T>
+     * @return
+     */
     public static <T> ProviderInvokerWrapper<T> getProviderWrapper(URL registeredProviderUrl, Invoker<T> invoker) {
         String serviceUniqueName = registeredProviderUrl.getServiceKey();
         ConcurrentMap<Invoker, ProviderInvokerWrapper> invokers = providerInvokers.get(serviceUniqueName);

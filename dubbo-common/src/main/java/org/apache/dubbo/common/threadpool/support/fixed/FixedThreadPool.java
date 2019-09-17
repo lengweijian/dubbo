@@ -43,9 +43,26 @@ public class FixedThreadPool implements ThreadPool {
 
     @Override
     public Executor getExecutor(URL url) {
+        /**
+         *
+         * <dubbo:service interface="com.alibaba.dubbo.demo.DemoService" ref="demoService">
+         *
+         *     <dubbo:parameter key="threadname" value="shuaiqi" />
+         *     <dubbo:parameter key="threads" value="123" />
+         *     <dubbo:parameter key="queues" value="10" />
+         *
+         * </dubbo:service>
+         *
+         *
+         *
+         */
+        // 线程名
         String name = url.getParameter(THREAD_NAME_KEY, DEFAULT_THREAD_NAME);
+        // 线程数
         int threads = url.getParameter(THREADS_KEY, DEFAULT_THREADS);
+        // 队列数
         int queues = url.getParameter(QUEUES_KEY, DEFAULT_QUEUES);
+        // 创建执行器
         return new ThreadPoolExecutor(threads, threads, 0, TimeUnit.MILLISECONDS,
                 queues == 0 ? new SynchronousQueue<Runnable>() :
                         (queues < 0 ? new LinkedBlockingQueue<Runnable>()
