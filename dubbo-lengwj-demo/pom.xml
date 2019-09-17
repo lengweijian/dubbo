@@ -7,14 +7,13 @@
         <artifactId>dubbo-parent</artifactId>
         <version>${revision}</version>
     </parent>
-
     <modelVersion>4.0.0</modelVersion>
-
     <artifactId>dubbo-lengwj-demo</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>dubbo-xml-demo</module>
-        <module>dubbo-xml-api</module>
+<!--        <module>dubbo-xml-demo</module>-->
+<!--        <module>dubbo-xml-api</module>-->
+<!--        <module>spi-demo</module>-->
     </modules>
 
     <dependencyManagement>

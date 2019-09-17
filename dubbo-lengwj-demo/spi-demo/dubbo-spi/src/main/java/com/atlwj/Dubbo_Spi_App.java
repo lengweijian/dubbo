@@ -14,8 +14,8 @@ public class Dubbo_SPI_APP {
         ExtensionLoader<DemoService> extensionLoader = ExtensionLoader.getExtensionLoader(DemoService.class);
         DemoService extension = extensionLoader.getExtension("02");
         extension.sayHi("lengweijian");
-
-        WheelMaker wheel = (WheelMaker) extensionLoader.getExtension("wheel");
-
+//
+//        DemoService demoService = extensionLoader.getAdaptiveExtension();
+//        demoService.sayHi("hello");
     }
 }
