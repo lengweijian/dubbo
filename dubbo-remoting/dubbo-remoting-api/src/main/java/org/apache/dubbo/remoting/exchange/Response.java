@@ -56,12 +56,12 @@ public class Response {
     public static final byte BAD_RESPONSE = 50;
 
     /**
-     * com.atlwj.service not found.
+     * service not found.
      */
     public static final byte SERVICE_NOT_FOUND = 60;
 
     /**
-     * com.atlwj.service error.
+     * service error.
      */
     public static final byte SERVICE_ERROR = 70;
 

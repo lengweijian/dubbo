@@ -1,7 +1,7 @@
-package com.atlwj.service.impl;
+package impl;
 
 
-import com.atlwj.service.HelloService;
+import HelloService;
 
 public class HelloServiceImpl implements HelloService {
 

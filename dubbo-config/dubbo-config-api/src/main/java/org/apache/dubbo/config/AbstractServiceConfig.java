@@ -41,32 +41,32 @@ public abstract class AbstractServiceConfig extends AbstractInterfaceConfig {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The com.atlwj.service version
+     * The service version
      */
     protected String version;
 
     /**
-     * The com.atlwj.service group
+     * The service group
      */
     protected String group;
 
     /**
-     * whether the com.atlwj.service is deprecated
+     * whether the service is deprecated
      */
     protected Boolean deprecated = false;
 
     /**
-     * The time delay register com.atlwj.service (milliseconds)
+     * The time delay register service (milliseconds)
      */
     protected Integer delay;
 
     /**
-     * Whether to export the com.atlwj.service
+     * Whether to export the service
      */
     protected Boolean export;
 
     /**
-     * The com.atlwj.service weight
+     * The service weight
      */
     protected Integer weight;
 
@@ -76,8 +76,8 @@ public abstract class AbstractServiceConfig extends AbstractInterfaceConfig {
     protected String document;
 
     /**
-     * Whether to register as a dynamic com.atlwj.service or not on register center, the value is true, the status will be enabled
-     * after the com.atlwj.service registered,and it needs to be disabled manually; if you want to disable the com.atlwj.service, you also need
+     * Whether to register as a dynamic service or not on register center, the value is true, the status will be enabled
+     * after the service registered,and it needs to be disabled manually; if you want to disable the service, you also need
      * manual processing
      */
     protected Boolean dynamic = true;
@@ -93,7 +93,7 @@ public abstract class AbstractServiceConfig extends AbstractInterfaceConfig {
     protected String accesslog;
 
     /**
-     * The protocol list the com.atlwj.service will export with
+     * The protocol list the service will export with
      */
     protected List<ProtocolConfig> protocols;
     protected String protocolIds;

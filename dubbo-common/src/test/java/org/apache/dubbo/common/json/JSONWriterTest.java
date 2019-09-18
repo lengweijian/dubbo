@@ -44,7 +44,7 @@ public class JSONWriterTest {
         writer.objectItem("name").objectItem("displayName");
         writer.objectItem("emptyList").arrayBegin().arrayEnd();
         writer.objectItem("list").arrayBegin().valueNull().valueBoolean(false).valueInt(16).valueString("stri'''ng").arrayEnd();
-        writer.objectItem("com.atlwj.service").objectBegin().objectItem("type").valueString("org.apache.dubbo.TestService").objectItem("version").valueString("1.1.0").objectEnd();
+        writer.objectItem("service").objectBegin().objectItem("type").valueString("org.apache.dubbo.TestService").objectItem("version").valueString("1.1.0").objectEnd();
         writer.objectEnd();
     }
 }

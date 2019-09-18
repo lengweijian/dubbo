@@ -35,7 +35,7 @@ public interface Protocol {
     int getDefaultPort();
 
     /**
-     * Export com.atlwj.service for remote invocation: <br>
+     * Export service for remote invocation: <br>
      * 1. Protocol should record request source address after receive a request:
      * RpcContext.getContext().setRemoteAddress();<br>
      * 2. export() must be idempotent, that is, there's no difference between invoking once and invoking twice when
@@ -47,14 +47,14 @@ public interface Protocol {
      * 3. export()传入的Invoker由框架实现并传入，协议不需要关心。<br>
      * @param <T>     Service type
      * @param invoker Service invoker
-     * @return exporter reference for exported com.atlwj.service, useful for unexport the com.atlwj.service later
-     * @throws RpcException thrown when error occurs during export the com.atlwj.service, for example: port is occupied
+     * @return exporter reference for exported service, useful for unexport the service later
+     * @throws RpcException thrown when error occurs during export the service, for example: port is occupied
      */
     @Adaptive
     <T> Exporter<T> export(Invoker<T> invoker) throws RpcException;
 
     /**
-     * Refer a remote com.atlwj.service: <br>
+     * Refer a remote service: <br>
      * 1. When user calls `invoke()` method of `Invoker` object which's returned from `refer()` call, the protocol
      * needs to correspondingly execute `invoke()` method of `Invoker` object <br>
      * 2. It's protocol's responsibility to implement `Invoker` which's returned from `refer()`. Generally speaking,
@@ -68,9 +68,9 @@ public interface Protocol {
      * 3. 当url中有设置check=false时，连接失败不能抛出异常，需内部自动恢复。<br>
      * @param <T>  Service type
      * @param type Service class
-     * @param url  URL address for the remote com.atlwj.service
-     * @return invoker com.atlwj.service's local proxy
-     * @throws RpcException when there's any error while connecting to the com.atlwj.service provider
+     * @param url  URL address for the remote service
+     * @return invoker service's local proxy
+     * @throws RpcException when there's any error while connecting to the service provider
      */
     @Adaptive
     <T> Invoker<T> refer(Class<T> type, URL url) throws RpcException;
@@ -79,7 +79,7 @@ public interface Protocol {
      * Destroy protocol: <br>
      * 1. Cancel all dubbo this protocol exports and refers <br>
      * 2. Release all occupied resources, for example: connection, port, etc. <br>
-     * 3. Protocol can continue to export and refer new com.atlwj.service even after it's destroyed.
+     * 3. Protocol can continue to export and refer new service even after it's destroyed.
      */
     void destroy();
 

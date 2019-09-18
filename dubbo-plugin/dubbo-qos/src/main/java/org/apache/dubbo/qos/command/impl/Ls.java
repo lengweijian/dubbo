@@ -29,7 +29,7 @@ import java.util.Collection;
 import static org.apache.dubbo.registry.support.ProviderConsumerRegTable.getConsumerAddressNum;
 import static org.apache.dubbo.registry.support.ProviderConsumerRegTable.isRegistered;
 
-@Cmd(name = "ls", summary = "ls com.atlwj.service", example = {
+@Cmd(name = "ls", summary = "ls service", example = {
         "ls"
 })
 public class Ls implements BaseCommand {

@@ -24,8 +24,8 @@
     <!-- current application configuration -->
     <dubbo:application name="demo-consumer"/>
 
-    <!-- com.atlwj.service reference configuration -->
-    <dubbo:reference id="demoService" interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService">
+    <!-- service reference configuration -->
+    <dubbo:reference id="demoService" interface="org.apache.dubbo.config.spring.api.DemoService">
         <dubbo:method name="sayName" onreturn="notify.getBox" onthrow="notify.getBox" oninvoke="notify.getBox"/>
     </dubbo:reference>
 

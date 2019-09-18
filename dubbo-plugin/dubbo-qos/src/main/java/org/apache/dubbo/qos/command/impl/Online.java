@@ -35,7 +35,7 @@ import java.util.Set;
 
 @Cmd(name = "online", summary = "online dubbo", example = {
         "online dubbo",
-        "online xx.xx.xxx.com.atlwj.service"
+        "online xx.xx.xxx.service"
 })
 public class Online implements BaseCommand {
     private Logger logger = LoggerFactory.getLogger(Online.class);
@@ -70,7 +70,7 @@ public class Online implements BaseCommand {
         if (hasService) {
             return "OK";
         } else {
-            return "com.atlwj.service not found";
+            return "service not found";
         }
 
     }

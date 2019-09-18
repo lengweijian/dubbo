@@ -164,7 +164,7 @@ public class MockClusterInvoker<T> implements Invoker<T> {
                 invokers = directory.list(invocation);
             } catch (RpcException e) {
                 if (logger.isInfoEnabled()) {
-                    logger.info("Exception when try to invoke mock. Get mock invokers error for com.atlwj.service:"
+                    logger.info("Exception when try to invoke mock. Get mock invokers error for service:"
                             + directory.getUrl().getServiceInterface() + ", method:" + invocation.getMethodName()
                             + ", will contruct a new mock with 'new MockInvoker()'.", e);
                 }

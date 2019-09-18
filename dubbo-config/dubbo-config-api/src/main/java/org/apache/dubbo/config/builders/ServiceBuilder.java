@@ -30,12 +30,12 @@ import org.apache.dubbo.config.ServiceConfig;
  */
 public class ServiceBuilder<U> extends AbstractServiceBuilder<ServiceConfig, ServiceBuilder<U>> {
     /**
-     * The interface name of the exported com.atlwj.service
+     * The interface name of the exported service
      */
     private String interfaceName;
 
     /**
-     * The interface class of the exported com.atlwj.service
+     * The interface class of the exported service
      */
     private Class<?> interfaceClass;
 
@@ -45,7 +45,7 @@ public class ServiceBuilder<U> extends AbstractServiceBuilder<ServiceConfig, Ser
     private U ref;
 
     /**
-     * The com.atlwj.service name
+     * The service name
      */
     private String path;
 

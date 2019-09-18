@@ -1,6 +1,6 @@
 package com.atlwj.service;
 
-public class HelloServiceImpl implements HelloService{
+public class HelloServiceImpl implements HelloService {
 
     @Override
     public String sayHello(String username) {

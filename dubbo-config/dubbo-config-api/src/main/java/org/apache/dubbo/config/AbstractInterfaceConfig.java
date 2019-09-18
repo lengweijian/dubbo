@@ -98,12 +98,12 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
     private static final long serialVersionUID = -1559314110797223229L;
 
     /**
-     * Local impl class name for the com.atlwj.service interface
+     * Local impl class name for the service interface
      */
     protected String local;
 
     /**
-     * Local stub class name for the com.atlwj.service interface
+     * Local stub class name for the service interface
      */
     protected String stub;
 
@@ -123,29 +123,29 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
     protected String cluster;
 
     /**
-     * The {@link Filter} when the provider side exposed a com.atlwj.service or the customer side references a remote com.atlwj.service used,
+     * The {@link Filter} when the provider side exposed a service or the customer side references a remote service used,
      * if there are more than one, you can use commas to separate them
      */
     protected String filter;
 
     /**
-     * The Listener when the provider side exposes a com.atlwj.service or the customer side references a remote com.atlwj.service used
+     * The Listener when the provider side exposes a service or the customer side references a remote service used
      * if there are more than one, you can use commas to separate them
      */
     protected String listener;
 
     /**
-     * The owner of the com.atlwj.service providers
+     * The owner of the service providers
      */
     protected String owner;
 
     /**
-     * Connection limits, 0 means shared connection, otherwise it defines the connections delegated to the current com.atlwj.service
+     * Connection limits, 0 means shared connection, otherwise it defines the connections delegated to the current service
      */
     protected Integer connections;
 
     /**
-     * The layer of com.atlwj.service providers
+     * The layer of service providers
      */
     protected String layer;
 
@@ -184,7 +184,7 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
 
     // callback limits
     private Integer callbacks;
-    // the scope for referring/exporting a com.atlwj.service, if it's local, it means searching in current JVM only.
+    // the scope for referring/exporting a service, if it's local, it means searching in current JVM only.
     private String scope;
 
     protected String tag;
@@ -436,10 +436,10 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
     }
 
     /**
-     * Check whether the remote com.atlwj.service interface and the methods meet with Dubbo's requirements.it mainly check, if the
-     * methods configured in the configuration file are included in the interface of remote com.atlwj.service
+     * Check whether the remote service interface and the methods meet with Dubbo's requirements.it mainly check, if the
+     * methods configured in the configuration file are included in the interface of remote service
      *
-     * @param interfaceClass the interface of remote com.atlwj.service
+     * @param interfaceClass the interface of remote service
      * @param methods the methods configured
      */
     protected void checkInterfaceAndMethods(Class<?> interfaceClass, List<MethodConfig> methods) {
@@ -450,7 +450,7 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
         if (!interfaceClass.isInterface()) {
             throw new IllegalStateException("The interface class " + interfaceClass + " is not a interface!");
         }
-        // check if methods exist in the remote com.atlwj.service interface
+        // check if methods exist in the remote service interface
         if (CollectionUtils.isNotEmpty(methods)) {
             for (MethodConfig methodBean : methods) {
                 methodBean.setService(interfaceClass.getName());
@@ -459,7 +459,7 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
                 String methodName = methodBean.getName();
                 if (StringUtils.isEmpty(methodName)) {
                     throw new IllegalStateException("<dubbo:method> name attribute is required! Please check: " +
-                            "<dubbo:com.atlwj.service interface=\"" + interfaceClass.getName() + "\" ... >" +
+                            "<dubbo:service interface=\"" + interfaceClass.getName() + "\" ... >" +
                             "<dubbo:method name=\"\" ... /></<dubbo:reference>");
                 }
 
@@ -476,8 +476,8 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
      * Legitimacy check and setup of local simulated operations. The operations can be a string with Simple operation or
      * a classname whose {@link Class} implements a particular function
      *
-     * @param interfaceClass for provider side, it is the {@link Class} of the com.atlwj.service that will be exported; for consumer
-     *                       side, it is the {@link Class} of the remote com.atlwj.service interface that will be referenced
+     * @param interfaceClass for provider side, it is the {@link Class} of the service that will be exported; for consumer
+     *                       side, it is the {@link Class} of the remote service interface that will be referenced
      */
     void checkMock(Class<?> interfaceClass) {
         if (ConfigUtils.isEmpty(mock)) {
@@ -491,7 +491,7 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
                 //Check whether the mock value is legal, if it is illegal, throw exception
                 MockInvoker.parseMockValue(normalizedMock);
             } catch (Exception e) {
-                throw new IllegalStateException("Illegal mock return in <dubbo:com.atlwj.service/reference ... " +
+                throw new IllegalStateException("Illegal mock return in <dubbo:service/reference ... " +
                         "mock=\"" + mock + "\" />");
             }
         } else if (normalizedMock.startsWith(THROW_PREFIX)) {
@@ -501,7 +501,7 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
                     //Check whether the mock value is legal
                     MockInvoker.getThrowable(normalizedMock);
                 } catch (Exception e) {
-                    throw new IllegalStateException("Illegal mock throw in <dubbo:com.atlwj.service/reference ... " +
+                    throw new IllegalStateException("Illegal mock throw in <dubbo:service/reference ... " +
                             "mock=\"" + mock + "\" />");
                 }
             }
@@ -514,8 +514,8 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
     /**
      * Legitimacy check of stub, note that: the local will deprecated, and replace with <code>stub</code>
      *
-     * @param interfaceClass for provider side, it is the {@link Class} of the com.atlwj.service that will be exported; for consumer
-     *                       side, it is the {@link Class} of the remote com.atlwj.service interface
+     * @param interfaceClass for provider side, it is the {@link Class} of the service that will be exported; for consumer
+     *                       side, it is the {@link Class} of the remote service interface
      */
     void checkStubAndLocal(Class<?> interfaceClass) {
         if (ConfigUtils.isNotEmpty(local)) {
@@ -583,7 +583,7 @@ public abstract class AbstractInterfaceConfig extends AbstractMethodConfig {
             });
 
             if (tmpRegistries.size() > ids.length) {
-                throw new IllegalStateException("Too much registries found, the registries assigned to this com.atlwj.service " +
+                throw new IllegalStateException("Too much registries found, the registries assigned to this service " +
                         "are :" + registryIds + ", but got " + tmpRegistries.size() + " registries!");
             }
 

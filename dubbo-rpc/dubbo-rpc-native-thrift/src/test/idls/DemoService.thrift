@@ -1,8 +1,8 @@
 namespace java org.apache.dubbo.rpc.protocol.nativethrift
 namespace go demo
-/*Demo com.atlwj.service define file,can be generated to inteface files*/
+/*Demo service define file,can be generated to inteface files*/
 /*Here test the 7 kind of data type*/
-com.atlwj.service com.atlwj.service.DemoService {
+service DemoService {
     string sayHello(1:required string name);
 
     bool hasName( 1:required bool hasName);

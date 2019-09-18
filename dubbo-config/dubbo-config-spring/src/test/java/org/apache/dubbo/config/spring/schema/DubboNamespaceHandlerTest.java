@@ -105,7 +105,7 @@ public class DubboNamespaceHandlerTest {
 
         ServiceBean serviceBean = ctx.getBean(ServiceBean.class);
         assertThat(serviceBean.getParameters().size(), is(1));
-        assertThat(serviceBean.getParameters().get("com.atlwj.service-paramA"), is("com.atlwj.service-paramA"));
+        assertThat(serviceBean.getParameters().get("service-paramA"), is("service-paramA"));
     }
 
 
@@ -119,7 +119,7 @@ public class DubboNamespaceHandlerTest {
 
     @Test
     public void testTimeoutConfig() {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/provider-nested-com.atlwj.service.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/provider-nested-xml");
         ctx.start();
 
         Map<String, ProviderConfig> providerConfigMap = ctx.getBeansOfType(ProviderConfig.class);
@@ -170,7 +170,7 @@ public class DubboNamespaceHandlerTest {
 
     @Test
     public void testProperty() {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/com.atlwj.service-class.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(ConfigTest.class.getPackage().getName().replace('.', '/') + "/service-class.xml");
         ctx.start();
 
         ServiceBean serviceBean = ctx.getBean(ServiceBean.class);

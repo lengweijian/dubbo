@@ -37,7 +37,7 @@ import static org.apache.dubbo.registry.support.ProviderConsumerRegTable.isRegis
  * ListTelnetHandler handler list dubbo and its methods details.
  */
 @Activate
-@Help(parameter = "[-l] [com.atlwj.service]", summary = "List dubbo and methods.", detail = "List dubbo and methods.")
+@Help(parameter = "[-l] [service]", summary = "List dubbo and methods.", detail = "List dubbo and methods.")
 public class ListTelnetHandler implements TelnetHandler {
 
     @Override
@@ -60,7 +60,7 @@ public class ListTelnetHandler implements TelnetHandler {
         } else {
             service = (String) channel.getAttribute(ChangeTelnetHandler.SERVICE_KEY);
             if (StringUtils.isNotEmpty(service)) {
-                buf.append("Use default com.atlwj.service ").append(service).append(".\r\n");
+                buf.append("Use default service ").append(service).append(".\r\n");
             }
         }
 
@@ -70,7 +70,7 @@ public class ListTelnetHandler implements TelnetHandler {
             printSpecifiedService(service, buf, detail);
 
             if (buf.length() == 0) {
-                buf.append("No such com.atlwj.service: ").append(service);
+                buf.append("No such service: ").append(service);
             }
         }
         return buf.toString();

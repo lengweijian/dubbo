@@ -90,7 +90,7 @@ public class StubProxyFactoryWrapper implements ProxyFactory {
                     try {
                         Constructor<?> constructor = ReflectUtils.findConstructor(stubClass, serviceType);
                         proxy = (T) constructor.newInstance(new Object[]{proxy});
-                        //export stub com.atlwj.service
+                        //export stub service
                         URLBuilder urlBuilder = URLBuilder.from(url);
                         if (url.getParameter(STUB_EVENT_KEY, DEFAULT_STUB_EVENT)) {
                             urlBuilder.addParameter(STUB_EVENT_METHODS_KEY, StringUtils.join(Wrapper.getWrapper(proxy.getClass()).getDeclaredMethodNames(), ","));
@@ -98,7 +98,7 @@ public class StubProxyFactoryWrapper implements ProxyFactory {
                             try {
                                 export(proxy, (Class) invoker.getInterface(), urlBuilder.build());
                             } catch (Exception e) {
-                                LOGGER.error("export a stub com.atlwj.service error.", e);
+                                LOGGER.error("export a stub service error.", e);
                             }
                         }
                     } catch (NoSuchMethodException e) {

@@ -26,11 +26,11 @@ import java.util.Map;
  */
 
 /**
- * This class store the cache value with the characteristic of expiration time. If a com.atlwj.service,method,consumer or provided is configured with key <b>cache</b>
+ * This class store the cache value with the characteristic of expiration time. If a service,method,consumer or provided is configured with key <b>cache</b>
  * with value <b>expiring</b>, dubbo initialize the instance of this class using {@link ExpiringCacheFactory} to store method's returns value
  * to server from store without making method call.
  * <pre>
- *     e.g. 1) &lt;dubbo:com.atlwj.service cache="expiring" cache.seconds="60" cache.interval="10"/&gt;
+ *     e.g. 1) &lt;dubbo:service cache="expiring" cache.seconds="60" cache.interval="10"/&gt;
  *          2) &lt;dubbo:consumer cache="expiring" /&gt;
  * </pre>
  * <li>It used constructor argument url instance <b>cache.seconds</b> value to decide time to live of cached object.Default value of it is 180 second.</li>

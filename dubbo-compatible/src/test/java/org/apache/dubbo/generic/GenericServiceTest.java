@@ -147,7 +147,7 @@ public class GenericServiceTest {
         Invoker<GenericService> invoker = protocol.refer(GenericService.class, url);
 
         GenericService client = proxyFactory.getProxy(invoker, true);
-        Object result = client.$invoke("findComplexObject", new String[]{"java.lang.String", "int", "long", "java.lang.String[]", "java.util.List", "org.apache.dubbo.com.atlwj.service.ComplexObject$TestEnum"},
+        Object result = client.$invoke("findComplexObject", new String[]{"java.lang.String", "int", "long", "java.lang.String[]", "java.util.List", "org.apache.dubbo.ComplexObject$TestEnum"},
                 new Object[]{var1, var2, l, var3, var4, testEnum});
         Assertions.assertNotNull(result);
         ComplexObject r = map2bean((Map) result);
@@ -185,12 +185,12 @@ public class GenericServiceTest {
         }
         Assertions.assertEquals(topTypeDefinition.getProperties().get("v").getType(), "long");
         Assertions.assertEquals(topTypeDefinition.getProperties().get("maps").getType(), "java.util.Map<java.lang.String, java.lang.String>");
-        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject").getType(), "org.apache.dubbo.com.atlwj.service.ComplexObject$InnerObject");
+        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject").getType(), "org.apache.dubbo.ComplexObject$InnerObject");
         Assertions.assertEquals(topTypeDefinition.getProperties().get("intList").getType(), "java.util.List<java.lang.Integer>");
         Assertions.assertEquals(topTypeDefinition.getProperties().get("strArrays").getType(), "java.lang.String[]");
-        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject3").getType(), "org.apache.dubbo.com.atlwj.service.ComplexObject.InnerObject3[]");
-        Assertions.assertEquals(topTypeDefinition.getProperties().get("testEnum").getType(), "org.apache.dubbo.com.atlwj.service.ComplexObject.TestEnum");
-        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject2").getType(), "java.util.List<org.apache.dubbo.com.atlwj.service.ComplexObject$InnerObject2>");
+        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject3").getType(), "org.apache.dubbo.ComplexObject.InnerObject3[]");
+        Assertions.assertEquals(topTypeDefinition.getProperties().get("testEnum").getType(), "org.apache.dubbo.ComplexObject.TestEnum");
+        Assertions.assertEquals(topTypeDefinition.getProperties().get("innerObject2").getType(), "java.util.List<org.apache.dubbo.ComplexObject$InnerObject2>");
 
         Assertions.assertSame(innerTypeDefinition.getProperties().get("innerA").getType(), "java.lang.String");
         Assertions.assertSame(innerTypeDefinition.getProperties().get("innerB").getType(), "int");

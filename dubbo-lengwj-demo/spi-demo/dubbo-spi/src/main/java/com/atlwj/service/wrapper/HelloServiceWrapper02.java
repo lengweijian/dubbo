@@ -1,6 +1,6 @@
-package com.atlwj.service.wrapper;
+package wrapper;
 
-import com.atlwj.service.DemoService;
+import DemoService;
 
 /**
  * 扩展实现类包装类01

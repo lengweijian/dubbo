@@ -35,7 +35,7 @@ public class DeprecatedInvokerListener extends InvokerListenerAdapter {
     @Override
     public void referred(Invoker<?> invoker) throws RpcException {
         if (invoker.getUrl().getParameter(DEPRECATED_KEY, false)) {
-            LOGGER.error("The com.atlwj.service " + invoker.getInterface().getName() + " is DEPRECATED! Declare from " + invoker.getUrl());
+            LOGGER.error("The service " + invoker.getInterface().getName() + " is DEPRECATED! Declare from " + invoker.getUrl());
         }
     }
 

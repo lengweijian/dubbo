@@ -54,7 +54,7 @@ public class ExplicitCallbackTest {
     }
 
     public void exportService() {
-        // export one com.atlwj.service first, to test connection sharing
+        // export one service first, to test connection sharing
         serviceURL = serviceURL.addParameter("connections", 1);
         URL hellourl = serviceURL.setPath(IHelloService.class.getName());
         hello_exporter = ProtocolUtils.export(new HelloServiceImpl(), IHelloService.class, hellourl);

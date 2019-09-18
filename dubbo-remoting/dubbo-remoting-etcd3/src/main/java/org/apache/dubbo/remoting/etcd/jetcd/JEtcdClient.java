@@ -318,7 +318,7 @@ public class JEtcdClient extends AbstractEtcdClient<JEtcdClient.EtcdWatcher> {
 
                 List<String> children = clientWrapper.getChildren(path);
                 /**
-                 * caching the current com.atlwj.service
+                 * caching the current service
                  */
                 if (!children.isEmpty()) {
                     this.urls.addAll(filterChildren(children));
@@ -334,7 +334,7 @@ public class JEtcdClient extends AbstractEtcdClient<JEtcdClient.EtcdWatcher> {
             lock.lock();
             try {
                 /**
-                 * If the collection already contains the specified com.atlwj.service, do nothing
+                 * If the collection already contains the specified service, do nothing
                  */
                 return add ? this.urls.add(service) : this.urls.remove(service);
             } finally {

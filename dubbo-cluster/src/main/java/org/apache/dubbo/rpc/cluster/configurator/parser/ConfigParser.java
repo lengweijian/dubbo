@@ -50,7 +50,7 @@ public class ConfigParser {
         if (ConfiguratorConfig.SCOPE_APPLICATION.equals(scope)) {
             items.forEach(item -> urls.addAll(appItemToUrls(item, configuratorConfig)));
         } else {
-            // com.atlwj.service scope by default.
+            // service scope by default.
             items.forEach(item -> urls.addAll(serviceItemToUrls(item, configuratorConfig)));
         }
         return urls;
@@ -159,7 +159,7 @@ public class ConfigParser {
     private static String appendService(String serviceKey) {
         StringBuilder sb = new StringBuilder();
         if (StringUtils.isEmpty(serviceKey)) {
-            throw new IllegalStateException("com.atlwj.service field in configuration is null.");
+            throw new IllegalStateException("service field in configuration is null.");
         }
 
         String interfaceName = serviceKey;

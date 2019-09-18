@@ -54,7 +54,7 @@ import static org.junit.Assert.assertTrue;
     })
 @TestPropertySource(properties = {
     "packagesToScan = org.apache.dubbo.config.spring.context.annotation.provider",
-    "consumer.version = ${demo.com.atlwj.service.version}",
+    "consumer.version = ${demo.version}",
     "consumer.url = dubbo://127.0.0.1:12345?version=2.5.7",
 })
 public class ReferenceAnnotationBeanPostProcessorTest {

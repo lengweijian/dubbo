@@ -13,9 +13,9 @@
 
     <dubbo:protocol name="dubbo" port="20880"/>
 
-    <dubbo:service interface="com.atlwj.service.HelloService" ref="helloService"/>
+    <dubbo:service interface="HelloService" ref="helloService"/>
 
-    <bean id="helloService" class="com.atlwj.service.impl.HelloServiceImpl"></bean>
+    <bean id="helloService" class="impl.HelloServiceImpl"></bean>
 
 
 </beans>

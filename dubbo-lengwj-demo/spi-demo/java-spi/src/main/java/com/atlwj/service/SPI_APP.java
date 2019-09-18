@@ -1,4 +1,4 @@
-package com.atlwj.service;
+package service;
 
 import java.util.Iterator;
 import java.util.ServiceLoader;

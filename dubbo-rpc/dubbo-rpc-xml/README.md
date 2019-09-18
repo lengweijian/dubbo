@@ -24,9 +24,9 @@ Set default protocol:
 <dubbo:provider protocol="xmlrpc" />
 ```
 
-Set com.atlwj.service protocol:
+Set service protocol:
 ```xml
-<dubbo:com.atlwj.service protocol="xmlrpc" />
+<dubbo:service protocol="xmlrpc" />
 ```
 
 Multi port:
@@ -41,7 +41,7 @@ Multi protocol:
 ```
 <!-- multi protocols -->
 ```xml
-<dubbo:com.atlwj.service id="helloService" interface="org.apache.hello.api.HelloService" version="1.0.0" protocol="dubbo,xmlrpc" />
+<dubbo:service id="helloService" interface="org.apache.hello.api.HelloService" version="1.0.0" protocol="dubbo,xmlrpc" />
 ```
 
 

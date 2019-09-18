@@ -30,8 +30,8 @@
     <dubbo:protocol id="dubbo1" name="dubbo" port="20813"/>
     <dubbo:protocol id="dubbo2" name="dubbo" port="20814"/>
 
-    <!-- com.atlwj.service configuration -->
-    <dubbo:com.atlwj.service interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService" ref="demoService"
+    <!-- service configuration -->
+    <dubbo:service interface="org.apache.dubbo.config.spring.api.DemoService" ref="demoService"
                    protocol="dubbo1,dubbo2"/>
 
     <bean id="demoService" class="org.apache.dubbo.config.spring.impl.DemoServiceImpl_LongWaiting"/>

@@ -58,7 +58,7 @@ public class ZookeeperDynamicConfigurationTest {
 
         try {
             setData("/dubbo/config/dubbo/dubbo.properties", "The content from dubbo.properties");
-            setData("/dubbo/config/dubbo/com.atlwj.service:version:group.configurators", "The content from configurators");
+            setData("/dubbo/config/dubbo/service:version:group.configurators", "The content from configurators");
             setData("/dubbo/config/appname", "The content from higer level node");
             setData("/dubbo/config/dubbo/appname.tag-router", "The content from appname tagrouters");
             setData("/dubbo/config/dubbo/never.change.DemoService.configurators", "Never change value from configurators");
@@ -96,12 +96,12 @@ public class ZookeeperDynamicConfigurationTest {
         TestListener listener2 = new TestListener(latch);
         TestListener listener3 = new TestListener(latch);
         TestListener listener4 = new TestListener(latch);
-        configuration.addListener("com.atlwj.service:version:group.configurators", listener1);
-        configuration.addListener("com.atlwj.service:version:group.configurators", listener2);
+        configuration.addListener("service:version:group.configurators", listener1);
+        configuration.addListener("service:version:group.configurators", listener2);
         configuration.addListener("appname.tag-router", listener3);
         configuration.addListener("appname.tag-router", listener4);
 
-        setData("/dubbo/config/dubbo/com.atlwj.service:version:group.configurators", "new value1");
+        setData("/dubbo/config/dubbo/service:version:group.configurators", "new value1");
         Thread.sleep(100);
         setData("/dubbo/config/dubbo/appname.tag-router", "new value2");
         Thread.sleep(100);
@@ -110,8 +110,8 @@ public class ZookeeperDynamicConfigurationTest {
         Thread.sleep(5000);
 
         latch.await();
-        Assertions.assertEquals(1, listener1.getCount("com.atlwj.service:version:group.configurators"));
-        Assertions.assertEquals(1, listener2.getCount("com.atlwj.service:version:group.configurators"));
+        Assertions.assertEquals(1, listener1.getCount("service:version:group.configurators"));
+        Assertions.assertEquals(1, listener2.getCount("service:version:group.configurators"));
         Assertions.assertEquals(1, listener3.getCount("appname.tag-router"));
         Assertions.assertEquals(1, listener4.getCount("appname.tag-router"));
 

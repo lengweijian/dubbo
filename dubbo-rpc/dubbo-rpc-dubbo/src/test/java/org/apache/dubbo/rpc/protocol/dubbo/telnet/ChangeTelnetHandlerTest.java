@@ -54,14 +54,14 @@ public class ChangeTelnetHandlerTest {
     public void setUp() {
         mockChannel = mock(Channel.class);
         mockInvoker = mock(Invoker.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
-        mockChannel.setAttribute("telnet.com.atlwj.service", "DemoService");
+        given(mockChannel.getAttribute("telnet.service")).willReturn("org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
+        mockChannel.setAttribute("telnet.service", "DemoService");
         givenLastCall();
-        mockChannel.setAttribute("telnet.com.atlwj.service", "org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
+        mockChannel.setAttribute("telnet.service", "org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
         givenLastCall();
-        mockChannel.setAttribute("telnet.com.atlwj.service", "demo");
+        mockChannel.setAttribute("telnet.service", "demo");
         givenLastCall();
-        mockChannel.removeAttribute("telnet.com.atlwj.service");
+        mockChannel.removeAttribute("telnet.service");
         givenLastCall();
         given(mockInvoker.getInterface()).willReturn(DemoService.class);
         given(mockInvoker.getUrl()).willReturn(URL.valueOf("dubbo://127.0.0.1:20884/demo"));
@@ -81,14 +81,14 @@ public class ChangeTelnetHandlerTest {
     public void testChangeSimpleName() throws RemotingException {
         DubboProtocol.getDubboProtocol().export(mockInvoker);
         String result = change.telnet(mockChannel, "DemoService");
-        assertEquals("Used the DemoService as default.\r\nYou can cancel default com.atlwj.service by command: cd /", result);
+        assertEquals("Used the DemoService as default.\r\nYou can cancel default service by command: cd /", result);
     }
 
     @Test
     public void testChangeName() throws RemotingException {
         DubboProtocol.getDubboProtocol().export(mockInvoker);
         String result = change.telnet(mockChannel, "org.apache.dubbo.rpc.protocol.dubbo.support.DemoService");
-        assertEquals("Used the org.apache.dubbo.rpc.protocol.dubbo.support.DemoService as default.\r\nYou can cancel default com.atlwj.service by command: cd /",
+        assertEquals("Used the org.apache.dubbo.rpc.protocol.dubbo.support.DemoService as default.\r\nYou can cancel default service by command: cd /",
                 result);
     }
 
@@ -96,30 +96,30 @@ public class ChangeTelnetHandlerTest {
     public void testChangePath() throws RemotingException {
         DubboProtocol.getDubboProtocol().export(mockInvoker);
         String result = change.telnet(mockChannel, "demo");
-        assertEquals("Used the demo as default.\r\nYou can cancel default com.atlwj.service by command: cd /", result);
+        assertEquals("Used the demo as default.\r\nYou can cancel default service by command: cd /", result);
     }
 
     @Test
     public void testChangeMessageNull() throws RemotingException {
         String result = change.telnet(mockChannel, null);
-        assertEquals("Please input com.atlwj.service name, eg: \r\ncd XxxService\r\ncd com.xxx.XxxService", result);
+        assertEquals("Please input service name, eg: \r\ncd XxxService\r\ncd com.xxx.XxxService", result);
     }
 
     @Test
     public void testChangeServiceNotExport() throws RemotingException {
         String result = change.telnet(mockChannel, "demo");
-        assertEquals("No such com.atlwj.service demo", result);
+        assertEquals("No such service demo", result);
     }
 
     @Test
     public void testChangeCancel() throws RemotingException {
         String result = change.telnet(mockChannel, "..");
-        assertEquals("Cancelled default com.atlwj.service org.apache.dubbo.rpc.protocol.dubbo.support.DemoService.", result);
+        assertEquals("Cancelled default service org.apache.dubbo.rpc.protocol.dubbo.support.DemoService.", result);
     }
 
     @Test
     public void testChangeCancel2() throws RemotingException {
         String result = change.telnet(mockChannel, "/");
-        assertEquals("Cancelled default com.atlwj.service org.apache.dubbo.rpc.protocol.dubbo.support.DemoService.", result);
+        assertEquals("Cancelled default service org.apache.dubbo.rpc.protocol.dubbo.support.DemoService.", result);
     }
 }

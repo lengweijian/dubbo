@@ -27,21 +27,21 @@ import org.apache.dubbo.rpc.protocol.dubbo.DubboProtocol;
  * ChangeServiceTelnetHandler
  */
 @Activate
-@Help(parameter = "[com.atlwj.service]", summary = "Change default com.atlwj.service.", detail = "Change default com.atlwj.service.")
+@Help(parameter = "[service]", summary = "Change default ", detail = "Change default ")
 public class ChangeTelnetHandler implements TelnetHandler {
 
-    public static final String SERVICE_KEY = "telnet.com.atlwj.service";
+    public static final String SERVICE_KEY = "telnet.service";
 
     @Override
     public String telnet(Channel channel, String message) {
         if (message == null || message.length() == 0) {
-            return "Please input com.atlwj.service name, eg: \r\ncd XxxService\r\ncd com.xxx.XxxService";
+            return "Please input service name, eg: \r\ncd XxxService\r\ncd com.xxx.XxxService";
         }
         StringBuilder buf = new StringBuilder();
         if ("/".equals(message) || "..".equals(message)) {
             String service = (String) channel.getAttribute(SERVICE_KEY);
             channel.removeAttribute(SERVICE_KEY);
-            buf.append("Cancelled default com.atlwj.service " + service + ".");
+            buf.append("Cancelled default service " + service + ".");
         } else {
             boolean found = false;
             for (Exporter<?> exporter : DubboProtocol.getDubboProtocol().getExporters()) {
@@ -54,9 +54,9 @@ public class ChangeTelnetHandler implements TelnetHandler {
             }
             if (found) {
                 channel.setAttribute(SERVICE_KEY, message);
-                buf.append("Used the " + message + " as default.\r\nYou can cancel default com.atlwj.service by command: cd /");
+                buf.append("Used the " + message + " as default.\r\nYou can cancel default service by command: cd /");
             } else {
-                buf.append("No such com.atlwj.service " + message);
+                buf.append("No such service " + message);
             }
         }
         return buf.toString();

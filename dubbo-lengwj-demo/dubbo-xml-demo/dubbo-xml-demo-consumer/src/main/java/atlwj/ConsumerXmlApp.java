@@ -1,6 +1,6 @@
 package atlwj;
 
-import com.atlwj.service.HelloService;
+import HelloService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.io.IOException;

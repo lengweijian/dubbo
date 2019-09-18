@@ -33,9 +33,9 @@ import java.util.List;
 public interface Directory<T> extends Node {
 
     /**
-     * get com.atlwj.service type.
+     * get service type.
      *
-     * @return com.atlwj.service type.
+     * @return service type.
      */
     Class<T> getInterface();
 

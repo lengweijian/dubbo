@@ -176,8 +176,8 @@ public interface CommonConstants {
     String PORT_KEY = "port";
     String DUBBO_IP_TO_BIND = "DUBBO_IP_TO_BIND";
     @Deprecated
-    String SHUTDOWN_WAIT_SECONDS_KEY = "dubbo.com.atlwj.service.shutdown.wait.seconds";
-    String SHUTDOWN_WAIT_KEY = "dubbo.com.atlwj.service.shutdown.wait";
+    String SHUTDOWN_WAIT_SECONDS_KEY = "dubbo.shutdown.wait.seconds";
+    String SHUTDOWN_WAIT_KEY = "dubbo.shutdown.wait";
     String DUBBO_PROTOCOL = "dubbo";
 
     String DUBBO_LABELS = "dubbo.labels";

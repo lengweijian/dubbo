@@ -2,16 +2,17 @@ package com.atlwj.config;
 
 import com.atlwj.service.HelloService;
 import com.atlwj.service.HelloServiceImpl;
-import org.apache.dubbo.config.*;
+import org.apache.dubbo.config.ApplicationConfig;
+import org.apache.dubbo.config.ProtocolConfig;
+import org.apache.dubbo.config.RegistryConfig;
+import org.apache.dubbo.config.ServiceConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 import java.io.IOException;
 
 @Configuration
-@ComponentScan("com.atlwj.service")
 public class Config {
 
     private static final String DUBBO_PROTOCAL_NAME = "dubbo";
@@ -19,6 +20,7 @@ public class Config {
     private static final String ZK_ADDRESS = "zookeeper://127.0.0.1:2181";
 
     private static final String APP_NAME = "dubbo-javaconfig-provider-demo";
+
     @Bean
     public ApplicationConfig applicationConfig(){
         ApplicationConfig applicationConfig = new ApplicationConfig();
@@ -45,12 +47,14 @@ public class Config {
     public ServiceConfig<HelloService> serviceConfig(){
         ServiceConfig<HelloService> serviceConfig = new ServiceConfig<>();
         serviceConfig.setVersion("1.0.0");
-        serviceConfig.setInterface(HelloService.class);
         serviceConfig.setProtocol(protocolConfig());
         serviceConfig.setRegistry(registryConfig());
         serviceConfig.setApplication(applicationConfig());
+        serviceConfig.setInterface(HelloService.class);
         serviceConfig.setRef(helloService());
-        serviceConfig.setId("helloService");
+
+        // 暴露及注册服务
+        serviceConfig.export();
         return serviceConfig;
     }
 

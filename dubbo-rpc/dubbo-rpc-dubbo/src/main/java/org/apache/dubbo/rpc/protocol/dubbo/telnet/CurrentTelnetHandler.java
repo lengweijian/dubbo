@@ -25,7 +25,7 @@ import org.apache.dubbo.remoting.telnet.support.Help;
  * CurrentServiceTelnetHandler
  */
 @Activate
-@Help(parameter = "", summary = "Print working default com.atlwj.service.", detail = "Print working default com.atlwj.service.")
+@Help(parameter = "", summary = "Print working default ", detail = "Print working default ")
 public class CurrentTelnetHandler implements TelnetHandler {
 
     @Override

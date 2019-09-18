@@ -1,6 +1,6 @@
 package com.atlwj;
 
-import com.atlwj.service.DemoService;
+import DemoService;
 
 import java.util.Iterator;
 import java.util.ServiceLoader;

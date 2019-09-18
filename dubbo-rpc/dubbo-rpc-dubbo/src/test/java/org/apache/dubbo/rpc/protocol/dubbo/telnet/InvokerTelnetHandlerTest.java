@@ -64,7 +64,7 @@ public class InvokerTelnetHandlerTest {
     @Test
     public void testInvokeDefaultService() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(DemoService.class.getName());
+        given(mockChannel.getAttribute("telnet.service")).willReturn(DemoService.class.getName());
         given(mockChannel.getLocalAddress()).willReturn(NetUtils.toAddress("127.0.0.1:5555"));
         given(mockChannel.getRemoteAddress()).willReturn(NetUtils.toAddress("127.0.0.1:20886"));
 
@@ -79,7 +79,7 @@ public class InvokerTelnetHandlerTest {
     @Test
     public void testInvokeWithSpecifyService() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(null);
+        given(mockChannel.getAttribute("telnet.service")).willReturn(null);
         given(mockChannel.getLocalAddress()).willReturn(NetUtils.toAddress("127.0.0.1:5555"));
         given(mockChannel.getRemoteAddress()).willReturn(NetUtils.toAddress("127.0.0.1:20886"));
 
@@ -94,7 +94,7 @@ public class InvokerTelnetHandlerTest {
     @Test
     public void testInvokeByPassingNullValue() {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(DemoService.class.getName());
+        given(mockChannel.getAttribute("telnet.service")).willReturn(DemoService.class.getName());
         given(mockChannel.getLocalAddress()).willReturn(NetUtils.toAddress("127.0.0.1:5555"));
         given(mockChannel.getRemoteAddress()).willReturn(NetUtils.toAddress("127.0.0.1:20886"));
 
@@ -110,7 +110,7 @@ public class InvokerTelnetHandlerTest {
     @Test
     public void testInvokeByPassingEnumValue() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(null);
+        given(mockChannel.getAttribute("telnet.service")).willReturn(null);
         given(mockChannel.getLocalAddress()).willReturn(NetUtils.toAddress("127.0.0.1:5555"));
         given(mockChannel.getRemoteAddress()).willReturn(NetUtils.toAddress("127.0.0.1:20886"));
 
@@ -126,7 +126,7 @@ public class InvokerTelnetHandlerTest {
     @Test
     public void testOverriddenMethodWithSpecifyParamType() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(DemoService.class.getName());
+        given(mockChannel.getAttribute("telnet.service")).willReturn(DemoService.class.getName());
         given(mockChannel.getLocalAddress()).willReturn(NetUtils.toAddress("127.0.0.1:5555"));
         given(mockChannel.getRemoteAddress()).willReturn(NetUtils.toAddress("127.0.0.1:20886"));
 
@@ -140,7 +140,7 @@ public class InvokerTelnetHandlerTest {
     public void testInvokeOverriddenMethodBySelect() throws RemotingException {
         //create a real instance to keep the attribute values;
         mockChannel = spy(getChannelInstance());
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(DemoService.class.getName());
+        given(mockChannel.getAttribute("telnet.service")).willReturn(DemoService.class.getName());
         given(mockChannel.getLocalAddress()).willReturn(NetUtils.toAddress("127.0.0.1:5555"));
         given(mockChannel.getRemoteAddress()).willReturn(NetUtils.toAddress("127.0.0.1:20886"));
 
@@ -157,7 +157,7 @@ public class InvokerTelnetHandlerTest {
     @Test
     public void testInvokeMultiJsonParamMethod() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(null);
+        given(mockChannel.getAttribute("telnet.service")).willReturn(null);
         given(mockChannel.getLocalAddress()).willReturn(NetUtils.toAddress("127.0.0.1:5555"));
         given(mockChannel.getRemoteAddress()).willReturn(NetUtils.toAddress("127.0.0.1:20886"));
 
@@ -171,7 +171,7 @@ public class InvokerTelnetHandlerTest {
     @Test
     public void testMessageNull() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(null);
+        given(mockChannel.getAttribute("telnet.service")).willReturn(null);
 
         String result = invoke.telnet(mockChannel, null);
         assertEquals("Please input method name, eg: \r\ninvoke xxxMethod(1234, \"abcd\", {\"prop\" : \"value\"})\r\ninvoke XxxService.xxxMethod(1234, \"abcd\", {\"prop\" : \"value\"})\r\ninvoke com.xxx.XxxService.xxxMethod(1234, \"abcd\", {\"prop\" : \"value\"})",
@@ -181,9 +181,9 @@ public class InvokerTelnetHandlerTest {
     @Test
     public void testInvalidMessage() throws RemotingException {
         mockChannel = mock(Channel.class);
-        given(mockChannel.getAttribute("telnet.com.atlwj.service")).willReturn(null);
+        given(mockChannel.getAttribute("telnet.service")).willReturn(null);
         String result = invoke.telnet(mockChannel, "(");
-        assertEquals("Invalid parameters, format: com.atlwj.service.method(args)", result);
+        assertEquals("Invalid parameters, format: method(args)", result);
     }
 
     private Channel getChannelInstance() {

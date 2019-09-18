@@ -1,6 +1,6 @@
-package com.atlwj.service.impl;
+package impl;
 
-import com.atlwj.service.DemoService;
+import DemoService;
 
 public class DemoServiceImpl_01 implements DemoService {
     @Override

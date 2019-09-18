@@ -129,8 +129,8 @@ public class RegistryProtocolTest {
 
 
     /**
-     * The name of the com.atlwj.service does not match and can't override invoker
-     * Service name matching, com.atlwj.service version number mismatch
+     * The name of the service does not match and can't override invoker
+     * Service name matching, service version number mismatch
      */
     @Test
     public void testNotifyOverride_notmatch() throws Exception {

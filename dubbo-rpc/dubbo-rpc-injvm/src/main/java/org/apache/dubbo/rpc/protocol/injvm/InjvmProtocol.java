@@ -111,7 +111,7 @@ public class InjvmProtocol extends AbstractProtocol implements Protocol {
             // generic invocation is not local reference
             return false;
         } else if (getExporter(exporterMap, url) != null) {
-            // by default, go through local reference if there's the com.atlwj.service exposed locally
+            // by default, go through local reference if there's the service exposed locally
             return true;
         } else {
             return false;

@@ -28,7 +28,7 @@ import org.apache.dubbo.rpc.cluster.Router;
 @Activate(order = 300)
 public class ServiceRouterFactory extends CacheableRouterFactory {
 
-    public static final String NAME = "com.atlwj.service";
+    public static final String NAME = "service";
 
     @Override
     protected Router createRouter(URL url) {

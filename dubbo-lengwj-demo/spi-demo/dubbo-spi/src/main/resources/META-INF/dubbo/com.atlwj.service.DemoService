@@ -1,4 +1,4 @@
-01=com.atlwj.service.impl.DemoServiceImpl_01
-02=com.atlwj.service.impl.DemoServiceImpl_02
-com.atlwj.service.wrapper.HelloServiceWrapper
-com.atlwj.service.wrapper.HelloServiceWrapper02
+01=impl.DemoServiceImpl_01
+02=impl.DemoServiceImpl_02
+wrapper.HelloServiceWrapper
+wrapper.HelloServiceWrapper02

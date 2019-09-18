@@ -28,7 +28,7 @@ import org.apache.dubbo.rpc.RpcException;
 import static org.apache.dubbo.rpc.Constants.$ECHO;
 
 /**
- * Dubbo provided default Echo echo com.atlwj.service, which is available for all dubbo provider com.atlwj.service interface.
+ * Dubbo provided default Echo echo service, which is available for all dubbo provider service interface.
  */
 @Activate(group = CommonConstants.PROVIDER, order = -110000)
 public class EchoFilter implements Filter {

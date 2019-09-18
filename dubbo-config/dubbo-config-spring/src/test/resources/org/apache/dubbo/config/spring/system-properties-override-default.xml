@@ -21,8 +21,8 @@
     http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd
     ">
 
-    <!-- com.atlwj.service configuration -->
-    <dubbo:com.atlwj.service id="demoServiceConfig" interface="org.apache.dubbo.config.spring.api.com.atlwj.service.DemoService"
+    <!-- service configuration -->
+    <dubbo:service id="demoServiceConfig" interface="org.apache.dubbo.config.spring.api.DemoService"
                    ref="demoService"/>
 
     <bean id="demoService" class="org.apache.dubbo.config.spring.impl.DemoServiceImpl"/>

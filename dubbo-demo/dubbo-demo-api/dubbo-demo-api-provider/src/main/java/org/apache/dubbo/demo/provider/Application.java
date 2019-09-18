@@ -19,6 +19,7 @@
 package org.apache.dubbo.demo.provider;
 
 import org.apache.dubbo.config.ApplicationConfig;
+import org.apache.dubbo.config.ProtocolConfig;
 import org.apache.dubbo.config.RegistryConfig;
 import org.apache.dubbo.config.ServiceConfig;
 import org.apache.dubbo.demo.DemoService;
@@ -27,13 +28,18 @@ public class Application {
     public static void main(String[] args) throws Exception {
         ServiceConfig<DemoServiceImpl> service = new ServiceConfig<>();
         service.setApplication(new ApplicationConfig("dubbo-demo-api-provider"));
+        ProtocolConfig protocolConfig = new ProtocolConfig();
+        protocolConfig.setName("dubbo");
+        protocolConfig.setPort(20882);
         RegistryConfig registryConfig = new RegistryConfig();
         registryConfig.setDefault(false);
         registryConfig.setAddress("zookeeper://127.0.0.1:2181");
+        service.setProtocol(protocolConfig);
         service.setRegistry(registryConfig);
         service.setInterface(DemoService.class);
         service.setRef(new DemoServiceImpl());
         service.export();
+        System.out.println("service has bean exported!!");
         System.in.read();
     }
 }

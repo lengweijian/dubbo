@@ -27,10 +27,10 @@ import org.springframework.beans.factory.annotation.Value;
  *
  * @since 2.6.5
  */
-@Service(version = "${demo.com.atlwj.service.version}")
+@Service(version = "${demo.version}")
 public class DefaultService implements DemoService {
 
-    @Value("${demo.com.atlwj.service.name}")
+    @Value("${demo.name}")
     private String serviceName;
 
     public String sayName(String name) {

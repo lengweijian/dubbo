@@ -350,7 +350,7 @@ public class RegistryDirectoryTest {
             URL url = invoker.getUrl();
             Assertions.assertNull(url.getParameter("key"));
         }
-        // The parameters of the provider for the inspection com.atlwj.service need merge
+        // The parameters of the provider for the inspection service need merge
         {
             serviceUrls.clear();
             serviceUrls.add(SERVICEURL.addParameter("methods", "getXXX2").addParameter("key", "provider"));
@@ -363,7 +363,7 @@ public class RegistryDirectoryTest {
             URL url = invoker.getUrl();
             Assertions.assertEquals("provider", url.getParameter("key"));
         }
-        // The parameters of the test com.atlwj.service query need to be with the providermerge.
+        // The parameters of the test service query need to be with the providermerge.
         {
             serviceUrls.clear();
             serviceUrls.add(SERVICEURL.addParameter("methods", "getXXX3").addParameter("key", "provider"));
@@ -489,7 +489,7 @@ public class RegistryDirectoryTest {
 
         Assertions.assertEquals(1, invokers.size());
 //        Assertions.assertEquals(
-//                serviceURL.setPath(com.atlwj.service).addParameters("check", "false", "interface", DemoService.class.getName(), REMOTE_APPLICATION_KEY, serviceURL.getParameter(APPLICATION_KEY))
+//                serviceURL.setPath(service).addParameters("check", "false", "interface", DemoService.class.getName(), REMOTE_APPLICATION_KEY, serviceURL.getParameter(APPLICATION_KEY))
 //                , invokers.get(0).getUrl()
 //        );
 
@@ -829,8 +829,8 @@ public class RegistryDirectoryTest {
     }
 
     /**
-     * Test override disables all com.atlwj.service providers through enable=false
-     * Expectation: all com.atlwj.service providers can not be disabled through override.
+     * Test override disables all service providers through enable=false
+     * Expectation: all service providers can not be disabled through override.
      */
     @Test
     public void testNofityOverrideUrls_disabled_allProvider() {
@@ -847,13 +847,13 @@ public class RegistryDirectoryTest {
         registryDirectory.notify(durls);
 
         List<Invoker<?>> invokers = registryDirectory.list(invocation);
-        //All com.atlwj.service providers can not be disabled through override.
+        //All service providers can not be disabled through override.
         Assertions.assertEquals(2, invokers.size());
     }
 
     /**
-     * Test override disables a specified com.atlwj.service provider through enable=false
-     * It is expected that a specified com.atlwj.service provider can be disable.
+     * Test override disables a specified service provider through enable=false
+     * It is expected that a specified service provider can be disable.
      */
     @Test
     public void testNofityOverrideUrls_disabled_specifiedProvider() {
@@ -881,8 +881,8 @@ public class RegistryDirectoryTest {
     }
 
     /**
-     * Test override disables a specified com.atlwj.service provider through enable=false
-     * It is expected that a specified com.atlwj.service provider can be disable.
+     * Test override disables a specified service provider through enable=false
+     * It is expected that a specified service provider can be disable.
      */
     @Test
     public void testNofity_To_Decrease_provider() {
@@ -912,8 +912,8 @@ public class RegistryDirectoryTest {
     }
 
     /**
-     * Test override disables a specified com.atlwj.service provider through enable=false
-     * It is expected that a specified com.atlwj.service provider can be disable.
+     * Test override disables a specified service provider through enable=false
+     * It is expected that a specified service provider can be disable.
      */
     @Test
     public void testNofity_disabled_specifiedProvider() {

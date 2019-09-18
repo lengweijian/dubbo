@@ -1,4 +1,4 @@
-package com.atlwj.service;
+package service;
 
 import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;

@@ -76,7 +76,7 @@ public abstract class AbstractMetadataReport implements MetadataReport {
     // Log output
     protected final Logger logger = LoggerFactory.getLogger(getClass());
 
-    // Local disk cache, where the special key value.registries records the list of metadata centers, and the others are the list of notified com.atlwj.service providers
+    // Local disk cache, where the special key value.registries records the list of metadata centers, and the others are the list of notified service providers
     final Properties properties = new Properties();
     private final ExecutorService reportCacheExecutor = Executors.newFixedThreadPool(1, new NamedThreadFactory("DubboSaveMetadataReport", true));
     final Map<MetadataIdentifier, Object> allMetadataReports = new ConcurrentHashMap<>(4);
@@ -99,7 +99,7 @@ public abstract class AbstractMetadataReport implements MetadataReport {
             file = new File(filename);
             if (!file.exists() && file.getParentFile() != null && !file.getParentFile().exists()) {
                 if (!file.getParentFile().mkdirs()) {
-                    throw new IllegalArgumentException("Invalid com.atlwj.service store file " + file + ", cause: Failed to create directory " + file.getParentFile() + "!");
+                    throw new IllegalArgumentException("Invalid service store file " + file + ", cause: Failed to create directory " + file.getParentFile() + "!");
                 }
             }
             // if this file exist, firstly delete it.
@@ -167,7 +167,7 @@ public abstract class AbstractMetadataReport implements MetadataReport {
             } else {
                 reportCacheExecutor.execute(new SaveProperties(lastCacheChanged.incrementAndGet()));
             }
-            logger.warn("Failed to save com.atlwj.service store file, cause: " + e.getMessage(), e);
+            logger.warn("Failed to save service store file, cause: " + e.getMessage(), e);
         }
     }
 
@@ -176,10 +176,10 @@ public abstract class AbstractMetadataReport implements MetadataReport {
             try (InputStream in = new FileInputStream(file)) {
                 properties.load(in);
                 if (logger.isInfoEnabled()) {
-                    logger.info("Load com.atlwj.service store file " + file + ", data: " + properties);
+                    logger.info("Load service store file " + file + ", data: " + properties);
                 }
             } catch (Throwable e) {
-                logger.warn("Failed to load com.atlwj.service store file " + file, e);
+                logger.warn("Failed to load service store file " + file, e);
             }
         }
     }
