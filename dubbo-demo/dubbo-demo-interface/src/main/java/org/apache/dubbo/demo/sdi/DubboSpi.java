@@ -5,8 +5,7 @@ import org.apache.dubbo.common.extension.Adaptive;
 import org.apache.dubbo.common.extension.SPI;
 
 /**
- * TODO
- *
+ * dubbo-spi 案例
  * @author lengweijian
  * @version 1.0
  * @date 2020-07-05 22:53
