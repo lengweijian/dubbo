@@ -1,0 +1,7 @@
+Random LoadBalance 基于权重的随机负载均衡机制
+
+RoundRobin LoadBalance 基于权重的轮训负载均衡
+
+LeastActive LoadBalance 最少活跃数负载均衡
+
+ConsistentHash LoadBalance 一致性hash

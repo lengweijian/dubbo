@@ -84,5 +84,9 @@
             <artifactId>tomcat-embed-core</artifactId>
             <version>9.0.12</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-compatible</artifactId>
+        </dependency>
     </dependencies>
 </project>

@@ -413,17 +413,34 @@ public class DubboProtocol extends AbstractProtocol {
         }
     }
 
+    /**
+     *
+     * 服务引用
+     * @param serviceType
+     * @param url
+     * @param <T>
+     * @return
+     * @throws RpcException
+     */
     @Override
     public <T> Invoker<T> protocolBindingRefer(Class<T> serviceType, URL url) throws RpcException {
         optimizeSerialization(url);
 
         // create rpc invoker.
+        /**
+         * 连接客户端
+         */
         DubboInvoker<T> invoker = new DubboInvoker<T>(serviceType, url, getClients(url), invokers);
         invokers.add(invoker);
 
         return invoker;
     }
 
+    /**
+     * 连接客户端
+     * @param url
+     * @return
+     */
     private ExchangeClient[] getClients(URL url) {
         // whether to share connection
 
@@ -450,6 +467,7 @@ public class DubboProtocol extends AbstractProtocol {
                 clients[i] = shareClients.get(i);
 
             } else {
+                // Create new connection
                 clients[i] = initClient(url);
             }
         }
@@ -606,6 +624,9 @@ public class DubboProtocol extends AbstractProtocol {
                 client = new LazyConnectExchangeClient(url, requestHandler);
 
             } else {
+                /**
+                 * 连接客户端
+                 */
                 client = Exchangers.connect(url, requestHandler);
             }
 

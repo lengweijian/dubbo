@@ -26,6 +26,7 @@ import org.springframework.stereotype.Component;
 
 @Component("demoServiceComponent")
 public class DemoServiceComponent implements DemoService {
+
     @Reference
     private DemoService demoService;
 

@@ -63,6 +63,9 @@ import static org.apache.dubbo.common.constants.CommonConstants.REMOVE_VALUE_PRE
  * @see org.apache.dubbo.common.extension.SPI
  * @see org.apache.dubbo.common.extension.Adaptive
  * @see org.apache.dubbo.common.extension.Activate
+ *
+ * 是dubbo spi整个扩展机制的主要逻辑类，在这个类里面实现了配置的加载、扩展类的缓存、自适应对象生成等所有工作。
+ * ExtensionLoader的逻辑入口可以分为三个：getExtension、getAdaptiveExtension、getActiveExtension。分别是获取普通扩展类、自适应扩展类、获取自动激活扩展类。
  */
 public class ExtensionLoader<T> {
 
@@ -342,7 +345,9 @@ public class ExtensionLoader<T> {
             // 获取默认的拓展实现类
             return getDefaultExtension();
         }
+
         final Holder<Object> holder = getOrCreateHolder(name);
+        // 先从缓存内get
         Object instance = holder.get();
         // double check
         if (instance == null) {

@@ -75,6 +75,9 @@ public class Transporters {
         } else {
             handler = new ChannelHandlerDispatcher(handlers);
         }
+        /**
+         * 创建连接  默认是netty
+         */
         return getTransporter().connect(url, handler);
     }
 

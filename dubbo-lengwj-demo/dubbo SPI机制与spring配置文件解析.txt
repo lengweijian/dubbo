@@ -1,6 +1,0 @@
-URL ----- 统一资源定位器
-
-invoker 是dubbo核心模型。
-
-invocation
-

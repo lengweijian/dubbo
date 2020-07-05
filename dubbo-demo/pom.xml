@@ -34,6 +34,8 @@
         <module>dubbo-demo-xml</module>
         <module>dubbo-demo-annotation</module>
         <module>dubbo-demo-api</module>
+        <module>lengwj-myrpc</module>
+        <module>spi-demo</module>
     </modules>
 
     <dependencyManagement>

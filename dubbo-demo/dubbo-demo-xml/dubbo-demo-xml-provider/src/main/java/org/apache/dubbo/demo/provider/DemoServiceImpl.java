@@ -22,12 +22,20 @@ import org.apache.dubbo.rpc.RpcContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.util.concurrent.TimeUnit;
+
 public class DemoServiceImpl implements DemoService {
+
     private static final Logger logger = LoggerFactory.getLogger(DemoServiceImpl.class);
 
     @Override
     public String sayHello(String name) {
-        logger.info("DemoServiceImpl.....Hello " + name + ", request from consumer: " + RpcContext.getContext().getRemoteAddress());
+//        try {
+//            TimeUnit.SECONDS.sleep(3);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+        System.out.println("DemoServiceImpl.....3号机器....");
         return "DemoServiceImpl......Hello " + name + ", response from provider: " + RpcContext.getContext().getLocalAddress();
     }
 

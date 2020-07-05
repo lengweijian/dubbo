@@ -466,6 +466,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
     private void doExportUrls() {
         // 加载注册中心 URL 数组
         List<URL> registryURLs = loadRegistries(true);
+        // 可配置多个协议，循环暴露服务
         for (ProtocolConfig protocolConfig : protocols) {
             String pathKey = URL.buildKey(getContextPath(protocolConfig).map(p -> p + "/" + path).orElse(path), group, version);
             ProviderModel providerModel = new ProviderModel(pathKey, ref, interfaceClass);
@@ -477,7 +478,7 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
 
     private void doExportUrlsFor1Protocol(ProtocolConfig protocolConfig, List<URL> registryURLs) {
         String name = protocolConfig.getName();
-        // <dubbo:protocol /> x=不指定name，默认就是dubbo协议>
+        // <dubbo:protocol /> 不指定name，默认就是dubbo协议>
         if (StringUtils.isEmpty(name)) {
             name = DUBBO;
         }
@@ -626,11 +627,18 @@ public class ServiceConfig<T> extends AbstractServiceConfig {
                         if (StringUtils.isNotEmpty(proxy)) {
                             registryURL = registryURL.addParameter(PROXY_KEY, proxy);
                         }
-                        // 使用 ProxyFactory 创建 Invoker 对象
+                        /**
+                         * 使用 ProxyFactory 创建 Invoker 对象
+                         */
                         Invoker<?> invoker = PROXY_FACTORY.getInvoker(ref, (Class) interfaceClass, registryURL.addParameterAndEncoded(EXPORT_KEY, url.toFullString()));
-                        // 创建 DelegateProviderMetaDataInvoker 对象
+                        /**
+                         * 创建 DelegateProviderMetaDataInvoker 对象
+                         */
                         DelegateProviderMetaDataInvoker wrapperInvoker = new DelegateProviderMetaDataInvoker(invoker, this);
-                        // 使用 Protocol 暴露 Invoker 对象,获取Exporter
+                        /**
+                         *  dubbo-spi
+                         * 使用 Protocol 暴露 Invoker 对象,获取Exporter
+                         */
                         Exporter<?> exporter = protocol.export(wrapperInvoker);
                         exporters.add(exporter);
                     }

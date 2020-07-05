@@ -39,6 +39,9 @@ public interface RegistryService {
      * 5. Allow URLs which have the same URL but different parameters to coexist,they can't cover each other.<br>
      *
      * @param url  Registration information , is not allowed to be empty, e.g: dubbo://10.20.153.10/org.apache.dubbo.foo.BarService?version=1.0.0&application=kylin
+     *
+     *             注册数据(服务接口信息，客户端地址，路由规则等等。。)
+     *
      */
     void register(URL url);
 
